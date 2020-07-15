@@ -1,7 +1,7 @@
 # export FLASK_APP=application.py
 # set FLASK_APP=application.py
 # top/mac bottom/windows
-# export DATABASE_URL="postgres://ayjxjjxhgpzlnl:f150cc319da46e38a1fb398ee335d98fa5468668d0d8aa3da415aed475d08f9b@ec2-54-225-227-125.compute-1.amazonaws.com:5432/d9prh5mib7dh2p"
+# set DATABASE_URL="postgres://bvyvdgxwtoixjr:fe8261a052ad6ba5997e288ef6d4a435b9f5d10be0e1dd8a7a452069f578dd97@ec2-52-204-20-42.compute-1.amazonaws.com:5432/ddju8atj54t423"
 
 
 # put link on sign-in page to other courses...need to take more courses?
@@ -45,11 +45,11 @@ app = Flask(__name__) # Instantiate a new web application called `app`, with `__
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 
-from flask_sslify import SSLify
-sslify = SSLify(app)
+# from flask_sslify import SSLify
+# sslify = SSLify(app)
 
 Session (app)
-engine = create_engine("postgres://iykazvclamrzem:140bdec1e446a9119d4fb1c9e20d89fb17716e702de72b7be09f2b2e53b86d36@ec2-50-19-127-115.compute-1.amazonaws.com:5432/d134n6bd1767sd")
+engine = create_engine("postgres://bvyvdgxwtoixjr:fe8261a052ad6ba5997e288ef6d4a435b9f5d10be0e1dd8a7a452069f578dd97@ec2-52-204-20-42.compute-1.amazonaws.com:5432/ddju8atj54t423")
 #talk to datbase wiTh SQL. Object used to manage connections to database.
 #Sending data to and from database.
 db = scoped_session(sessionmaker(bind=engine)) # for individual sessions
@@ -60,85 +60,14 @@ db = scoped_session(sessionmaker(bind=engine)) # for individual sessions
 # utils.recent_certificates_csv()
 
 # db.execute("CREATE TABLE fl_life_health_agent_1(id SERIAL PRIMARY KEY, name VARCHAR NOT NULL UNIQUE,email VARCHAR NOT NULL, password VARCHAR NOT NULL, address VARCHAR NOT NULL,first VARCHAR NOT NULL,last VARCHAR NOT NULL,license_no VARCHAR NOT NULL,license_state VARCHAR NOT NULL, maiden VARCHAR NOT NULL, color VARCHAR NOT NULL, ethics_paid Boolean, ethics_course  Boolean, ethics_score_date VARCHAR, course_2_paid Boolean, course_2_complete Boolean, course_2_score_date VARCHAR,  course_3_paid Boolean, course_3_complete Boolean, course_3_score_date VARCHAR, course_4_paid Boolean, course_4_complete Boolean, course_4_score_date VARCHAR)")
-
+# db.commit()
 #relational database
 # db.execute("CREATE TABLE ia_results_1(id SERIAL PRIMARY KEY, name VARCHAR NOT NULL UNIQUE,name_id INTEGER REFERENCES fl_public_adjuster_1)")
 # db.commit()
 # user = db.execute("SELECT fl_public_adjuster_1.name FROM fl_public_adjuster_1 JOIN ia_results_1 ON fl_public_adjuster_1.id = ia_results_1.name_id WHERE ia_results_1.name = 'frank'  ").fetchall()
 # now = datetime.datetime.now()
 # print("today-date", now)
-'''
-import pandas as pd
 
-name_dict = {
-			'Name': ['a','b','c','d'],
-			'Score': [90,80,95,20]
-		  }
-
-df = pd.DataFrame(name_dict)
-
-print (df)
-df.to_csv('file_name.csv', index = False)
-
-df = pd.DataFrame({'name': ['Raphael', 'Donatello'],
-				   'mask': ['red', 'purple'],
-				   'weapon': ['sai', 'bo staff']})
-
-df.to_csv('test.csv', index=False)
-
-
-import pandas as pd
-df = pd.DataFrame([['Bob', 'Builder'], ['Sally', 'Baker'], ['Scott', 'Candle Stick Maker']],
-columns=['name', 'occupation'])
-# df.to_csv('lhv-20-26000-30000.csv', index = False)
-'''
-
-'''
-df = read_csv("licenses-7-2020.csv")
-# newdf = df[(df.License_Desc == "LIFE INCL VAR ANNUITY & HEALTH") & (df.CE_Scenario == "CE, with more than 6 years")]
-# newdf.to_csv('newdf.csv', index = False)
-# print("total florida licenses",df.count())
-df1 = df[df['License TYCL Desc'] == 'HEALTH']
-# df1 = df[df['License_Desc'] == 'LIFE INCL VAR ANNUITY & HEALTH']
-# df1 = df[df['License_Desc'] == 'SURPLUS LINES']
-
-
-print("h",df1.count())
-# df1.to_csv('test1.csv', index=False, columns=['Full Name','First Name','License_Desc' ])
-# df2 = df1[df1['CE_Scenario'] == "CE, with more than 6 years"]
-
-
-# print("lhv > 6",df2.count())
-# df3 = df2.filter(["Email", "CE_Scenario"])
-df3 = df1[['Email Address', 'First Name','Last Name']].head(6000).tail(1000)
-# df3 = df1['Email Address'].head(5000).tail(2000)
-
-df3.to_csv('h-5000-6000.csv', index = False)
-'''
-
-
-'''
-#for end of month deadline
-df = read_csv("licenses-7-2020.csv")
-print("total florida licenses",df.count())
-df1 = df[df['License TYCL Desc'] == 'HEALTH']
-# df1 = df[df['License TYCL Desc'] == 'PUBLIC ADJUSTER-ALL LINES']
-# df1 = df[df['License_Desc'] == 'LIFE INCL VAR ANNUITY & HEALTH']
-
-print("lhv",df1.count())
-df2 = df1[df1['CE Due Date'] == "7/31/2020 12:00:00 AM"]
-# print("due july lhv",df2.count())
-# df3 = df2[df2['CE_Hours_Required'] == '="20"']
-# df3 = df2[df2['CE Hours Applied'] != '="24"']
-# df3 = df2[df2['CE Hours Applied'] == '="0"'] &  df2[df2['CE Hours Applied'] != '="20"']
-df3 = df2[df2['CE Hours Applied'] != '="24"']
-# newdf = df[(df.CE Hours Applied != '="24"') & (df.CE_Scenario == "CE, with more than 6 years")]
-print("0 hours",df3.count())
-# df4 = df3[['Email Address', 'First Name','Last Name']].head(1500)
-df4 = df3[['Email Address', 'First Name','Last Name']]
-# df4 = df3['Email Address']
-df4.to_csv('240-july-end-1.csv', index = False)
-'''
 
 #adds comma
 # df3.to_csv('lh-group-1.csv', index=False, header=False, line_terminator=',\n')
@@ -239,8 +168,9 @@ def final_results(num_questions):
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
-	session['admin'] = False #causing errors timing out
-	return render_template("main_page.html")
+    return "russ"
+	# session['admin'] = False #causing errors timing out
+	# return render_template("main_page.html")
 
 @app.route('/faq/', methods = ["GET", "POST"])
 def faq():
