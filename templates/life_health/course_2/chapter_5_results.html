@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Chapter 5 Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+</head>
+<style>
+h1{
+  margin-top: -60px;
+}
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+
+  <h1>Chapter 5 Results</h1>
+
+  <h5>Question 1:  </h5> <p>{{result_1}}<BR>
+  Answer: {{answer_1}}</p>
+  <h5>Question 2:  </h5> <p>{{result_2}}<BR>
+  Answer:  {{answer_2}}</p>
+
+
+
+  {% if wrong_answer %}
+  <p>Review and fix wrong answers before moving forward</p>
+  <form action="{{ url_for('life_health_course_2_chapter_5') }}" method="post">
+    <button class="btn btn-danger btn-lg" aria-pressed="true">BACK</button>
+  </form>
+  {% else %}
+  <p>100% GREAT JOB!!!</p>
+  <form action="{{ url_for('life_health_course_2_chapter_6') }}" method="post">
+    <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+  </form>
+  {% endif %}
+
+
+
+ </div>
+</body>
+</html>

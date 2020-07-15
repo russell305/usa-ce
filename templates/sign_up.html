@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: User Info </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+#security{
+  margin-top: 20px;
+}
+nav ul {
+    margin-right:7%;
+}
+nav ul li {
+  margin-left:7%;
+  font-size: 24px;
+}
+#add{
+  font-weight: 600;
+}
+
+#su{
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+#cert{
+  margin-bottom: 20px;
+}
+label{
+  margin-bottom: -30px;
+}
+h2{
+  margin-top: -40px;
+  margin-bottom: 10px;
+}
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+
+  <div class="jumbotron container-fluid text-left">
+      <h2 class="text-center">Sign-Up</h2>
+      <form action="{{ url_for('checkout') }}" method="post"  enctype = "multipart/form-data">
+        <div class="row">
+          <div id='cert' class="col-md-6">
+            <h3 >Account Details</h3>
+
+            <div class = "input-fields" >
+                <label for="name_label">Username</label><BR>
+                <input id="name_label"type="text" name="name" placeholder="Name" maxlength="40" required>
+                <label for="password_label">(case sensitive)</label>
+            </div>
+
+            <div class = "input-fields" >
+                <label for = "email_label" >Email</label><BR>
+                <input id = "email_label" type="text" name="email" placeholder="Email" maxlength="40" size = "25" required>
+            </div>
+            <div >
+
+            </div>
+            <input type="checkbox" name="fruit" value="Apple"> Subscribe to our mailing list
+            <div class = "input-fields" >
+                <label for="password_label">Password</label><BR>
+                <input id="password_label" type="text" placeholder="Password" maxlength="20" size = "20" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required>
+                <label for="password_label">(case sensitive)</label>
+            </div>
+
+            <div class = "input-fields" >
+                <label for = "re_password_label">Verify Password</label><BR>
+                <input id = "re_password_label" type="text" name="password" placeholder="Verify Password" maxlength="20" size = "20" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required>
+            </div>
+<!--
+          <div>
+            <label id = "add">Address:</label>
+            </div>
+            <div class = "input-fields">
+                <label for = "street_label" >Street</label><BR>
+                <input id = "street_label" type="text" name="street" placeholder="Street" maxlength="90" required>
+            </div>
+            <div class = "input-fields">
+                <label for = "city_label" >City</label><BR>
+                <input id = "city_label" type="text" name="city" placeholder="City" maxlength="20" required>
+            </div>
+            <div class = "input-fields">
+                <label for = "state_label" >State</label><BR>
+                <input id = "state_label" type="text" name="state" placeholder="State" maxlength="20" required>
+            </div>
+            <div class = "input-fields">
+                <label for = "zip_label" >Zip Code</label><BR>
+                <input id = "zip_label" type="text" name="zip_code" placeholder="Zip Code" maxlength="20" >
+            </div>
+ -->
+
+          </div>
+
+          <div class="col-md-6">
+            <h3 >Certification Details</h3>
+            <div class = "input-fields" >
+                <label for="first_label">First Name (on license)</label><BR>
+                <input id="first_label"type="text" name="first" placeholder="First" maxlength="40" required>
+            </div>
+            <div class = "input-fields" >
+                <label for="last_label">Last Name (on license)</label><BR>
+                <input id="last_label"type="text" name="last" placeholder="Last" maxlength="40" required>
+            </div>
+            <div class = "input-fields" >
+                <label for="license_label">License Number</label><BR>
+                <input id="license_label"type="text" name="license" placeholder="License" maxlength="40" required>
+            </div>
+            <!--
+            <div class = "input-fields" >
+                <label for="license_state_label">State (of license)</label><BR>
+                <input id="license_state_label"type="text" name="license_state" placeholder="State" maxlength="40" required>
+            </div>
+             -->
+            <h3 id = 'security'>Security Questions</h3>
+            <p>Used to monitor student identity at
+          registration and throughout the course and
+          examinations.</p>
+
+            <div class = "input-fields" >
+              <label for="maiden_label">What is your natural eye color?</label><BR>
+              <input id="maiden_label"type="text" name="maiden" placeholder="eye color" maxlength="40" required>
+            </div>
+            <div class = "input-fields" >
+              <label for="color_label">What is your favorite color?</label><BR>
+              <input id="color_label"type="text" name="color" placeholder="favorite color" maxlength="40" required>
+            </div>
+
+          </div>
+        </div>
+        <div class = "text-center">
+          <button id ="su" class="btn-primary btn-lg  ">Sign Up</button>
+        </div>
+
+      </div>
+
+
+
+    </form>
+
+
+</div>
+
+</body>
+</html>

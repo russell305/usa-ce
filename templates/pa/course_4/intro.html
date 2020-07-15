@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Discount Florida Continuing Education </title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111789653-4');
+</script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+		<!-- <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.png') }}"> -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+body {
+	height: 100%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 0px;
+	margin-bottom: 100px;
+	padding: 0;
+	font-family: verdana;
+	background-color: 	white ;
+}
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+
+h2{
+  margin-top: -30px;
+	margin-bottom: 15px;
+}
+.list{
+	margin-bottom: 20px;
+}
+.button1{
+	/* margin: -5px; */
+}
+.button2{
+	margin-top: 25px;
+}
+.info{
+	margin-bottom: 25px;
+}
+
+</style>
+</head>
+
+<body >
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+<div class="container-fluid text-center jumbotron ">
+<h2>4-Hour National Flood Insurance Program</h2>
+<h5>This course fulfills the state-mandated
+requirements for the Public Adjuster Optional Electives continuing education
+component for Florida-licensed public adjusters. (3-20)</h5>
+
+<div class=" text-left info">
+<p>In this course we will review the fundamental concepts and the
+complex coverage details involving The National Flood Insurance Program.
+
+</p><p> Our course is 100% online and
+	can be taken in the privacy of your own home at your convenience.</p>
+
+
+		<p>Class highlights include:</p>
+		<div class="text-left">
+			<ul>
+			<div class="list">
+				<li>Creation of NFIP</li>
+				<li>The Role of FEMA</li>
+				<li>Increased Cost of Compliance Coverage</li>
+				<li>Damages and Property Not Covered</li>
+				<li>Claims Handling Procedures</li>
+				<li>Other Issues Affecting Flood Coverage</li>
+			</div>
+
+		</ul>
+		</div>
+		<p>This course has been approved by the Florida Department of Financial Services for insurance continuing education. </p>
+		<b>		<p>Provider of Record: Florida Discount Continuing Education </p>
+				<p>Course number: 112746</p>
+				<p>Provider Number: 372120</p>
+				<p>Hours Approved: 4 Public Adjuster Optional Electives (3-20)</p>
+				<p>Price: $7.60</p>
+		</b>
+
+  </div>
+
+
+<div>
+	<form action="{{ url_for('sign_up') }}" method="post">
+				<button class="btn-primary btn-lg " aria-pressed="true">Sign-Up</button><BR>
+	</form>
+</div>
+<div class="button2">
+	<form action="{{ url_for('sign_in_main') }}" method="post">
+				<button class="btn-primary btn-lg " aria-pressed="true">Sign-In</button><BR>
+	</form>
+</div>
+
+</div>
+</div>
+</body>
+</html>

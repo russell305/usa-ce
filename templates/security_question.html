@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Florida Discount CE: security_question </title>
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+		<style>
+        body {
+					height: 100%;
+					margin-left: 10%;
+					margin-right: 10%;
+					margin-bottom: 100px;
+					padding: 0;
+					font-family: verdana;
+					background-color: white ;
+        }
+
+        ul{
+          font-size:20px;
+          list-style-type: none;
+        }
+        button{
+          margin:10px;
+        }
+				nav ul {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+				}
+				nav ul li {
+					display: flex;
+					margin:2%;
+					margin-bottom: 25px;
+					margin-top: 50px;
+					text-decoration: none;
+					font-size: 15px;
+				}
+				@media (min-width: 500px) {
+					nav ul li {
+						margin: 2%;
+						margin-bottom: 0px;
+						margin-top: 20px;
+						font-size: 20px;
+					}
+				}
+				nav ul li a {
+					color: black;
+					text-decoration: none;
+				}
+
+		</style>
+		</head>
+
+	<body>
+		<div class="jumbotron container-fluid text-center">
+	      <form action="{{ url_for('security_question_result', url=url) }}" method="post"  enctype = "multipart/form-data">
+	      <h3>Security Question</h3>
+				<div class = "input-fields" >
+						<label for="name_label">Username</label>
+						<input id="name_label"type="text" name="name" placeholder="Name" maxlength="40" required>
+
+				</div>
+				<div class = "input-fields" >
+						<label for="color_label">What is your natural eye color?</label>
+						<input id="color_label" type="text" name="color" placeholder="color" maxlength="20" size = "20" required>
+				</div>
+
+
+	      <div class = "text-center">
+	        <button id ="su" class="btn btn-primary btn-md ">Submit</button>
+
+	      </div>
+
+	    </form>
+			<div class="fp">
+				<!-- <a  href="{{ url_for('forgot_password') }}">Forgot Username or Password</a> -->
+			</div>
+	  </div>
+
+	</body>
+
+</html>

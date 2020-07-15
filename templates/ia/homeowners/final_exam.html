@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Homeowners Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -30px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('ia_homeowners_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('ia_homeowners_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1.  Which would you not see on the Declaration page of a homeowners’ policy? <BR>
+  <input type="radio" name="1" value="maison"> The agent’s name, agency name and address<BR>
+  <input type="radio" name="1" value="correct"> Liability of homeowner<BR>
+  <input type="radio" name="1" value="quatre"> Name and address of the insured and address of the insured property<BR>
+  <input type="radio" name="1" value="poisson"> The coverage and premium breakdown<BR>
+</p>
+
+<P>2.  A homeowners’ policy endorsement that provides Liability coverage for a business conducted away from the residence is:<BR>
+  <input type="radio" name="2" value="maison">  Indemnity Endorsement<BR>
+  <input type="radio" name="2" value="quatre"> Flood Endorsement<BR>
+  <input type="radio" name="2" value="corre"> Homeowner's Endorsement<BR>
+  <input type="radio" name="2" value="correct"> Business Pursuits Endorsement<BR>
+</p>
+
+<P>3. What is not part of Property Coverages – Section I?<BR>
+  <input type="radio" name="3" value="maison"> Personal Property Limits<BR>
+  <input type="radio" name="3" value="quatre"> Loss of Use Limits<BR>
+  <input type="radio" name="3" value="correct"> Medical Payments to Others<BR>
+  <input type="radio" name="3" value="soleil"> Detached Structures Limits<BR>
+</p>
+
+<P>4. This coverage form would be used for an owner-occupant of a condo unit?<BR>
+  <input type="radio" name="4" value="maison"> Special Form (HO-3)<BR>
+  <input type="radio" name="4" value="quatre"> Contents Form (HO-4)<BR>
+  <input type="radio" name="4" value="correct"> Unit Owners Form (HO-6)<BR>
+  <input type="radio" name="4" value="poisson"> Comprehensive Form (HO-5)<BR>
+</p>
+
+<P>5. What is considered “real property”? <BR>
+  <input type="radio" name="5" value="maison"> Items that will not float in a flood<BR>
+  <input type="radio" name="5" value="quatre"> Items of real value<BR>
+  <input type="radio" name="5" value="xxx"> Furniture, appliances, jewelry, clothing, and the like that are located in the dwelling<BR>
+  <input type="radio" name="5" value="correct"> Structure that is bolted or fixed to a permanent foundation <BR>
+</p>
+
+<P>6. By law all insurance policies must be readable and pass a score of __ on a Flesch Reading Ease test. <BR>
+  <input type="radio" name="6" value="maison"> 100<BR>
+  <input type="radio" name="6" value="quatre"> 30<BR>
+  <input type="radio" name="6" value="">  60<BR>
+  <input type="radio" name="6" value="correct"> 45<BR>
+</p>
+
+<P>7.  What types of animals are covered by homeowner's insurance? <BR>
+  <input type="radio" name="7" value="maison"> Birds or fish<BR>
+  <input type="radio" name="7" value="quatre"> Vaccinated animals<BR>
+  <input type="radio" name="7" value=""> Pure bred animals<BR>
+  <input type="radio" name="7" value="correct"> None<BR>
+</p>
+
+<P>8.   If a large snowfall melts into ice on a roof and the weight causes the roof to buckle, coverage would be provided: <BR>
+  <input type="radio" name="8" value="maison"> Sometimes<BR>
+  <input type="radio" name="8" value="quatre"> Only if named storm<BR>
+  <input type="radio" name="8" value="correct"> Always<BR>
+  <input type="radio" name="8" value="poisson"> Never <BR>
+</p>
+
+<P>9.  What is not considered an additional coverage?<BR>
+  <input type="radio" name="9" value="maison">  Grave Marker<BR>
+  <input type="radio" name="9" value="correct"> Medical Payments<BR>
+  <input type="radio" name="9" value="soleil"> Debris Removal<BR>
+  <input type="radio" name="9" value="poisson"> Fire Department Service Charge<BR>
+</p>
+
+<P>10.  Which of the following types of water damage are excluded from coverage?<BR>
+  <input type="radio" name="10" value="ccc">  Flood<BR>
+  <input type="radio" name="10" value="coct"> Waves<BR>
+  <input type="radio" name="10" value="wrong"> Tidal Waves<BR>
+  <input type="radio" name="10" value="correct"> All of the above <BR>
+</p>
+
+<P>11.  A(n) _____ limit is the limit that applies to the entire policy as a whole, no matter how many people are involved in an occurrence.<BR>
+  <input type="radio" name="11" value="correct">  Aggregate<BR>
+  <input type="radio" name="11" value="coct"> Single<BR>
+  <input type="radio" name="11" value="wrong"> Split<BR>
+  <input type="radio" name="11" value="wrong"> Indemnity<BR>
+</p>
+
+<P>12.  Compensatory Damages are classified into two sub-categories:  General and what else?<BR>
+  <input type="radio" name="12" value="correct">  Special <BR>
+  <input type="radio" name="12" value="coct"> Comparative<BR>
+  <input type="radio" name="12" value="wrong"> Punitive<BR>
+  <input type="radio" name="12" value="wrong"> Tort<BR>
+</p>
+
+<P>13.  What does not constitute a homeowners’ loss?<BR>
+  <input type="radio" name="13" value="coct"> Caused by extraneous factor<BR>
+  <input type="radio" name="13" value="wrong"> Involve legal, covered property<BR>
+  <input type="radio" name="13" value="correct">  Caused by deliberate action on the part of the policy owner<BR>
+  <input type="radio" name="13" value="wrong"> Loss is accidental<BR>
+</p>
+
+<P>14.  What is a building of lesser value that is situated on the same land as the main building that is insured by the policy called?<BR>
+  <input type="radio" name="14" value="coct"> Shed<BR>
+  <input type="radio" name="14" value="wrong"> Dwelling<BR>
+  <input type="radio" name="14" value="correct"> Appurtenant structure<BR>
+  <input type="radio" name="14" value="wrong"> All of the above<BR>
+</p>
+
+<P>15.  Which of following small business items does liability insurance coverage not protect? <BR>
+  <input type="radio" name="15" value="coct"> Fire<BR>
+  <input type="radio" name="15" value="correct">  Dwelling<BR>
+  <input type="radio" name="15" value="wrong"> Bodily injury<BR>
+  <input type="radio" name="15" value="wrong"> Advertising<BR>
+</p>
+
+<P>16.  When does an employer need to buy workers’ compensation insurance?<BR>
+  <input type="radio" name="16" value="correct">  When there are one or more employees<BR>
+  <input type="radio" name="16" value="quatre"> They don't, its optional<BR>
+  <input type="radio" name="16" value="corre"> When there are ten or more employees<BR>
+  <input type="radio" name="16" value=""> After 1 year in business<BR>
+</p>
+
+<P>17.   The very first form of personal property insurance coverage was:<BR>
+    <input type="radio" name="17" value="maison">  Real Property Policy<BR>
+    <input type="radio" name="17" value="quatre"> Personal Property Policy<BR>
+    <input type="radio" name="17" value="correct"> Ocean Marine Policy<BR>
+    <input type="radio" name="17" value="corr"> Inland Marine Policy<BR>
+</p>
+
+<P>18.  Which policy includes coverage for the personal property of a business at specific, as well as unnamed locations, including while in transit?<BR>
+  <input type="radio" name="18" value="correct"> Manufacturers’ Output Policy (MOP)<BR>
+  <input type="radio" name="18" value="maison">  Motor Truck Policy (MTP)<BR>
+  <input type="radio" name="18" value="quatre"> Non Standard Policy (NSP)<BR>
+  <input type="radio" name="18" value="corre"> Business Output Policy (BOP)<BR>
+</p>
+
+<P>19.  Which type of coverage will insure building materials and components, machinery, and specialized
+  equipment while being installed in a building or structure, or erected or fabricated at a specific location?<BR>
+  <input type="radio" name="19" value="maison"> Maintenance coverage<BR>
+  <input type="radio" name="19" value="quatre"> Contractors equipment coverage<BR>
+  <input type="radio" name="19" value="corre"> Fine arts coverage<BR>
+  <input type="radio" name="19" value="correct"> Installation coverage <BR>
+</p>
+
+<P>20.  What is the name of the policy that deals only with the insuring of the goods while being transported on land?<BR>
+  <input type="radio" name="20" value="maison">  Ocean Marine Policy <BR>
+  <input type="radio" name="20" value="quatre"> Inland Policy <BR>
+  <input type="radio" name="20" value="correct"> Inland Marine Policy<BR>
+  <input type="radio" name="20" value="corr"> Personal Property Policy<BR>
+</p>
+
+<P>21.  Which is not a characteristic of an Inland Marine Floater?<BR>
+  <input type="radio" name="21" value="maison">  Tailored coverage<BR>
+  <input type="radio" name="21" value="quatre"> Selection of policy limits<BR>
+  <input type="radio" name="21" value="corre"> Extensive coverage to perils covered<BR>
+  <input type="radio" name="21" value="correct"> Country wide coverage <BR>
+</p>
+
+<P>22.  Which floater provides coverage on nine optional classes of personal property: Jewelry, Furs, Fine Arts, Stamps, etc.?<BR>
+  <input type="radio" name="22" value="maison"> Personal Property Floater<BR>
+  <input type="radio" name="22" value="quatre"> Limited Property Floater<BR>
+  <input type="radio" name="22" value="cot"> Public Sector Floater<BR>
+  <input type="radio" name="22" value="correct"> Personal Article Floater<BR>
+</p>
+
+<P>23.  Insurance on watercraft applies to all of the following except:<BR>
+  <input type="radio" name="23" value="maison">  Cannoes<BR>
+  <input type="radio" name="23" value="correct"> Skateboards<BR>
+  <input type="radio" name="23" value="quatre"> Dinghies<BR>
+  <input type="radio" name="23" value="cort"> Rowboats<BR>
+</p>
+
+<P>24. Which type of policy is for larger boats such as inboard motorboats and cabin cruisers?<BR>
+  <input type="radio" name="24" value="maison">  Cabin Cruiser Coverage<BR>
+  <input type="radio" name="24" value="quatre"> Large Watercraft Coverage<BR>
+  <input type="radio" name="24" value="corre"> Canoe Coverage<BR>
+  <input type="radio" name="24" value="correct"> Personal Yacht Coverage<BR>
+</p>
+
+<P>25.  Which coverage is a particular form of umbrella liability designed for accounts where
+  the principal exposure is marine and involves the operation of vessels and use of docks?<BR>
+  <input type="radio" name="25" value="maison">  Charter Liability<BR>
+  <input type="radio" name="25" value="quatre"> Vessel Liability<BR>
+  <input type="radio" name="25" value="corre">  Dock Liability<BR>
+  <input type="radio" name="25" value="correct"> Bumbershoot Liability<BR>
+</p>
+
+<P>26. Liability insurance will pay for what?<BR>
+  <input type="radio" name="26" value="correct">  Bodily injury caused to others<BR>
+  <input type="radio" name="26" value="quatre"> Bodily injury caused to the driver<BR>
+  <input type="radio" name="26" value="corre"> Damage to the car<BR>
+  <input type="radio" name="26" value=""> Homeowner's expenses<BR>
+</p>
+
+<P>27. PIP laws were enacted in an attempt to reduce:<BR>
+    <input type="radio" name="27" value="maison">  The number of cars on the road<BR>
+    <input type="radio" name="27" value="quatre"> The number of accidents<BR>
+    <input type="radio" name="27" value="correct"> Auto-injury fraud<BR>
+    <input type="radio" name="27" value="corr"> Collision repair costs<BR>
+</p>
+
+<P>28.  Which insurance would  cover pedestrians that were injured?<BR>
+  <input type="radio" name="28" value="correct"> Medical Payments<BR>
+  <input type="radio" name="28" value="maison">  Indemnity Endorsement<BR>
+  <input type="radio" name="28" value="quatre"> Uninsured Motorists Coverage<BR>
+  <input type="radio" name="28" value="corre"> Gap Coverage<BR>
+</p>
+
+<P>29. Territorial rating would factor in an insured's:<BR>
+  <input type="radio" name="29" value="maison"> Age<BR>
+  <input type="radio" name="29" value="quatre"> Country of origin<BR>
+  <input type="radio" name="29" value="correct"> Zip code <BR>
+  <input type="radio" name="29" value="corre"> All of the above<BR>
+</p>
+
+<P>30.  Which is not a criteria used by insurance companies to label a car a 'Classic'?<BR>
+  <input type="radio" name="30" value="maison">  Often the car must be in excellent condition (restored in other words).
+  Some insurers may deny coverage when the vehicles have too many miles, damage, or extensive wear <BR>
+  <input type="radio" name="30" value="quatre"> The car must not be used on a regular basis as a family car would be <BR>
+  <input type="radio" name="30" value="correct"> The top speed must be < 120mph <BR>
+  <input type="radio" name="30" value="corr"> The vehicle must be at least a certain age<BR>
+</p>
+
+<P>31.  Which is an example of an insurance discount?<BR>
+  <input type="radio" name="31" value="maison">  Tire tread<BR>
+  <input type="radio" name="31" value="quatre"> Sun Roof<BR>
+  <input type="radio" name="31" value="corre"> Emergency brakes<BR>
+  <input type="radio" name="31" value="correct"> Air bags <BR>
+</p>
+
+<P>32. If a state is “No-fault”, who pays bodily injury claims if an insured is hit by another driver?<BR>
+  <input type="radio" name="32" value="maison"> The state insurance fund<BR>
+  <input type="radio" name="32" value="quatre"> The driver at fault's insurance company<BR>
+  <input type="radio" name="32" value="cot"> No one because it was no ones fault<BR>
+  <input type="radio" name="32" value="correct"> The insured's policy <BR>
+</p>
+
+<P>33. What is the name of the association that sells insurance to the otherwise uninsurable?<BR>
+  <input type="radio" name="33" value="maison">  Watcher's<BR>
+  <input type="radio" name="33" value="correct"> Joint Underwriter’s<BR>
+  <input type="radio" name="33" value="quatre"> Non-Standard<BR>
+  <input type="radio" name="33" value="cort"> State Underwriter's<BR>
+</p>
+
+<P>34. Risks are stated in one of three ways, which is not one of them?<BR>
+  <input type="radio" name="34" value="maison">  Preferred<BR>
+  <input type="radio" name="34" value="quatre"> Non-standard<BR>
+  <input type="radio" name="34" value="corre"> Standard<BR>
+  <input type="radio" name="34" value="correct"> Non-preferred<BR>
+</p>
+
+<P>35.  A 'Moral Hazard' involves a(n)________ act.<BR>
+  <input type="radio" name="35" value="maison">  Careless<BR>
+  <input type="radio" name="35" value="quatre"> Unintentional<BR>
+  <input type="radio" name="35" value="corre">  Reckless<BR>
+  <input type="radio" name="35" value="correct"> Intentional<BR>
+</p>
+
+<P>36. When seeking coverage from a specialty insurer for
+  collectible or classic vehicles, what is the type of coverage that the owner will buy?<BR>
+  <input type="radio" name="36" value="correct">  Agreed Value Coverage<BR>
+  <input type="radio" name="36" value="quatre"> Low Cost Coverage<BR>
+  <input type="radio" name="36" value="corre"> Actual Value coverage<BR>
+  <input type="radio" name="36" value=""> Replacement Value Coverage<BR>
+</p>
+
+<P>37. What is a good option of insurance for an independent delivery driver?<BR>
+    <input type="radio" name="37" value="maison">  Independent automobile insurance<BR>
+    <input type="radio" name="37" value="quatre"> Adjusted automobile insurance<BR>
+    <input type="radio" name="37" value="correct"> Commercial automobile insurance<BR>
+    <input type="radio" name="37" value="corr"> Delivery driver insurance<BR>
+</p>
+
+<P>38.  RV owners have numerous options when insuring their RVs, which is not one of them?<BR>
+  <input type="radio" name="38" value="correct"> Intentional damage, damaging on purpose in order to make a claim<BR>
+  <input type="radio" name="38" value="maison">  Vacation liability, which pays for bodily injury and property damage occurring at a 	vacation site<BR>
+  <input type="radio" name="38" value="quatre"> Total loss, which provides a replacement vehicle when the RV is completely destroyed<BR>
+  <input type="radio" name="38" value="corre"> Theft/Vandalism, which reimburses the owner for stolen items from the RV or damage during a break-in<BR>
+</p>
+
+<P>39. What is an option for those who want more coverage than an extended warranty offers?<BR>
+  <input type="radio" name="39" value="maison"> Manufacturers Warranty<BR>
+  <input type="radio" name="39" value="quatre"> Dealership Extended Warranty<BR>
+  <input type="radio" name="39" value="correct"> Mechanical Breakdown Insurance <BR>
+  <input type="radio" name="39" value="corre"> Super Extended Warranty<BR>
+</p>
+
+<P>40.  Which of the following is not a personal statistic factor used in insurance rating?<BR>
+  <input type="radio" name="40" value="maison">  Gender <BR>
+  <input type="radio" name="40" value="quatre"> Marital Status<BR>
+  <input type="radio" name="40" value="correct"> Divorce record <BR>
+  <input type="radio" name="40" value="corr"> Age<BR>
+</p>
+
+
+</div>
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>

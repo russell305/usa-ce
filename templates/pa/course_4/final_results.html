@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: NFIP Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+h3{
+    margin-top: -60px;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h3>Final Results</h3>
+    <h4>{{final_score}}%</h4>
+    <div class="text-left">
+      <h6>Question 1:  Encourage participation in the program</h6>
+      <h6>Question 2:  Base Flood Elevation</h6>
+      <h6>Question 3:  To allow premiums to rise to reflect the true risk of living in high-flood areas </h6>
+      <h6>Question 4:  25 to 30 percent of claims</h6>
+      <h6>Question 5:  The lowest floor would have to meet the requirements of 6 feet above mean sea level</h6>
+      <h6>Question 6:  Subsidized and full-risk</h6>
+      <h6>Question 7:  Flood Hazard Boundary Map (FHBM) , Flood Insurance Rate Map (FIRM)</h6>
+      <h6>Question 8:  Coastal Barrier Resources System</h6>
+      <h6>Question 9:  Disaster assistance loans from SBA are usually more costly than flood insurance premiums</h6>
+      <h6>Question 10:  Often based on outdated information and processes, so even these rates may not reflect the actual risk of flood-related loss</h6>
+      <h6>Question 11:  The NFIP is required to submit all "significant" management decisions to FEMA for approval</h6>
+      <h6>Question 12:  May increase NFIP's financial risk</h6>
+      <h6>Question 13:  "Probability of elevation" and "Damage by elevation”Divorce record</h6>
+      <h6>Question 14:  The NFIP is likely to cost taxpayers significantly more than its current financial reports indicate</h6>
+      <h6>Question 15:  30 days</h6>
+      <h6>Question 16:  Providing direct government assistance to homeowners after floods  </h6>
+      <h6>Question 17:  Local geography, flooding histories and risk levels </h6>
+      <h6>Question 18:  Special Flood Hazard Areas</h6>
+      <h6>Question 19:  Increased Cost of Compliance (ICC) coverage</h6>
+      <h6>Question 20:  Prevent insureds from buying coverage in the hours before a major storm or flood event has been predicted to occur</h6>
+      <h6>Question 21:  To assist the mortgage lending and servicing industries in bringing their mortgage portfolios into compliance with flood insurance requirements</h6>
+      <h6>Question 22:  A building or its contents, or both</h6>
+      <h6>Question 23:  Properties that have had two or more flood insurance claims payments of $1,000 or more over 10 years</h6>
+      <h6>Question 24:  Bureau and Statistical Agent (BSA) contractor employees</h6>
+      <h6>Question 25:  All of the above</h6>
+
+    </div>
+
+
+
+    {% if exam_pass %}
+    <p>GREAT JOB!!!</p>
+    <form action="{{ url_for('pa_course_4_course_complete',  name=name, final_score=final_score, date_fin=date_fin) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+    </form>
+    {% else %}
+    <h5>Review and fix wrong answers before moving forward</h5>
+    <form action="{{ url_for('pa_course_4_final_prep', name=name) }}" method="post">
+      <button class="btn btn-danger btn-lg" aria-pressed="true">Back</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

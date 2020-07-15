@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Main Page </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<style>
+
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: 	white ;
+}
+
+nav ul {
+  	margin-right:3%;
+}
+nav ul li {
+	/* margin-left:7%; */
+	font-size: 24px;
+}
+
+
+
+@media (min-width: 500px) {
+	h1{
+    margin-top: -40px;
+    margin-bottom: 10px;
+					  }
+				}
+@media (max-width: 500px) {
+	h1{
+    margin-top: -20px;
+    margin-bottom: 10px;
+					  }
+				}
+#tag{
+  margin-top: -10px;
+}
+
+
+#toplist{
+  margin-bottom: 20px;
+}
+#left{
+  margin-left: 40px;
+}
+
+#adj{
+		width:200px;
+		height:120px;
+		margin-bottom: 20px;
+		}
+@media (min-width: 500px) {
+	#adj {
+		width:750px;
+		height:300px;
+		margin-bottom: 20px;
+					  }
+				}
+h3{
+  margin-bottom: 20px;
+}
+
+
+</style>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top"> -->
+    <div class="container">
+      <a class="navbar-brand"  >
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}" >
+      </a>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('sign_in_main') }}">Sign-in</a>
+
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+
+        </ul>
+
+    </div>
+  </nav>
+
+
+  <div class="container-fluid  jumbotron">
+
+<div class="text-center">
+  <h1>Florida Discount Continuing Education</h1>
+  <h4 id="tag">Online continung education courses</h4>
+  <i><h5>24-hour 3-course bundle only $25!</h5></i>
+
+</div>
+<strong><h4>Click on your field:</h4></strong>
+
+<ul id = "toplist">
+<h4>  <li id="list"><a href="{{ url_for('health') }}">Health Agent (2-40)</a></li></h4>
+<h4>  <li id="list"><a href="{{ url_for('life_health') }}">Life, Health, & Annuity Agent (2-15 & 2-18)</a></li></h4>
+<h4>  <li id="list"><a href="{{ url_for('public_adjuster') }}">Public Adjusters (3-20)</a></li></h4>
+<h4>  <li id="list"><a href="{{ url_for('independent_adjuster') }}">All-Lines Adjusters (5-20 & 6-20) </a></li></h4>
+
+
+
+</ul>
+<h5><b><p>Provider of Record: Florida Discount Continuing Education </p></b></h5>
+<h5><b><p>Provider Number: 372120</p></b></h5>
+
+
+
+
+  <ul>
+    <h5>  <li>Continuing education courses are 100% Self-Study Online. Every course has been approved by the
+        state of Florida for CE credits and we will submit the completed credits to the State of Florida for you.</li></h5>
+    <h5><li>A 2 question quiz will be required at the end of each chapter and the course will have a final exam.</li></h5>
+  <h5><li>Each student must achieve a grade of 70% or better on the final examination to receive credit for the course.</li></h5>
+  <h5>  <li>Exam Proctor Requirements:  "Monitor-Free", closed-book exams do NOT require a monitor.</li></h5>
+  <h5>  <li>The course examination must be completed unassisted by any person.</li></h5>
+  <h5>  <li>A violation of such standards shall result in the loss of course
+    credit and administrative sanction by the Florida Department of Financial Services.</li></h5>
+
+  </ul>
+
+
+
+
+<h5>You can also find us on the State of Florida's myfloridacfo.com website at:
+
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <p> <a href="https://www.myfloridacfo.com/Division/Agents/">www.myfloridacfo.com/Division/Agents/</a> -> Find a CE Course → Course Authority -> Study Method = Self Study Online</p>
+      </div>
+
+    </div>
+</h5>
+
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+h3{
+    margin-top: -60px;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h3>Final Results</h3>
+    <h4>{{percent}}%</h4>
+    <div class="text-left">
+      <h6>Question 1:  {{answer_1}}</h6>
+      <h6>Question 2:  {{answer_2}}</h6>
+      <h6>Question 3:  {{answer_3}}</h6>
+      <h6>Question 4:  {{answer_4}}</h6>
+      <h6>Question 5:  {{answer_5}}</h6>
+      <h6>Question 6:  {{answer_6}}</h6>
+      <h6>Question 7:  {{answer_7}}</h6>
+      <h6>Question 8:  {{answer_8}}</h6>
+      <h6>Question 9:  {{answer_9}}</h6>
+      <h6>Question 10:  {{answer_10}}</h6>
+      <h6>Question 11:  {{answer_11}}</h6>
+      <h6>Question 12:  {{answer_12}}</h6>
+      <h6>Question 13:  {{answer_13}}</h6>
+      <h6>Question 14:  {{answer_14}}</h6>
+      <h6>Question 15:  {{answer_15}}</h6>
+      <h6>Question 16:  {{answer_16}}</h6>
+      <h6>Question 17:  {{answer_17}}</h6>
+      <h6>Question 18:  {{answer_18}}</h6>
+      <h6>Question 19:  {{answer_19}}</h6>
+      <h6>Question 20:  {{answer_20}}</h6>
+      <h6>Question 21:  {{answer_21}}</h6>
+      <h6>Question 22:  {{answer_22}}</h6>
+      <h6>Question 23:  {{answer_23}}</h6>
+      <h6>Question 24:  {{answer_24}}</h6>
+      <h6>Question 25:  {{answer_25}}</h6>
+      <h6>Question 26:  {{answer_26}}</h6>
+      <h6>Question 27:  {{answer_27}}</h6>
+      <h6>Question 28:  {{answer_28}}</h6>
+      <h6>Question 29:  {{answer_29}}</h6>
+      <h6>Question 30:  {{answer_30}}</h6>
+    </div>
+
+
+
+    {% if exam_pass %}
+    <p>GREAT JOB!!!</p>
+    <form action="{{ url_for('pa_ethics_course_complete', name=name, final_score=final_score, date_fin=date_fin) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+    </form>
+    {% else %}
+    <h5>Review and fix wrong answers before moving forward</h5>
+    <form action="{{ url_for('pa_ethics_final_prep', name=name) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Back</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

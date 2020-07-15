@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Chapter 4</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: 	white ;
+}
+object{
+margin-top: 0px;
+margin-left: 40px;
+margin-right: 40px;
+margin-bottom: 40px;
+}
+#line{
+  margin-bottom: -35px;
+}
+
+h2{
+  margin-top: -60px;
+}
+h3{
+  margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: -30px;
+  margin-bottom: 0px;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+
+
+
+  <h2>Chapter 4</h2>
+<p>Read through and study course material. When complete answer practice questions before moving on.</p>
+<p id = "line">(PDF may take several seconds to appear)</p>
+  <object data="/static/pa-ethics-image/chapter-4.pdf" type="application/pdf" width="90%" height="900px">
+
+  </object>
+
+<div class="" >
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('pa_ethics_chapter_4_results') }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+     <h3>Quiz</h3>
+
+<h5>Check the answer to each multiple-choice question. Press the "Submit" button when finished.
+  Answer all questions correctly to proceed to next chapter.</h5>
+<form action="{{ url_for('pa_ethics_chapter_4_results') }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+  <P>1.  What is the maximum length a public adjuster license may be suspended?<BR>
+    <input type="radio" name="1" value="wrong"> 3 months<BR>
+    <input type="radio" name="1" value="cct"> 6 months<BR>
+    <input type="radio" name="1" value="wrong"> 1 year<BR>
+    <input type="radio" name="1" value="correct"> 2 years<BR>
+  </p>
+
+  <P>2. Which of the following is a reason to have license suspended or revoked?<BR>
+    <input type="radio" name="2" value="ect"> Misappropriation, conversion, or
+    unlawful withholding of moneys belonging to insurers or insureds or
+    beneficiaries or to others and received in conduct of business under the
+    license or appointment.<BR>
+    <input type="radio" name="2" value="xxx"> Fraudulent or dishonest practices
+    in the conduct of business under the license or appointment.<BR>
+    <input type="radio" name="2" value="soleil"> Material misstatement,
+    misrepresentation, or fraud in obtaining the license or appointment or in
+    attempting to obtain the license or appointment.<BR>
+    <input type="radio" name="2" value="correct"> All of the above.<BR>
+  </p>
+
+
+</div>
+
+<button id ="su" class="btn btn-primary btn-md ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+</html>

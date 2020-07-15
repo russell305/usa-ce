@@ -133,15 +133,15 @@ Health 240
 Florida Real Estate
 173,000
 
-
+Life and Annuity 214 & 216
+54,000
 
 Customer Service Rep 440
 26,000
 
 
 
-Life and Annuity 214 & 216
-54,000
+
 
 Property & Casualty 220
 3,600
@@ -152,10 +152,13 @@ Title 410
 "0120",SURPLUS LINES?
 1000
 
+Legislative Updates
+Industry Awareness → Insurance Insights → Previous Issues → June 2019 ->In The Know
 
 Russell Mckee
 Provider of Record: Florida Discount Continuing Education
 Provider Number: 372120
+
 
 
 

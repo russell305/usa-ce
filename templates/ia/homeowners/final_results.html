@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+h3{
+  margin-top: -30px;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h3>Final Results</h3>
+    <h4>{{final_score}}%</h4>
+    <div class="text-left">
+      <h6>Question 1:  Liability of homeowner</h6>
+      <h6>Question 2:  Business Pursuits Endorsement </h6>
+      <h6>Question 3:  Medical payments to others</h6>
+      <h6>Question 4:  Unit Owners Form (HO-6) </h6>
+      <h6>Question 5:  Structure that is bolted or fixed to a permanent foundation</h6>
+      <h6>Question 6:  45</h6>
+      <h6>Question 7:  None</h6>
+      <h6>Question 8:  Always</h6>
+      <h6>Question 9:  Medical Payment</h6>
+      <h6>Question 10:  All of the above</h6>
+      <h6>Question 11:  Aggregate</h6>
+      <h6>Question 12:  Special</h6>
+      <h6>Question 13:  Caused by deliberate action on the part of the policy owner </h6>
+      <h6>Question 14:  Appurtenant structure</h6>
+      <h6>Question 15:  Dwelling</h6>
+      <h6>Question 16:  When there are one or more employees</h6>
+      <h6>Question 17:  Ocean Marine Policy</h6>
+      <h6>Question 18:  Manufacturers’ Output Policy (MOP)</h6>
+      <h6>Question 19:  Installation coverage</h6>
+      <h6>Question 20:  Inland Marine Policy </h6>
+      <h6>Question 21:  Country wide coverage</h6>
+      <h6>Question 22:  Personal Article Floater</h6>
+      <h6>Question 23:  Skateboards</h6>
+      <h6>Question 24:  Personal Yacht Coverage</h6>
+      <h6>Question 25:  Bumbershoot Liability</h6>
+      <h6>Question 26:  Bodily injury caused to others</h6>
+      <h6>Question 27:  Auto-injury fraud</h6>
+      <h6>Question 28:  Medical Payments</h6>
+      <h6>Question 29:  Zip code</h6>
+      <h6>Question 30:  The top speed must be < 120mph</h6>
+      <h6>Question 31:  Air bags</h6>
+      <h6>Question 32:  The insured's policy</h6>
+      <h6>Question 33:  Joint Underwriter’s  </h6>
+      <h6>Question 34:  Non-preferred</h6>
+      <h6>Question 35:  Intentional</h6>
+      <h6>Question 36:  Agreed Value Coverage</h6>
+      <h6>Question 37:  Commercial automobile insurance</h6>
+      <h6>Question 38:  Intentional damage, damaging on purpose in order to make a claim</h6>
+      <h6>Question 39:  Mechanical Breakdown Insurance</h6>
+      <h6>Question 40:  Divorce record </h6>
+
+
+    </div>
+
+
+
+    {% if exam_pass %}
+    <p>GREAT JOB!!!</p>
+    <form action="{{ url_for('ia_homeowners_course_complete', name=name, final_score=final_score, date_fin=date_fin) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+    </form>
+    {% else %}
+    <h5>Review and fix wrong answers before moving forward</h5>
+    <form action="{{ url_for('ia_homeowners_final_prep', name=name) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Back</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

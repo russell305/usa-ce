@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+h3{
+  margin-top: -30px;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h3>Final Results</h3>
+    <h4>{{final_score}}%</h4>
+    <div class="text-left">
+      <h6>Question 1:  Chief Financial Officer</h6>
+      <h6>Question 2:  Office of Insurance Regulation</h6>
+      <h6>Question 3:  Deny claims to consumers</h6>
+      <h6>Question 4:  Defamation</h6>
+      <h6>Question 5:  Bureau of Human Resource Management</h6>
+      <h6>Question 6:  Office of Communications</h6>
+      <h6>Question 7:  Office of Insurance Regulation</h6>
+      <h6>Question 8:  Diligent effort </h6>
+      <h6>Question 9:  Division of Securities</h6>
+      <h6>Question 10:  18</h6>
+      <h6>Question 11:  Bureau of Investigation</h6>
+      <h6>Question 12:  Health insurance account</h6>
+      <h6>Question 13:  Funeral Director</h6>
+      <h6>Question 14:  Continuation fee</h6>
+      <h6>Question 15:  Always true</h6>
+      <h6>Question 16:  2 years</h6>
+      <h6>Question 17:  Guarantee, assume, or reinsure, or cause to be guaranteed, assumed, or reinsured, the covered policies of residents of this state</h6>
+      <h6>Question 18:  Negotiate and contract with any liquidator, rehabilitator, conservator, or ancillary receiver to carry out the powers and duties of the association</h6>
+      <h6>Question 19:  30 days</h6>
+      <h6>Question 20:  Felony of the third degree</h6>
+      <h6>Question 21:  Must pass a driver safety test</h6>
+      <h6>Question 22:  Customer representative</h6>
+      <h6>Question 23:  Managing general agent</h6>
+      <h6>Question 24:  Defamation</h6>
+      <h6>Question 25:  Sliding</h6>
+      <h6>Question 26:  Affordability index</h6>
+      <h6>Question 27:  Brokering Agent</h6>
+      <h6>Question 28:  Agent-in-charge </h6>
+      <h6>Question 29:  Usage based insurance</h6>
+      <h6>Question 30:  59.5</h6>
+    </div>
+
+
+
+    {% if exam_pass %}
+    <p>GREAT JOB!!!</p>
+    <form action="{{ url_for('life_health_ethics_course_complete', name=name, date_fin=date_fin, final_score=final_score) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+    </form>
+    {% else %}
+    <h5>Review and fix wrong answers before moving forward</h5>
+    <form action="{{ url_for('life_health_ethics_final_prep', name=name) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Back</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

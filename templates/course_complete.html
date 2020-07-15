@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+h2{
+  margin-top: -20px;
+}
+button{
+  margin-top: 20px;
+}
+#anchor {
+  margin-bottom: 140px;
+}
+
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+            <span class="sr-only">(current)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h2>Florida Discount Continuing Education</h2>
+    <h3>Course Complete Certificate</h3>
+    <h5>Course: {{course}} </h5>
+    <h7>First Name: {{first_name}}</h7><BR>
+    <h7>Last Name: {{last_name}}</h7><BR>
+    <h7>User Name: {{user_name}}</h7><BR>
+    <!-- <h7>State: {{license_state}}</h7><BR> -->
+    <h7>License number: {{license_no}}</h7><BR>
+    <!-- <h7>Address: {{address}}</h7><BR> -->
+    <h7>Course number: {{course_no}} </h7><BR>
+    <h7>Offering number: {{offering_no}} </h7><BR>
+    <h7>Provider Number: 372120 </h7><BR>
+    <h7>School Official: <i>Russell Mckee</i></h7><BR>
+    <h7>Date: {{date_complete}}</h7><BR>
+    <h7>Score: {{percent}}</h7><BR>
+    <h7 id="anchor">The person named on this certificate has successfully completed an insurance course taught in compliance with the rules of the Department of Financial Services.</h7><BR>
+    <h7 class="anchor">Print or screenshot for your records, We send your updated hours to the Department of Financial Services wihin 2-3 business days </h7><BR>
+
+    <!-- <h7>You should see your updated hours wihin 2-days. </h7> -->
+    <!-- <h6>You can check you hours here: <a href="https://licenseesearch.fldfs.com/">License Search</a> </h6> -->
+
+    <h7 class="anchor">If you signed up for multiple course please go to the <a class="nav-link" href="{{ url_for('index') }}">Home Page</a> and Sign-In to access other courses</h7>
+
+    <!-- <form action="{{ url_for('sign_in_main') }}" method="post"> -->
+          <!-- <button class="btn btn-success btn-lg " aria-pressed="true">Continue</button> -->
+    <!-- </form> -->
+
+</div>
+
+
+</body>
+</html>

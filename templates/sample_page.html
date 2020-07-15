@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Chapter 1</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: 	white ;
+}
+object{
+margin-top: -20px;
+margin-left: 40px;
+margin-right: 40px;
+margin-bottom: 40px;
+}
+
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+
+h5{
+  margin-bottom:30px;
+}
+#title{
+  margin-top: -20px;
+}
+#quiz{
+  margin-bottom: 30px;
+}
+.admin-text{
+  margin-top: -30px;
+  margin-bottom: 0px;
+}
+
+#line{
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+h2{
+  margin-top: -30px;
+}
+</style>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home
+
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid text-center jumbotron">
+
+<h2>5-Hour Law & Ethics Update for Health Agents</h2>
+  <h3> Chapter 1 </h3>
+  <h6>(6 chapters)</h6>
+<p>Read through and study course material. When complete answer practice questions before moving on.</p>
+  <p id = "line">(PDF may take several seconds to appear)</p>
+  <object data="/static/fl-health/ethics-image/chapter_1a.pdf" type="application/pdf" width="90%" height="900px">
+
+  </object>
+
+<div>
+
+     <h3 id = "quiz">Quiz</h3>
+
+<h5>Check the answer to each multiple-choice question. Press the "Submit" button when finished.
+  Answer all questions correctly to proceed to next chapter.</h5>
+<form action="{{ url_for('faq') }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+  <P>1. Which is not part of The Division of Accounting and Auditing?<BR>
+      <input type="radio" name="1" id="option1" value="wrong"> State Payrolls<BR>
+      <input type="radio" name="1" id="option2" value="correct"> Consumer Services<BR>
+      <input type="radio" name="1" id="option3" value="wrong">  Vendor Relations<BR>
+      <input type="radio" name="1" id="option4"  value="wrong"> Auditing<BR>
+        <!-- <input type="radio" name="options" id="option1" value="option1"> Option1 </input><br -->
+  </p>
+
+  <P>2. Which Office has the mission to advance positive change in performance, accountability, efficiency, integrity, and transparency of programs?<BR>
+      <input type="radio" name="2" value="wrong"> Office of Finance and Budget<BR>
+      <input type="radio" name="2" value=""> Office of Purchasing and Contractual Services<BR>
+      <input type="radio" name="2" value="correct">   Office of Inspector General <BR>
+      <input type="radio" name="2" value="wrong">  Office of Communications<BR>
+  </p>
+
+</div>
+
+<button id ="su" class=" btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+</html>

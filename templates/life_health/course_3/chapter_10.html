@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Chapter 10</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+object{
+margin-top: -20px;
+margin-left: 40px;
+margin-right: 40px;
+margin-bottom: 40px;
+}
+#line{
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+h2{
+  margin-top: -60px;
+}
+#quiz{
+  margin-bottom: 30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: -30px;
+  margin-bottom: 0px;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+	<ul >
+		<li><a href="{{ url_for('index') }}">Home</a></li>
+		<li><a href="{{ url_for('faq') }}">FAQ</a></li>
+		<li><a href="{{ url_for('contact') }}" >Contact</a></li>
+	</ul>
+	</nav>
+  <div class="container-fluid text-center jumbotron">
+
+      <h2>Chapter 10</h2>
+<p>Read through and study course material. When complete answer practice questions before moving on.</p>
+<p id = "line">(PDF may take several seconds to appear)</p>
+  <object data="/static/fl-life-health/course-3-image/chapter-10.pdf" type="application/pdf" width="90%" height="900px">
+
+  </object>
+
+<div class="" >
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('life_health_course_3_chapter_10_results') }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+     <h3 id = "quiz">Quiz</h3>
+
+<h5>Check the answer to each multiple-choice question. Press the "Submit" button when finished.
+  Answer all questions correctly to proceed to next chapter.</h5>
+<form action="{{ url_for('life_health_course_3_chapter_10_results') }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1. Which is not a good habit for responsible claims management?<BR>
+    <input type="radio" name="1" value="wrong"> Keep the insured client advised<BR>
+    <input type="radio" name="1" value="cc"> Explore the possibility of settlement<BR>
+    <input type="radio" name="1" value="wrong">  Consider the insured’s interest<BR>
+    <input type="radio" name="1" value="correct"> Focusing on your fees<BR>
+</p>
+
+<P>2. How does technology make managing claims better?<BR>
+    <input type="radio" name="2" value="s"> Cost reduction through automation<BR>
+    <input type="radio" name="2" value=""> Improvement in insurer “legacy” computers<BR>
+    <input type="radio" name="2" value="wrong"> Electronic and web claims processing<BR>
+    <input type="radio" name="2" value="correct"> All of the above <BR>
+</p>
+</div>
+<button id ="su" class="btn btn-primary btn-md ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+</html>

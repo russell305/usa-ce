@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -60px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('life_health_course_3_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('life_health_course_3_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1. As a general rule, a person needs to have accumulated how many quarters of qualified
+  credits to be entitled to Medicare coverage? <BR>
+  <input type="radio" name="1" value="maison"> 10 quarters<BR>
+  <input type="radio" name="1" value="correct"> 40 quarters<BR>
+  <input type="radio" name="1" value="quatre"> 20 quarters<BR>
+  <input type="radio" name="1" value="poisson"> 30 quarters<BR>
+</p>
+
+<P>2. Medicare Advantage was created in what government Act? <BR>
+  <input type="radio" name="2" value="maison">  Medicare Act of 1965<BR>
+  <input type="radio" name="2" value="quatre"> Medicare Prescription Drug Improvement and Modernization Act of 2003<BR>
+  <input type="radio" name="2" value="corre"> Medicare Improvements for Patients and Providers Act (MIPPA 2008)<BR>
+  <input type="radio" name="2" value="correct"> Balanced Budget Act of 1997<BR>
+</p>
+
+<P>3. Under this type of coverage, a carrier will pay replacement cost instead of actual cash value
+for lost or damaged property?<BR>
+  <input type="radio" name="3" value="maison"> Actual cash value<BR>
+  <input type="radio" name="3" value="quatre"> Property value<BR>
+  <input type="radio" name="3" value="correct"> Replacement cost coverage <BR>
+  <input type="radio" name="3" value="soleil"> Damage control coverage<BR>
+</p>
+
+<P>4. Which Act created the first large-scale reorganization of health care coverage and delivery
+in the United States?<BR>
+  <input type="radio" name="4" value="maison"> Social Security Act of 1998<BR>
+  <input type="radio" name="4" value="quatre"> The False Claims Act<BR>
+  <input type="radio" name="4" value="correct"> Patient Protection and Affordability Care Act<BR>
+  <input type="radio" name="4" value="poisson"> Family and Medical Leave Act<BR>
+</p>
+
+<P>5. Medicare Advantage was originally called? <BR>
+  <input type="radio" name="5" value="maison"> Medicare + Medicaid program<BR>
+  <input type="radio" name="5" value="quatre"> Medicare + Advantage program<BR>
+  <input type="radio" name="5" value="xxx"> Advantage + Choice program<BR>
+  <input type="radio" name="5" value="correct"> Medicare + Choice program <BR>
+</p>
+
+<P>6. What would happen if an insured had intentionally concealed or misrepresented
+any material fact or circumstance? <BR>
+  <input type="radio" name="6" value="maison"> Deductibles will increase<BR>
+  <input type="radio" name="6" value="quatre"> They will pay a penalty<BR>
+  <input type="radio" name="6" value=""> The part of the policy misrepresented will be void<BR>
+  <input type="radio" name="6" value="correct"> The entire policy will be void<BR>
+</p>
+
+<P>7. During an approved hospital admission, which part of Medicare will help pay for a semi-private room?<BR>
+  <input type="radio" name="7" value="maison"> Medicare Part C<BR>
+  <input type="radio" name="7" value="quatre"> Medicare Part D<BR>
+  <input type="radio" name="7" value="correct"> Medicare Part A<BR>
+  <input type="radio" name="7" value="poisson"> Medicare Part B<BR>
+</p>
+
+<P>8.Coverage in a skilled nursing facility is limited to a
+maximum of how many days per benefit period?<BR>
+  <input type="radio" name="8" value="maison"> 10 days<BR>
+  <input type="radio" name="8" value="quatre"> 21 days<BR>
+  <input type="radio" name="8" value="correct"> 100 days<BR>
+  <input type="radio" name="8" value="poisson"> 52 days<BR>
+</p>
+
+<P>9. A Medicare Advantage HMO plan is composed of what?<BR>
+  <input type="radio" name="9" value="maison">  Outside network of doctors and hospitals <BR>
+  <input type="radio" name="9" value="correct"> Its own network of doctors and hospitals<BR>
+  <input type="radio" name="9" value="soleil"> Private fee-for-service doctors and hospitals<BR>
+  <input type="radio" name="9" value="poisson"> Any of the above<BR>
+</p>
+
+<P>10. In regards to Medicaid, which of the following would a state not be allowed to do? <BR>
+  <input type="radio" name="10" value="ccc">  Expand eligibility to groups above the minimum required by the federal government <BR>
+  <input type="radio" name="10" value=""> Expand health care services above the minimum<BR>
+  <input type="radio" name="10" value="wrong"> Establish provisions for reimbursement to providers<BR>
+  <input type="radio" name="10" value="correct"> Reduce eligibility in order to balance the budget <BR>
+</p>
+
+<P>11. What does notification of a loss to an insurance company by a
+  policyholder or a third person constitute?<BR>
+  <input type="radio" name="11" value="correct">  A Claim<BR>
+  <input type="radio" name="11" value="coct"> An Appraisal<BR>
+  <input type="radio" name="11" value="wrong"> A Payout<BR>
+  <input type="radio" name="11" value="wrong"> An Adjustment<BR>
+</p>
+
+<P>12. What type of program is Medicare referred to as?<BR>
+  <input type="radio" name="12" value="correct">  Entitlement program<BR>
+  <input type="radio" name="12" value="coct"> Welfare program<BR>
+  <input type="radio" name="12" value="wrong"> Title program<BR>
+  <input type="radio" name="12" value="wrong"> Services program<BR>
+</p>
+
+<P>13. What policies extend coverage for liability for activities that occur
+  over a policy year, notwithstanding the fact that a suit might be brought at
+  a later date to determine liability on the part of a carrier? <BR>
+  <input type="radio" name="13" value="coct"> Risk coverage<BR>
+  <input type="radio" name="13" value="wrong"> Appraisal coverage<BR>
+  <input type="radio" name="13" value="correct"> Occurrence coverage <BR>
+  <input type="radio" name="13" value="wrong"> Private coverage<BR>
+</p>
+
+<P>14. What is the purpose of Basic Medicare Supplemental Insurance?<BR>
+  <input type="radio" name="14" value="coct"> Adds more “gaps” in Original Medicare coverage<BR>
+  <input type="radio" name="14" value="wrong"> Replaces the Original Medicare plan<BR>
+  <input type="radio" name="14" value="correct"> Fills the “gaps” in Original Medicare coverage<BR>
+  <input type="radio" name="14" value="wrong"> Adds Long Term Care coverage<BR>
+</p>
+
+<P>15. Medigap Plan C includes all of the Plan A basic benefits, plus:<BR>
+  <input type="radio" name="15" value="coct"> Coverage for the Medicare Part A inpatient hospital deductible<BR>
+  <input type="radio" name="15" value="wrong"> Coverage for the skilled nursing facility care coinsurance amountCustodial Care<BR>
+  <input type="radio" name="15" value="wrong"> Coverage for the Medicare Part B deductible<BR>
+  <input type="radio" name="15" value="correct"> All of the above<BR>
+</p>
+
+<P>16.  The person who is protected against loss and may or may not be the owner of the insurance policy is:<BR>
+  <input type="radio" name="16" value="correct">  The Insured<BR>
+  <input type="radio" name="16" value="quatre"> The Owner<BR>
+  <input type="radio" name="16" value="corre"> The Appraiser<BR>
+  <input type="radio" name="16" value=""> The Underwriter<BR>
+</p>
+
+<P>17.  Which part of Medicare would pay for inpatient care in a general or psychiatric hospital? <BR>
+    <input type="radio" name="17" value="maison">  Part C<BR>
+    <input type="radio" name="17" value="quatre"> Part D<BR>
+    <input type="radio" name="17" value="correct"> Part A<BR>
+    <input type="radio" name="17" value="corr"> Part B<BR>
+</p>
+
+<P>18. Medicare Medical Savings Account plans (MSA's ) combine which two components?<BR>
+  <input type="radio" name="18" value="correct"> High-deductible MA policies with a medical savings account <BR>
+  <input type="radio" name="18" value="maison"> PPO's and HMO's<BR>
+  <input type="radio" name="18" value="quatre"> Network and Non-network doctors and hospitals<BR>
+  <input type="radio" name="18" value="corre"> Low-deductible MA policies with Social Security<BR>
+</p>
+
+<P>19.  New standards introduced in September 1996 require property owners who are selling or renting real estate
+  built prior to____ to disclose any known lead-based paint or lead hazards.<BR>
+  <input type="radio" name="19" value="maison"> 2001<BR>
+  <input type="radio" name="19" value="quatre"> 1999 <BR>
+  <input type="radio" name="19" value="corre"> 1988<BR>
+  <input type="radio" name="19" value="correct"> 1977  <BR>
+</p>
+
+<P>20. The company that extends insurance coverage over the subject matter by the sale of a
+  contract known as an insurance policy is called what?<BR>
+  <input type="radio" name="20" value="maison">  Writer<BR>
+  <input type="radio" name="20" value="quatre"> Underwriter <BR>
+  <input type="radio" name="20" value="correct"> Issuer<BR>
+  <input type="radio" name="20" value="corr"> Assister<BR>
+</p>
+
+<P>21. There are basically two types of Medicare Advantage plans, what are they?<BR>
+  <input type="radio" name="21" value="maison">  Medicare and Medicaid<BR>
+  <input type="radio" name="21" value="quatre"> Countable and Non-countable<BR>
+  <input type="radio" name="21" value="corre"> Deductible and Non-deductible<BR>
+  <input type="radio" name="21" value="correct"> Network and Non-network <BR>
+</p>
+
+<P>22. What do you call the first peril in a chain of events
+  without which a loss would not have been sustained?<BR>
+  <input type="radio" name="22" value="maison"> Benefit cause<BR>
+  <input type="radio" name="22" value="quatre"> Secondary cause<BR>
+  <input type="radio" name="22" value="correct"> Proximate cause<BR>
+  <input type="radio" name="22" value=""> Shared cause <BR>
+</p>
+
+<P>23. In an insurance policy, the relative obligations and responsibilities
+  of both the carrier and the policyholder is called what?<BR>
+  <input type="radio" name="23" value="maison">  The Declaration Page<BR>
+  <input type="radio" name="23" value="correct"> The Insurance Agreement <BR>
+  <input type="radio" name="23" value="quatre"> The Deductible<BR>
+  <input type="radio" name="23" value="cort"> Cancellation<BR>
+</p>
+
+<P>24. This occurs when there is damage to the property or health
+  of a person other than the insured:<BR>
+  <input type="radio" name="24" value="maison">  A “first-party loss”<BR>
+  <input type="radio" name="24" value="quatre"> A “fourth-party loss”<BR>
+  <input type="radio" name="24" value="corre"> A “second-party loss”<BR>
+  <input type="radio" name="24" value="correct"> A “third-party loss” <BR>
+</p>
+
+<P>25.   Medicare supplement policies are what type insurance plans?<BR>
+  <input type="radio" name="25" value="maison">  Assisted insurance plans<BR>
+  <input type="radio" name="25" value="quatre"> Government insurance plans<BR>
+  <input type="radio" name="25" value="corre">  Public insurance plans<BR>
+  <input type="radio" name="25" value="correct"> Private insurance plans<BR>
+</p>
+
+<P>26. Which policy provides insurance coverage against liability for any claims that are presented to an insurance carrier during a policy year, regardless
+  of when the underlying conduct giving rise to the liability occurred?<BR>
+  <input type="radio" name="26" value=""> Plan A policy<BR>
+  <input type="radio" name="26" value="quatre"> Non-Occurence policy<BR>
+  <input type="radio" name="26" value="soleil"> Occurence policy<BR>
+  <input type="radio" name="26" value="correct">  Claims-made policy<BR>
+</p>
+
+<P>27. Which is not one of the habits for responsible claims management?<BR>
+  <input type="radio" name="27" value="quatre"> Listen to the advice of defense counsel<BR>
+  <input type="radio" name="27" value="soleil"> Keep the insured client advised<BR>
+  <input type="radio" name="27" value="correct"> Do not explore the possibility of settlement <BR>
+  <input type="radio" name="27" value="poisson">  Do not deplete the policy carelessly when there are multiple claims<BR>
+</p>
+
+<P>28. Which is one of the four corporate divisions of most insurance companies?<BR>
+  <input type="radio" name="28" value="quatre"> Finance<BR>
+  <input type="radio" name="28" value=""> Underwriting<BR>
+  <input type="radio" name="28" value="soleil"> Claims <BR>
+  <input type="radio" name="28" value="correct">  All of the above <BR>
+</p>
+
+<P>29. If certain conditions are met, Medicare will fully cover the first how many days
+  of care in a skilled nursing facility (SNF) during each benefit period?<BR>
+  <input type="radio" name="29" value="quatre"> 1 month<BR>
+  <input type="radio" name="29" value="soleil"> 1 week<BR>
+  <input type="radio" name="29" value="poisson"> 90 Days <BR>
+  <input type="radio" name="29" value="correct"> 20 Days <BR>
+</p>
+
+<P>30. What are periodic payments made during the term of an insurance policy
+  by an owner to the issuer for insuring against a loss called?<BR>
+  <input type="radio" name="30" value="People"> Interest<BR>
+  <input type="radio" name="30" value="soleil"> Appraisals<BR>
+  <input type="radio" name="30" value="correct">  Premiums<BR>
+  <input type="radio" name="30" value="poisson">  Deductibles<BR>
+</p>
+
+<P>31. What is the provision called that each carrier will pay a fair proportion
+  of a loss when there is more than one policy in effect for the same property?<BR>
+  <input type="radio" name="31" value="maison">  Property & Casualty<BR>
+  <input type="radio" name="31" value="quatre"> The Insurance Agreement<BR>
+  <input type="radio" name="31" value="corre"> Cancellation<BR>
+  <input type="radio" name="31" value="correct"> Pro Rata Contributions <BR>
+</p>
+
+<P>32. Which system pays a hospital a preset amount for a certain number of days of care
+  for each diagnosis rather than each hospital submitting bills for a patient’s stay?<BR>
+  <input type="radio" name="32" value="maison"> Depletion of Benefits System<BR>
+  <input type="radio" name="32" value="quatre"> Referral System<BR>
+  <input type="radio" name="32" value="cot"> Medical Condition System<BR>
+  <input type="radio" name="32" value="correct"> Prospective Payment System (PPS)  <BR>
+</p>
+
+<P>33. Who is the ultimate interpreter of an insurance policy?<BR>
+  <input type="radio" name="33" value="maison"> Policyholder<BR>
+  <input type="radio" name="33" value=""> Attorney<BR>
+  <input type="radio" name="33" value="quatre"> Carrier<BR>
+  <input type="radio" name="33" value="correct"> Courts<BR>
+</p>
+
+<P>34. Which party could be involved in an insurance claim?<BR>
+  <input type="radio" name="34" value="maison">  Arbitrator<BR>
+  <input type="radio" name="34" value="quatre"> Lawyer<BR>
+  <input type="radio" name="34" value="corre"> Mediator<BR>
+  <input type="radio" name="34" value="correct"> All of the above<BR>
+</p>
+
+<P>35.  What is not an element of a valid claim?<BR>
+  <input type="radio" name="35" value="maison"> Losses must be fortuitous<BR>
+  <input type="radio" name="35" value="quatre"> A loss must be sustained <BR>
+  <input type="radio" name="35" value="corre">  Losses must be occasioned by an extraneous factor<BR>
+  <input type="radio" name="35" value="correct"> Losses can be intentionally caused by the policyholder<BR>
+</p>
+
+<P>36. Generally, the burden of proving the existence of a loss is upon whom?<BR>
+  <input type="radio" name="36" value="correct">  Policyholder  <BR>
+  <input type="radio" name="36" value="quatre"> Insurer <BR>
+  <input type="radio" name="36" value="corre"> Mediator<BR>
+  <input type="radio" name="36" value=""> Injured<BR>
+</p>
+
+<P>37. Which part of Medicare will pay for hospice care?<BR>
+    <input type="radio" name="37" value="maison"> Medicare Part C<BR>
+    <input type="radio" name="37" value="quatre"> Medicare Part D<BR>
+    <input type="radio" name="37" value="correct"> Medicare Part A<BR>
+    <input type="radio" name="37" value="corr"> Medicare Part B<BR>
+</p>
+
+<P>38.  Which is a mandated service covered by Medicare?<BR>
+  <input type="radio" name="38" value="corre"> Inpatient and outpatient acute care services <BR>
+  <input type="radio" name="38" value="maison">  Long-term care for the elderly and mentally ill<BR>
+  <input type="radio" name="38" value="quatre"> Medicare Part B premiums for elderly persons in poverty<BR>
+  <input type="radio" name="38" value="correct"> All of the above<BR>
+</p>
+
+<P>39. In a claim involving death due to an accident, what  statute may apply where a surviving spouse, parents or
+  children of the deceased may recover damages from the party responsible for the death?<BR>
+  <input type="radio" name="39" value="correct"> Wrongful death statute<BR>
+  <input type="radio" name="39" value="quatre"> Accidental deceased statute<BR>
+  <input type="radio" name="39" value=""> Survivors law <BR>
+  <input type="radio" name="39" value=""> Next of kin statute<BR>
+</p>
+
+<P>40. If language in an insurance  policy is capable of being interpreted in two
+  different ways, who will the courts favor?<BR>
+  <input type="radio" name="40" value="maison">  Attorneys <BR>
+  <input type="radio" name="40" value="quatre"> Insurers<BR>
+  <input type="radio" name="40" value="corct"> Adjusters <BR>
+  <input type="radio" name="40" value="correct"> Policyholders<BR>
+</p>
+
+<P>41.  What is something Medicare Part A will not pay for? <BR>
+  <input type="radio" name="41" value="">  Lab tests <BR>
+  <input type="radio" name="41" value="coct"> Semi-private room<BR>
+  <input type="radio" name="41" value="wrong"> Rehabilitation services, such as physical therapy<BR>
+  <input type="radio" name="41" value="correct"> Telephone<BR>
+</p>
+
+<P>42.  Which is not one of the unfair claims practices in the Model Unfair Claim
+  Settlement Practices Act?<BR>
+  <input type="radio" name="42" value="correct">  Acting promptly upon notification of a claim arising under a policy <BR>
+  <input type="radio" name="42" value="coct"> Failing to adopt and maintain sound criteria for the investigation and processing of claims<BR>
+  <input type="radio" name="42" value="wrong"> Misstating policy terms or relevant facts that affect coverage<BR>
+  <input type="radio" name="42" value="wrong"> Misrepresenting the statute of limitations<BR>
+</p>
+
+<P>43. Insurers claim to be losing how much a year to fraud?<BR>
+  <input type="radio" name="43" value="coct"> $15 - $20 billion <BR>
+  <input type="radio" name="43" value="correct"> $85 - $120 billion <BR>
+  <input type="radio" name="43" value="t">  $85 - $120 million <BR>
+  <input type="radio" name="43" value="wrong"> $15 - $20 million <BR>
+</p>
+
+<P>44. Many claim experts feel that the first_____ following a loss  is the time when losses can be minimized
+  and excess claims and client dissatisfaction avoided.  <BR>
+  <input type="radio" name="44" value="correct"> 48 hours  <BR>
+  <input type="radio" name="44" value="wrong"> 1 week<BR>
+  <input type="radio" name="44" value=""> 2 week<BR>
+  <input type="radio" name="44" value="wrong"> 1 month<BR>
+</p>
+
+<P>45. What is the only type of nursing facility Medicare will pay for?<BR>
+  <input type="radio" name="45" value="coct"> Assured nursing facility<BR>
+  <input type="radio" name="45" value="correct">  Skilled nursing facility <BR>
+  <input type="radio" name="45" value="wrong"> Custodial nursing facility<BR>
+  <input type="radio" name="45" value="wrong"> Coverage nursing facility<BR>
+</p>
+
+<P>46.  What constitutes an equitable insurance practice under the Insurance
+  Consumer’s Bill of Rights and Responsibilities?<BR>
+  <input type="radio" name="46" value="maison">  The right to a voice<BR>
+  <input type="radio" name="46" value="quatre"> The right to safeguards <BR>
+  <input type="radio" name="46" value="corre"> The right to a remedy<BR>
+  <input type="radio" name="46" value="correct"> All of the above<BR>
+</p>
+
+<P>47. The Patient Protection and Affordability Act expanded Medicaid for whom?<BR>
+  <input type="radio" name="47" value="maison">  Groups under age 65 with incomes up
+  to 138 percent of the federal poverty level<BR>
+  <input type="radio" name="47" value="quatre"> Individuals over 65 with incomes
+  less than 138 percent of the federal poverty level<BR>
+  <input type="radio" name="47" value="correct"> Individuals under age 65 with
+  incomes up to 138 percent of the federal poverty level <BR>
+  <input type="radio" name="47" value="corr"> Individuals under age 65 with
+  incomes up to 238 percent of the federal poverty level<BR>
+</p>
+
+<P>48. A professional, trained in the examination, evaluation, and dispensation of claims is called:<BR>
+  <input type="radio" name="48" value="corre"> An Appraiser <BR>
+  <input type="radio" name="48" value="correct">  An Adjuster <BR>
+  <input type="radio" name="48" value="quatre"> An Appealer<BR>
+  <input type="radio" name="48" value="ddddd"> An Underwriter<BR>
+</p>
+
+<P>49.  Under Medicare,what must have occurred in order to receive Medicare’s skilled nursing care benefits?<BR>
+  <input type="radio" name="49" value="correct"> Hospitalization for at least 3 consecutive days<BR>
+  <input type="radio" name="49" value="quatre"> Depletion of benefits<BR>
+  <input type="radio" name="49" value="corre"> Wrongful death<BR>
+  <input type="radio" name="49" value="vvvvvv"> Medical condition  <BR>
+</p>
+
+<P>50. The rights of a carrier to legally recoup the amount of settlement from a third party
+  who is responsible for a loss after payment of a claim is called:<BR>
+  <input type="radio" name="50" value="maison">  Cancellation<BR>
+  <input type="radio" name="50" value="quatre"> Obligation<BR>
+  <input type="radio" name="50" value="correct"> Subrogation  <BR>
+  <input type="radio" name="50" value="corr"> Adjustment <BR>
+</p>
+
+
+</div>
+
+
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+<!-- <input type="radio" name="21" value="maison">   Adjusters may handle investigations, or handle loss and claim adjustments and settlements in any manner<BR> -->
+<!-- <input type="radio" name="21" value="quatre"> Adjusters must report the facts after making a complete investigation in a truthful and unbiased manner.<BR> -->
+<!-- <input type="radio" name="21" value="correct"> Adjusters may refer claimants who need repairs or other services related to a loss to an individual or organization with which the adjuster has an undisclosed financial interest or that might reasonably be expected to compensate the adjuster for the referral.<BR> -->
+<!-- <input type="radio" name="21" value="corre"> All of thee Above<BR> -->

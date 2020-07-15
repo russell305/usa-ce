@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+h3{
+  margin-top: -60px;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h3>Final Results</h3>
+    <h4>{{final_score}}%</h4>
+    <div class="text-left">
+      <h6>Question 1:  12 million</h6>
+      <h6>Question 2:  Alzheimer’s Disease</h6>
+      <h6>Question 3:  Elimination period</h6>
+      <h6>Question 4:  Shopping</h6>
+      <h6>Question 5:  6 months</h6>
+      <h6>Question 6:  Caregiver</h6>
+      <h6>Question 7:  58 or 59 years old</h6>
+      <h6>Question 8:  12 weeks </h6>
+      <h6>Question 9:  Age</h6>
+      <h6>Question 10:  All of the above</h6>
+      <h6>Question 11:  Advanced Directive</h6>
+      <h6>Question 12:  Height</h6>
+      <h6>Question 13:  Home</h6>
+      <h6>Question 14:  Aging baby boomers</h6>
+      <h6>Question 15:  Custodial Care</h6>
+      <h6>Question 16:  Transferring</h6>
+      <h6>Question 17:  1965</h6>
+      <h6>Question 18:  Medicaid</h6>
+      <h6>Question 19:  20 Days</h6>
+      <h6>Question 20:  Nursing Home</h6>
+      <h6>Question 21:  Checking and Savings accounts</h6>
+      <h6>Question 22:  Linked benefit policies</h6>
+      <h6>Question 23:  Food stamps</h6>
+      <h6>Question 24:  Formal care</h6>
+      <h6>Question 25:  Minimum Monthly Maintenance Needs Allowance (MMMNA)</h6>
+      <h6>Question 26:  All of the above</h6>
+      <h6>Question 27:  Benefit Amount</h6>
+      <h6>Question 28:  Valet services </h6>
+      <h6>Question 29:  31</h6>
+      <h6>Question 30:  Individuals with above-average wealth</h6>
+      <h6>Question 31:  Medicaid </h6>
+      <h6>Question 32:  The Robert Wood Johnson Foundation</h6>
+      <h6>Question 33:  40 percent   </h6>
+      <h6>Question 34:  All of the above</h6>
+      <h6>Question 35:  The policy holder must have assets over $100,000</h6>
+      <h6>Question 36:  Total Asset Protection</h6>
+      <h6>Question 37:  60 months</h6>
+      <h6>Question 38:  Driving</h6>
+      <h6>Question 39:  Lower the deductible</h6>
+      <h6>Question 40:  All of the above </h6>
+      <h6>Question 41:  Misrepresentation</h6>
+      <h6>Question 42:  Maximum Lifetime Benefit </h6>
+      <h6>Question 43:  Acute</h6>
+      <h6>Question 44:  Less than 1 percent</h6>
+      <h6>Question 45:  Assisting in raising deductibles along with inflation</h6>
+      <h6>Question 46:  Hybrid Model</h6>
+      <h6>Question 47:  Inflation Protection</h6>
+      <h6>Question 48:  Hospitalization</h6>
+      <h6>Question 49:  Department of Children and Families</h6>
+      <h6>Question 50:  $3,000</h6>
+      <h6>Question 51:  Representing to claimants or insureds relevant
+      facts or policy provisions that relate to the coverages at issue</h6>
+      <h6>Question 52:  Burial plot</h6>
+      <h6>Question 53:  50 percent  </h6>
+      <h6>Question 54:  Restoration of Policy Benefits </h6>
+      <h6>Question 55:  Medicare Supplement Insurance</h6>
+      <h6>Question 56:  63 </h6>
+      <h6>Question 57:  Objective information</h6>
+      <h6>Question 58:  Daily benefit amount</h6>
+      <h6>Question 59:  Old Age Assistance (OAA)</h6>
+      <h6>Question 60:  Durable Power of Attorney for Health Care </h6>
+    </div>
+
+    {% if exam_pass %}
+    <p>GREAT JOB!!!</p>
+    <form action="{{ url_for('life_health_course_2_course_complete', name=name, final_score=final_score, date_fin=date_fin) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+    </form>
+    {% else %}
+    <h5>Review and fix wrong answers before moving forward</h5>
+    <form action="{{ url_for('life_health_course_2_final_prep', name=name) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Back</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

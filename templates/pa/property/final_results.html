@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Property Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+h3{
+    margin-top: -60px;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h3>Final Results</h3>
+    <h4>{{final_score}}%</h4>
+    <div class="text-left">
+      <h6>Question 1:  Bodily injury caused to others</h6>
+      <h6>Question 2:  Sometimes true</h6>
+      <h6>Question 3:  Auto-injury fraud</h6>
+      <h6>Question 4:  The insured’s vehicle</h6>
+      <h6>Question 5:  Medical Payments</h6>
+      <h6>Question 6:  51 to 80 percent</h6>
+      <h6>Question 7:  Arbitration and litigation</h6>
+      <h6>Question 8:  All of the above</h6>
+      <h6>Question 9:  $10 per day</h6>
+      <h6>Question 10:  Sound Components or Equipment</h6>
+      <h6>Question 11:  Motorized vehicles with four wheels</h6>
+      <h6>Question 12:  Pricing</h6>
+      <h6>Question 13:  Divorce record</h6>
+      <h6>Question 14:  Zip code</h6>
+      <h6>Question 15:  The top speed must be</h6>
+      <h6>Question 16:  Air bags </h6>
+      <h6>Question 17:  The insured's policy</h6>
+      <h6>Question 18:  Joint Underwriter’s</h6>
+      <h6>Question 19:  Non-preferred</h6>
+      <h6>Question 20:  Intentional</h6>
+      <h6>Question 21:  Agreed Value Coverage</h6>
+      <h6>Question 22:  Commercial automobile insurance</h6>
+      <h6>Question 23:  Intentional damage, damaging on purpose in order to make a claim</h6>
+      <h6>Question 24:  Mechanical Breakdown Insurance</h6>
+      <h6>Question 25:  Inland Marine Policy</h6>
+      <h6>Question 26:  Ocean Marine Policy</h6>
+      <h6>Question 27:  Country wide coverage</h6>
+      <h6>Question 28:  Personal Article Floater</h6>
+      <h6>Question 29:  Skateboards</h6>
+      <h6>Question 30:  Owned watercraft regardless of size with inboard or inboard/outboard motor power</h6>
+      <h6>Question 31:  Personal Yacht Coverage</h6>
+      <h6>Question 32:  Personal and commercial property floaters</h6>
+      <h6>Question 33:  Bumbershoot Liability</h6>
+      <h6>Question 34:  Specialty Contractors</h6>
+      <h6>Question 35:  Delivery Drivers</h6>
+      <h6>Question 36:  Scheduled Property</h6>
+      <h6>Question 37:  All of the above</h6>
+      <h6>Question 38:  A fender bender</h6>
+      <h6>Question 39:  Exceeds</h6>
+      <h6>Question 40:  Risk management</h6>
+      <h6>Question 41:  Estimating appraisal values</h6>
+      <h6>Question 42:  Desirable insurance</h6>
+      <h6>Question 43:  Body & Property</h6>
+      <h6>Question 44:  1 million and up</h6>
+      <h6>Question 45:  Legal purpose</h6>
+      <h6>Question 46:  All of the above</h6>
+      <h6>Question 47:  Vandalism</h6>
+      <h6>Question 48:  Insurable interest</h6>
+      <h6>Question 49:  Promise</h6>
+      <h6>Question 50:  Unilateral contract</h6>
+      <h6>Question 51:  Indemnity basis</h6>
+      <h6>Question 52:  Altering applications</h6>
+      <h6>Question 53:  Untruths in Advertising</h6>
+      <h6>Question 54:  The Unfair Claims Settlement Practices Act</h6>
+      <h6>Question 55:  Objective information</h6>
+      <h6>Question 56:  In a future period</h6>
+      <h6>Question 57:  Minor</h6>
+      <h6>Question 58:  All of the above</h6>
+      <h6>Question 59:  Manufacturers’ Output Policy (MOP)</h6>
+      <h6>Question 60:  Installation coverage</h6>
+    </div>
+
+
+
+    {% if exam_pass %}
+    <p>GREAT JOB!!!</p>
+    <form action="{{ url_for('pa_property_course_complete', name=name, final_score=final_score, date_fin=date_fin) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+    </form>
+    {% else %}
+    <h5>Review and fix wrong answers before moving forward</h5>
+    <form action="{{ url_for('pa_property_final_prep', name=name) }}" method="post">
+      <button class="btn btn-danger btn-lg" aria-pressed="true">Back</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

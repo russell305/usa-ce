@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Review</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+object{
+margin-top: 20px;
+margin-left: 40px;
+margin-right: 40px;
+margin-bottom: 40px;
+}
+h2{
+  margin-top:-30px;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="jumbotron container-fluid text-center">
+  <h2>Review</h2>
+  <div class="" >
+
+  <object data="/static/fl-health/ethics-image/full_course_1.pdf" type="application/pdf" width="90%" height="900px">
+
+  </object>
+<form action="{{ url_for('health_ethics_final_prep', name=name) }}" method="post"  enctype = "multipart/form-data">
+  <button id ="su" class="btn btn-primary btn-md ">Back</button>
+</form>
+</div>
+ </div>
+</body>
+</html>

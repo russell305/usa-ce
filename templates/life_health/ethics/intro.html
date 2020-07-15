@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Discount Florida Continuing Education: Life & Health Ethics Intro </title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+	  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+	  <script>
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag(){dataLayer.push(arguments);}
+	    gtag('js', new Date());
+
+	    gtag('config', 'UA-111789653-4');
+	  </script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+body {
+	height: 100%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 0px;
+	margin-bottom: 100px;
+	padding: 0;
+	font-family: verdana;
+	background-color: 	white ;
+}
+
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+.button2{
+	margin-top: 25px;
+}
+
+#title{
+	margin-top: -40px;
+	margin-bottom: 5px;
+}
+
+.list{
+	margin-bottom: 20px;
+}
+
+.info{
+	margin-bottom: 25px;
+}
+h2{
+  margin-top: -30px;
+	margin-bottom: 15px;
+}
+
+
+</style>
+</head>
+
+<body >
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+<div class="container-fluid text-center jumbotron ">
+<h2>Florida 5-Hour Law & Ethics Update for Life, Health, & Annuity Agents </h2>
+<h5>This course fulfills the state-mandated
+requirements for the Law and Ethics continuing education
+component for Florida-licensed Life, Health, & Annuity Agents. (5-215)</h5>
+
+<div class="text-left">
+
+
+<p> Florida 5-Hour Law & Ethics Update examines
+	the duties and ethical responsibilities of Life Health Annuity Agents in Florida (2-15 & 2-18).
+	It takes a look at the many new rules and regulations that Agents must comply with when transacting insurance,
+	including ethical situations that may arise.  Recent changes to state and federal laws that affect the insurance industry,
+	and disciplinary trends and enforcement actions are also discussed.
+</p>
+<p> Our course is 100% online and
+	can be taken in the privacy of your own home at your convenience.</p>
+	<p>This course has been approved by the Florida Department of Financial Services for insurance continuing education. It follows the state-mandated outline for the Law and Ethics continuing education
+	component for Florida-licensed Health Agents. It includes the following sections:</p>
+</div>
+
+
+<div class="text-left">
+	<b>	<p>Class highlights include:</p></b>
+	<ol>
+	<div class="list">
+		<li>Regulatory Awareness</li>
+		<li>Ethical Requirements</li>
+		<li>Insurance Law and Updates</li>
+		<li>Disciplinary and Industry Trends</li>
+	</div>
+
+	</ol>
+</div>
+
+
+	<div class=" text-left info">
+
+
+<b>		<p>Provider of Record: Florida Discount Continuing Education </p>
+		<p>Course number: 112007</p>
+<p>Provider Number: 372120</p>
+<p>Hours Approved: 5 Life Health Annuity Agent Ethics (5-215)</p>
+<p>Price: $9.50</p>
+
+</b>
+
+
+
+  </div>
+
+	<div class="button1">
+		<form action="{{ url_for('sign_up') }}" method="post">
+					<button class=" btn-primary btn-lg " aria-pressed="true">Sign-Up</button><BR>
+		</form>
+	</div>
+	<div class="button2">
+		<form action="{{ url_for('sign_in_main') }}" method="post">
+					<button class=" btn-primary btn-lg " aria-pressed="true">Sign-In</button><BR>
+		</form>
+	</div>
+
+
+</div>
+</body>
+</html>

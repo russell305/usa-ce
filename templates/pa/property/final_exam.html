@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Property Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -60px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('pa_property_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('pa_property_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1. Liability insurance will pay for what? <BR>
+  <input type="radio" name="1" value="maison"> Bodily injury caused to the driver<BR>
+  <input type="radio" name="1" value="correct"> Bodily injury caused to others <BR>
+  <input type="radio" name="1" value="quatre"> Damage to the car<BR>
+  <input type="radio" name="1" value="poisson"> Homeowner's expenses<BR>
+</p>
+
+<P>2. Many auto insurance companies look at the individual’s credit history, this is: <BR>
+  <input type="radio" name="2" value="maison">  Always true<BR>
+  <input type="radio" name="2" value="quatre"> Always false<BR>
+  <input type="radio" name="2" value="corre"> Never true<BR>
+  <input type="radio" name="2" value="correct"> Sometimes true<BR>
+</p>
+
+<P>3. PIP laws were enacted in an attempt to reduce:<BR>
+  <input type="radio" name="3" value="maison"> Collision repair costs<BR>
+  <input type="radio" name="3" value="quatre"> The number of accidents<BR>
+  <input type="radio" name="3" value=""> The number of cars on the road<BR>
+  <input type="radio" name="3" value="correct"> Auto-injury fraud<BR>
+</p>
+
+<P>4. Collision coverage will pay to repair: <BR>
+  <input type="radio" name="4" value="maison"> The passenger's vehicle<BR>
+  <input type="radio" name="4" value="quatre"> Damage to all vehicles involved<BR>
+  <input type="radio" name="4" value="correct"> The insured’s vehicle<BR>
+  <input type="radio" name="4" value="poisson"> The insurer's vehicle<BR>
+</p>
+
+<P>5. Which insurance would  cover pedestrians that were injured? <BR>
+  <input type="radio" name="5" value="correct"> Medical Payments<BR>
+  <input type="radio" name="5" value="maison">  Indemnity Endorsement<BR>
+  <input type="radio" name="5" value="quatre">  Uninsured Motorists Coverage<BR>
+  <input type="radio" name="5" value="xxx"> Gap Coverage<BR>
+
+</p>
+
+<P>6.  Insurance companies total vehicles usually between_____ of its actual worth:<BR>
+  <input type="radio" name="6" value="maison"> 31 to 50 percent<BR>
+  <input type="radio" name="6" value="quatre"> 10 to 20 percent<BR>
+  <input type="radio" name="6" value="correct">  51 to 80 percent<BR>
+  <input type="radio" name="6" value="poisson"> 95 to 100 percent<BR>
+</p>
+
+<P>7.   If the insurance company refuses to give the insured more money, the insured has two options:<BR>
+  <input type="radio" name="7" value="maison"> Arbitration and investigation<BR>
+  <input type="radio" name="7" value="correct"> Arbitration and litigation<BR>
+  <input type="radio" name="7" value="quatre"> Litigation and malfeasance<BR>
+
+  <input type="radio" name="7" value="poisson"> Negotiation and arbitration<BR>
+</p>
+
+<P>8.  Who is covered under the uninsured motorist provision?<BR>
+  <input type="radio" name="8" value="maison"> The insured<BR>
+  <input type="radio" name="8" value="quatre"> Members of his or her household<BR>
+  <input type="radio" name="8" value=""> Any other person entitled to recover damages<BR>
+  <input type="radio" name="8" value="correct"> All of the above <BR>
+</p>
+
+<P>9.  If your car is stolen, you can be entitled to reimbursement for some of the transportation costs that you incur.  How much are the average benefits?<BR>
+  <input type="radio" name="9" value="maison"> $2 per day<BR>
+  <input type="radio" name="9" value="correct"> $10 per day<BR>
+  <input type="radio" name="9" value="soleil"> $25 per day<BR>
+  <input type="radio" name="9" value="poisson"> $50 per day<BR>
+</p>
+
+<P>10.  What us an example of an Automobile Insurance Policy Endorsement?<BR>
+  <input type="radio" name="10" value="correct"> Sound Components or Equipment<BR>
+  <input type="radio" name="10" value="ccc"> Medical Payments<BR>
+  <input type="radio" name="10" value="coct"> Theft<BR>
+  <input type="radio" name="10" value="wrong"> Collision<BR>
+
+</p>
+
+<P>11.  Typically, liability coverage is provided or afforded to the following types of vehicles:<BR>
+  <input type="radio" name="11" value="correct">  Motorized vehicles with four wheels<BR>
+  <input type="radio" name="11" value="coct"> A vehicle furnished or available for the regular uses of a family member other than the covered auto<BR>
+  <input type="radio" name="11" value="wrong"> Motorized vehicles with less than four wheels<BR>
+  <input type="radio" name="11" value="wrong"> A vehicle furnished, available for the regular use of the person insured other than the covered auto<BR>
+</p>
+
+<P>12.   Which is a component of the Auto Insurance Provider Rating?<BR>
+  <input type="radio" name="12" value="correct">  Pricing<BR>
+  <input type="radio" name="12" value="coct"> Length of policy<BR>
+  <input type="radio" name="12" value="wrong"> Deductible<BR>
+  <input type="radio" name="12" value="wrong"> Aleatory contract<BR>
+</p>
+
+<P>13.  Which of the following is not a personal statistic factor used in insurance rating?<BR>
+  <input type="radio" name="13" value="coct"> Age<BR>
+  <input type="radio" name="13" value="wrong"> Gender<BR>
+  <input type="radio" name="13" value="correct">  Divorce record<BR>
+  <input type="radio" name="13" value="wrong"> Marital Status<BR>
+</p>
+
+<P>14.  Territorial rating would factor in an insured's:<BR>
+  <input type="radio" name="14" value="coct"> Country of origin<BR>
+  <input type="radio" name="14" value="wrong"> Age<BR>
+  <input type="radio" name="14" value="correct"> Zip code <BR>
+  <input type="radio" name="14" value="wrong"> All of the above<BR>
+</p>
+
+<P>15. Which is not a criteria used by insurance companies to label a car a 'Classic'?<BR>
+  <input type="radio" name="15" value="coct"> The car must not be used on a regular basis as a family car would be<BR>
+  <input type="radio" name="15" value="correct">  The top speed must be < 120mph<BR>
+  <input type="radio" name="15" value="wrong"> The vehicle must be at least a certain age<BR>
+  <input type="radio" name="15" value="wrong"> Often the car must be in excellent condition (restored in other words). Some insurers may deny coverage when the vehicles have too many miles, damage, or extensive wear<BR>
+</p>
+
+<P>16.  Which is an example of an insurance discount?<BR>
+  <input type="radio" name="16" value="maison">  Emergency brakes<BR>
+  <input type="radio" name="16" value="quatre"> Tire tread<BR>
+  <input type="radio" name="16" value="corre"> Sun roof<BR>
+  <input type="radio" name="16" value="correct"> Air bags<BR>
+</p>
+
+<P>17.  If a state is “No-fault”, who pays bodily injury claims if an insured is hit by another driver?<BR>
+    <input type="radio" name="17" value="maison">  The driver at fault's insurance company<BR>
+    <input type="radio" name="17" value="quatre"> No one because it was no ones fault<BR>
+    <input type="radio" name="17" value="correct"> The insured's policy<BR>
+    <input type="radio" name="17" value="corr"> The state insurance fund<BR>
+</p>
+
+<P>18. What is the name of the association that sells insurance to the otherwise uninsurable?<BR>
+  <input type="radio" name="18" value="correct"> Joint Underwriter’s <BR>
+  <input type="radio" name="18" value="maison">  State Underwriter's<BR>
+  <input type="radio" name="18" value="quatre"> Watcher's<BR>
+  <input type="radio" name="18" value="corre"> Non-Standard<BR>
+</p>
+
+<P>19.  Risks are stated in one of three ways, which is not one of them?<BR>
+  <input type="radio" name="19" value="maison"> Standard<BR>
+  <input type="radio" name="19" value="quatre"> Non-standard<BR>
+  <input type="radio" name="19" value="corre"> Preferred<BR>
+  <input type="radio" name="19" value="correct"> Non-preferred <BR>
+</p>
+
+<P>20.  A 'Moral Hazard' involves a(n)________ act.<BR>
+  <input type="radio" name="20" value="maison">  Unintentional<BR>
+  <input type="radio" name="20" value="quatre"> Careless<BR>
+  <input type="radio" name="20" value="correct"> Intentional <BR>
+  <input type="radio" name="20" value="corr"> Reckless<BR>
+</p>
+
+<P>21.  When seeking coverage from a specialty insurer for collectible or classic vehicles, what is the type of coverage that the owner will buy?<BR>
+  <input type="radio" name="21" value="maison">  Actual Value coverage<BR>
+  <input type="radio" name="21" value="quatre"> Replacement Value Coverage<BR>
+  <input type="radio" name="21" value="corre"> Low Cost Coverage<BR>
+  <input type="radio" name="21" value="correct"> Agreed Value Coverage <BR>
+</p>
+
+<P>22. What is a good option of insurance for an independent delivery driver?<BR>
+  <input type="radio" name="22" value="maison">  Delivery driver insurance<BR>
+  <input type="radio" name="22" value="correct"> Commercial automobile insurance<BR>
+  <input type="radio" name="22" value="quatre"> Independent automobile insurance<BR>
+  <input type="radio" name="22" value="corre"> Adjusted automobile insurance<BR>
+
+</p>
+
+<P>23. RV owners have numerous options when insuring their RVs, which is not one of them?<BR>
+  <input type="radio" name="23" value="correct"> Intentional damage, damaging on purpose in order to make a claim<BR>
+  <input type="radio" name="23" value="maison"> Vacation liability, which pays for bodily injury and property damage occurring at a 	vacation site<BR>
+  <input type="radio" name="23" value="quatre"> Theft/Vandalism, which reimburses the owner for stolen items from the RV or damage during a break-in<BR>
+  <input type="radio" name="23" value="cot"> Total loss, which provides a replacement vehicle when the RV is completely destroyed<BR>
+
+</p>
+
+<P>24.  What is an option for those who want more coverage than an extended warranty offers?<BR>
+  <input type="radio" name="24" value="maison">  Dealership Extended Warranty<BR>
+  <input type="radio" name="24" value="quatre"> Manufacturers Warranty<BR>
+  <input type="radio" name="24" value="corre"> Super Extended Warranty<BR>
+  <input type="radio" name="24" value="correct"> Mechanical Breakdown Insurance<BR>
+</p>
+
+<P>25.   What is the name of the policy that deals only with the insuring of the goods while being transported on land?<BR>
+  <input type="radio" name="25" value="maison">  Inland Policy<BR>
+  <input type="radio" name="25" value="quatre"> Personal Property Policy<BR>
+  <input type="radio" name="25" value="corre">  Ocean Marine Policy<BR>
+  <input type="radio" name="25" value="correct"> Inland Marine Policy<BR>
+</p>
+
+<P>26. The very first form of personal property insurance coverage was:<BR>
+  <input type="radio" name="26" value="correct"> Ocean Marine Policy<BR>
+  <input type="radio" name="26" value="quatre"> Inland Marine Policy<BR>
+  <input type="radio" name="26" value="soleil"> Real property Policy<BR>
+  <input type="radio" name="26" value="poisson">  Personal Property Policy<BR>
+</p>
+
+<P>27. Which is not a characteristic of an Inland Marine Floater?<BR>
+  <input type="radio" name="27" value="quatre"> Selection of policy limits<BR>
+  <input type="radio" name="27" value="soleil"> Extensive coverage to perils covered<BR>
+  <input type="radio" name="27" value="correct"> Country wide coverage<BR>
+  <input type="radio" name="27" value="poisson">  Tailored coverage<BR>
+</p>
+
+<P>28. Which floater provides coverage on nine optional classes of personal property: Jewelry, Furs, Fine Arts, Stamps, etc.?<BR>
+  <input type="radio" name="28" value="quatre"> Public Sector Floater<BR>
+  <input type="radio" name="28" value="correct"> Personal Article Floater <BR>
+  <input type="radio" name="28" value="soleil"> Limited Property Floater<BR>
+  <input type="radio" name="28" value="poisson">  Personal Property Floater<BR>
+</p>
+
+<P>29. Insurance on watercraft applies to all of the following except:<BR>
+  <input type="radio" name="29" value="quatre"> Dinghies<BR>
+  <input type="radio" name="29" value="soleil"> Canoes<BR>
+  <input type="radio" name="29" value="poisson">  Rowboats<BR>
+  <input type="radio" name="29" value="correct"> Skateboards <BR>
+</p>
+
+<P>30. What is one of the several important categories of watercraft liability that the homeowners’ policy excludes from coverage?<BR>
+  <input type="radio" name="30" value="quatre"> Rented watercraft with an inboard or inboard/outboard motor power with less than 50 horsepower<BR>
+  <input type="radio" name="30" value="soleil"> An owned or rented canoe that is more than 16 feet in length<BR>
+  <input type="radio" name="30" value="correct">  Owned watercraft regardless of size with inboard or inboard/outboard motor power<BR>
+  <input type="radio" name="30" value="poisson">  All of the above<BR>
+</p>
+
+<P>31. Which type of policy is for larger boats such as inboard motorboats and cabin cruisers? <BR>
+  <input type="radio" name="31" value="maison"> Canoe Coverage<BR>
+  <input type="radio" name="31" value="correct"> Personal Yacht Coverage <BR>
+  <input type="radio" name="31" value="quatre"> Large Watercraft Coverage<BR>
+  <input type="radio" name="31" value="poisson"> Cabin Cruiser Coverage<BR>
+</p>
+
+<P>32.The Nationwide Marine Insurance Definition includes imports, exports, domestic shipments, means of communications, and what as marine insurance? <BR>
+  <input type="radio" name="32" value="maison">  Loss of Use Limits<BR>
+  <input type="radio" name="32" value="quatre"> Personal Property Limits<BR>
+  <input type="radio" name="32" value="corre"> Collision coverage<BR>
+  <input type="radio" name="32" value="correct"> Personal and commercial property floaters<BR>
+</p>
+
+<P>33. Which coverage is a particular form of umbrella liability designed for accounts where the principal exposure is marine and involves the operation of vessels and use of docks?<BR>
+  <input type="radio" name="33" value="maison"> Charter Liability<BR>
+  <input type="radio" name="33" value="quatre"> Dock Liability<BR>
+  <input type="radio" name="33" value=""> Vessel Liability<BR>
+  <input type="radio" name="33" value="correct"> Bumbershoot Liability<BR>
+</p>
+
+<P>34. Who would be a typical policyholder of Installation Coverage? <BR>
+  <input type="radio" name="34" value="maison"> Boaters<BR>
+  <input type="radio" name="34" value="quatre"> NFIP<BR>
+  <input type="radio" name="34" value="correct"> Specialty Contractors <BR>
+  <input type="radio" name="34" value="poisson"> Homeowners<BR>
+</p>
+
+<P>35. Who would not need Motor Truck Cargo Liability? <BR>
+  <input type="radio" name="35" value="correct"> Delivery Drivers <BR>
+  <input type="radio" name="35" value="maison"> Non-trucking risks whom backhaul property of others on their own truck<BR>
+  <input type="radio" name="35" value="quatre"> Contract Carriers<BR>
+
+  <input type="radio" name="35" value="poisson"> Common Carriers<BR>
+</p>
+
+<P>36.  _____ coverage is designed to cover property that is unique or unusual or is not typically covered under any other marine or property cover<BR>
+  <input type="radio" name="36" value="maison"> Homeowner<BR>
+  <input type="radio" name="36" value="quatre"> Special Property<BR>
+  <input type="radio" name="36" value="correct">  Scheduled Property<BR>
+  <input type="radio" name="36" value="poisson"> Flood Zone<BR>
+</p>
+
+<P>37.   Some of the unusual types of risks eligible for Scheduled Property coverage include:<BR>
+  <input type="radio" name="37" value="maison"> Water storage tanks<BR>
+  <input type="radio" name="37" value=""> Antique and race cars<BR>
+  <input type="radio" name="37" value="quatre"> Ski lifts<BR>
+  <input type="radio" name="37" value="correct"> All of the above<BR>
+</p>
+
+<P>38.  What would a Personal Umbrella Liability Coverage not be used for?<BR>
+  <input type="radio" name="38" value="maison"> A lawsuit<BR>
+  <input type="radio" name="38" value="correct"> A fender bender  <BR>
+  <input type="radio" name="38" value="quatre"> A judgment<BR>
+  <input type="radio" name="38" value=""> A catastrophic claim<BR>
+
+</p>
+
+<P>39.  Generally, an umbrella policy pays all of the covered loss that_____ the limits of the base or underlying policy. <BR>
+  <input type="radio" name="39" value="maison"> Excludes<BR>
+  <input type="radio" name="39" value="correct"> Exceeds<BR>
+  <input type="radio" name="39" value="soleil"> Understates<BR>
+  <input type="radio" name="39" value="poisson"> Averages<BR>
+</p>
+
+<P>40.  What is it called to make the best possible arrangements ahead of time so that one will not be seriously financially affected when a loss occurs?<BR>
+  <input type="radio" name="40" value="correct"> Risk management<BR>
+  <input type="radio" name="40" value="ccc"> Collision protection<BR>
+  <input type="radio" name="40" value="coct"> Liability management<BR>
+  <input type="radio" name="40" value="wrong"> Indemnity management<BR>
+
+</p>
+
+<P>41.  Which is not a step in the risk management process?<BR>
+  <input type="radio" name="41" value="correct">  Estimating appraisal values <BR>
+  <input type="radio" name="41" value="coct"> Revising and monitoring the risk management plan<BR>
+  <input type="radio" name="41" value="wrong"> Selecting the most economical way of handling the risk<BR>
+  <input type="radio" name="41" value="wrong"> Formulating a risk management plan<BR>
+</p>
+
+<P>42.   Insurance that provides protection against losses that could financially harm an individual but that would not completely destroy his or her savings is:<BR>
+  <input type="radio" name="42" value="correct">  Desirable insurance<BR>
+  <input type="radio" name="42" value="coct"> Primary insurance<BR>
+  <input type="radio" name="42" value="wrong"> Liability insurance<BR>
+  <input type="radio" name="42" value="wrong"> Catastrophic insurance<BR>
+</p>
+
+<P>43.  The personal liability provided under the ISO homeowners’ policy specifically which these two types of liability?<BR>
+  <input type="radio" name="43" value="coct"> Dwelling & Auto<BR>
+  <input type="radio" name="43" value="wrong"> Flood & Body<BR>
+  <input type="radio" name="43" value="correct">  Body & Property<BR>
+  <input type="radio" name="43" value="wrong"> Dwelling & Property<BR>
+</p>
+
+<P>44.  How much is the personal umbrella liability coverage usually for?<BR>
+  <input type="radio" name="44" value="coct"> $10,000 - $100,000<BR>
+  <input type="radio" name="44" value="wrong"> Less than $10,000<BR>
+  <input type="radio" name="44" value="correct"> 1 million and up <BR>
+  <input type="radio" name="44" value="wrong"> Less than 1 million<BR>
+</p>
+
+<P>45. In order to be enforceable, contracts must be made for some _____<BR>
+  <input type="radio" name="45" value="coct"> Special purpose<BR>
+  <input type="radio" name="45" value="correct">  Legal purpose<BR>
+  <input type="radio" name="45" value="wrong"> Two parties<BR>
+  <input type="radio" name="45" value="wrong"> Monetary exchange<BR>
+</p>
+
+<P>46.  What are the requirements of a legal contract?<BR>
+  <input type="radio" name="46" value="maison">  Consideration<BR>
+  <input type="radio" name="46" value="quatre"> Offer and acceptance <BR>
+  <input type="radio" name="46" value="corre"> Competent parties<BR>
+  <input type="radio" name="46" value="correct"> All of the above<BR>
+</p>
+
+<P>47.  In most umbrella policies, the term personal liability refers to all of the following except:<BR>
+    <input type="radio" name="47" value="maison">  Bodily injury<BR>
+    <input type="radio" name="47" value="quatre"> False Imprisonment<BR>
+    <input type="radio" name="47" value="correct"> Vandalism<BR>
+    <input type="radio" name="47" value="corr"> Battery<BR>
+</p>
+
+<P>48. Any actual, lawful and substantial economic interest in the safety or preservation of the subject of the insurance from loss or destruction or financial damage or impairment is called:<BR>
+  <input type="radio" name="48" value="correct"> Insurable interest <BR>
+  <input type="radio" name="48" value="maison">  Risk aversion<BR>
+  <input type="radio" name="48" value="quatre"> Endorsement payback<BR>
+  <input type="radio" name="48" value="corre"> Liability causation<BR>
+</p>
+
+<P>49.  In a Unilateral contract, an act is exchanged for a(n):<BR>
+  <input type="radio" name="49" value="maison"> Action<BR>
+  <input type="radio" name="49" value="quatre"> Avoidance<BR>
+  <input type="radio" name="49" value="corre"> Re-action<BR>
+  <input type="radio" name="49" value="correct"> Promise <BR>
+</p>
+
+<P>50.  What kind of contract is an insurance contract?<BR>
+  <input type="radio" name="50" value="maison">  Collision contract<BR>
+  <input type="radio" name="50" value="quatre"> Aleatory contract<BR>
+  <input type="radio" name="50" value="correct"> Unilateral contract <BR>
+  <input type="radio" name="50" value="corr"> Conditional contract <BR>
+</p>
+
+<P>51.  Most property and liability insurance is written on what type of basis?<BR>
+  <input type="radio" name="51" value="maison">  Warranty basis<BR>
+  <input type="radio" name="51" value="quatre"> Liability basis<BR>
+  <input type="radio" name="51" value="corre"> Subrogation basis<BR>
+  <input type="radio" name="51" value="correct"> Indemnity basis <BR>
+</p>
+
+<P>52. Adding additional zeroes to the amount of coverage applied for is a prohibited activity called what?<BR>
+  <input type="radio" name="52" value="maison">  Misrepresentation<BR>
+  <input type="radio" name="52" value="correct"> Altering applications<BR>
+  <input type="radio" name="52" value="quatre"> Premium theft<BR>
+  <input type="radio" name="52" value="corre"> Unlicensed sales<BR>
+
+</p>
+
+<P>53. Paying someone to make a false testimonial in an insurance ad is an example of: <BR>
+  <input type="radio" name="53" value="correct"> Untruths in Advertising<BR>
+  <input type="radio" name="53" value="maison"> Discrimination<BR>
+  <input type="radio" name="53" value="quatre">Illegal rebates<BR>
+  <input type="radio" name="53" value="cot"> Untruthful Policy Replacements<BR>
+
+</p>
+
+<P>54.  Which Act has provisions that are meant to protect insureds and claimants from claims settlements that are deceptive, misleading or unfair?<BR>
+  <input type="radio" name="54" value="maison">  The Fair Insurance Act<BR>
+  <input type="radio" name="54" value="quatre"> The Ethical Industry Act<BR>
+  <input type="radio" name="54" value="corre"> The Insurer's Fairness Act<BR>
+  <input type="radio" name="54" value="correct"> The Unfair Claims Settlement Practices Act<BR>
+</p>
+
+<P>55.  For an underwriter, what is the most reliable data is that received from objective outside sources?<BR>
+  <input type="radio" name="55" value="maison">  Subjective information<BR>
+  <input type="radio" name="55" value="quatre"> Aleatory information<BR>
+  <input type="radio" name="55" value="corre">  Subrogation information<BR>
+  <input type="radio" name="55" value="correct"> Objective information<BR>
+</p>
+
+<P>56. Statistics demonstrate that, as a group, drivers having accidents during one time period are substantially more likely to have accidents:<BR>
+  <input type="radio" name="56" value="correct"> In a future period<BR>
+  <input type="radio" name="56" value="quatre"> In a fluctuating period<BR>
+  <input type="radio" name="56" value="soleil"> In a past period<BR>
+  <input type="radio" name="56" value="poisson">  In a static period<BR>
+</p>
+
+<P>57. Underwriters tend to divide traffic violations into the following groups, which is not one of them?<BR>
+  <input type="radio" name="57" value="quatre"> Major<BR>
+  <input type="radio" name="57" value="soleil"> Equipment Violations<BR>
+  <input type="radio" name="57" value="correct"> Minor<BR>
+  <input type="radio" name="57" value="poisson">  Other Moving Violations<BR>
+</p>
+
+<P>58. Underwriting of all types is designed to accomplish what major goals?<BR>
+  <input type="radio" name="58" value="quatre"> It helps the company to achieve underwriting gains<BR>
+  <input type="radio" name="58" value=""> It contributes to society <BR>
+  <input type="radio" name="58" value="soleil"> It assists in maintaining a strong, solvent industry, which can serve the public in the future<BR>
+  <input type="radio" name="58" value="correct">  All of the above<BR>
+</p>
+
+<P>59. Which policy  includes coverage for the personal property of a business at specific, as well as unnamed locations, including while in transit?<BR>
+  <input type="radio" name="59" value="correct"> Manufacturers’ Output Policy (MOP)  <BR>
+  <input type="radio" name="59" value="quatre"> Business Output Policy (BOP)<BR>
+  <input type="radio" name="59" value="soleil"> Motor Truck Policy (MTP)<BR>
+  <input type="radio" name="59" value="poisson">  Non Standard Policy (NSP)<BR>
+
+</p>
+
+<P>60.Which type of coverage will insure building materials and components, machinery, and specialized equipment while being installed in a building or structure, or erected or fabricated at a specific location?<BR>
+  <input type="radio" name="60" value="quatre"> Fine arts coverage<BR>
+  <input type="radio" name="60" value="soleil"> Contractors equipment coverage<BR>
+  <input type="radio" name="60" value="correct">  Installation coverage<BR>
+  <input type="radio" name="60" value="poisson">  Maintenance coverage<BR>
+</p>
+
+</div>
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>

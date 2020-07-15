@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+ {% block head %}
+
+ <title>{% block title %}{% endblock %}</title>
+
+ {% endblock %}
+ <nav>
+
+ </nav>
+ headbase
+</head>
+
+<body>
+
+whata
+<p>papapapaap</p>
+ {% block body %}what is this{% endblock %}
+</body>
+</html>

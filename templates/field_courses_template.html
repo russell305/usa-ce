@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Health 240 </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+.row{
+  margin-bottom: 15px;
+}
+@media (min-width: 500px) {
+	h2{
+    margin-top: -40px;
+    margin-bottom: 5px;
+					  }
+				}
+@media (max-width: 500px) {
+	h2{
+    margin-top: -20px;
+    margin-bottom: 5px;
+					  }
+				}
+h3{
+  margin-bottom: 15px;
+}
+h6{
+  margin-bottom: -30px;
+}
+
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home
+
+                </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+            <span class="sr-only">(current)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid jumbotron text-center">
+
+  <h2>{{field}}</h2>
+
+  <h3>Courses</h3>
+
+  <div class="row ">
+    <div class="col-md-7">
+      <h4>Name of Course</h4>
+
+    </div>
+    <div class="col-md-1">
+      <h4>Hours</h4>
+
+    </div>
+    <div class="col-md-2">
+      <h4>Price</h4>
+
+    </div>
+    <div class="col-md-2">
+      <h4>Course #</h4>
+
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+
+      <a href="{{ url_for(url) }}">{{course_name}}wtf</a><Br>
+      <a href="{{ url_for('health_law_ethics') }}">Law & Ethics Update for Health Agent (5-240)</a><Br>
+    </div>
+    <div class="col-md-1">
+      {{hours}}
+    </div>
+    <div class="col-md-2">
+      ${{price}}<Br>
+    </div>
+    <div class="col-md-2">
+      {{course_number}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <!-- <a href="{{ url_for('ia_homeowners') }}">Homeowners, Property and Auto Update for Independent Adjusters</a><Br> -->
+
+    </div>
+    <div class="col-md-1">
+      <!-- 7 -->
+    </div>
+    <div class="col-md-2">
+      <!-- $13.30 -->
+    </div>
+    <div class="col-md-2">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <!-- <a href="{{ url_for('ia_umbrella') }}"> Flood, Umbrella, and Underwriting update for Independent Adjusters </a><Br> -->
+
+    </div>
+    <div class="col-md-1">
+    <!-- 12 -->
+
+    </div>
+    <div class="col-md-2">
+      <!-- $22.80 -->
+
+    </div>
+    <div class="col-md-2">
+      <!-- not yet available -->
+    </div>
+  </div>
+
+ <h6>(more courses coming soon)</h6>
+ </div>
+</body>
+</html>

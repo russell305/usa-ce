@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Health Agent Ethics Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -30px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('life_health_ethics_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('life_health_ethics_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1.  What is the Chief Fiscal Officer of the state is called? <BR>
+  <input type="radio" name="1" value="maison"> Chief Officer of Economy<BR>
+  <input type="radio" name="1" value="correct"> Chief Financial Officer<BR>
+  <input type="radio" name="1" value="quatre"> Deputy of Finance<BR>
+  <input type="radio" name="1" value="poisson"> Finance Minister<BR>
+</p>
+
+<P>2.  The _____________ has primary responsibility for regulation, compliance and
+  enforcement of statutes related to the business of insurance and the monitoring of industry markets. <BR>
+  <input type="radio" name="2" value="maison">  Office of Finance<BR>
+  <input type="radio" name="2" value="quatre"> Office of  Regulation<BR>
+  <input type="radio" name="2" value="corre"> Office of Insurance Rehabilitation<BR>
+  <input type="radio" name="2" value="correct"> Office of Insurance Regulation<BR>
+</p>
+
+<P>3. Which is not a duty of the Office of Insurance Regulation?<BR>
+  <input type="radio" name="3" value="maison"> Force the insurance code and shall execute the duties imposed upon it by the code<BR>
+  <input type="radio" name="3" value="quatre"> Make rules and regulations to administer the state's insurance laws<BR>
+  <input type="radio" name="3" value="correct"> Deny claims to consumers <BR>
+  <input type="radio" name="3" value="soleil"> Have the powers and authority expressly conferred upon it by, or reasonably implied from, the provisions of the code<BR>
+</p>
+
+<P>4.  ____________ occurs when an adjuster knowingly makes any type of statement—in writing or verbally—that is false or maliciously critical to any person and does so with the intent to harm that person.<BR>
+  <input type="radio" name="4" value="maison"> A false claim<BR>
+  <input type="radio" name="4" value="quatre"> Coercion<BR>
+  <input type="radio" name="4" value="correct"> Defamation<BR>
+  <input type="radio" name="4" value="poisson"> Intimidation<BR>
+</p>
+<P>5. Which Bureau would deal with employee relations? <BR>
+  <input type="radio" name="5" value="maison"> Bureau of General Services<BR>
+  <input type="radio" name="5" value="quatre"> Bureau of Inspector General<BR>
+  <input type="radio" name="5" value="xxx"> Bureau of Employee Relations<BR>
+  <input type="radio" name="5" value="correct"> Bureau of Human Resource Management <BR>
+</p>
+
+<P>6. Which office serves as the Chief Financial Officer’s liaison with the news media? <BR>
+  <input type="radio" name="6" value="maison"> Oval Office<BR>
+  <input type="radio" name="6" value="quatre"> Office of the President<BR>
+  <input type="radio" name="6" value="">  Office of Cabinet Affairs<BR>
+  <input type="radio" name="6" value="correct"> Office of Communications<BR>
+</p>
+
+<P>7.  The _____  has primary responsibility for regulation, compliance and enforcement of statutes related to the business of insurance and the monitoring of industry markets. <BR>
+  <input type="radio" name="7" value="maison"> Office of Insurance Consumer Advocate<BR>
+  <input type="radio" name="7" value="quatre"> Office of Internal Affairs and Appointments<BR>
+  <input type="radio" name="7" value="correct"> Office of Insurance Regulation<BR>
+  <input type="radio" name="7" value="poisson"> Office of Finance and Budget<BR>
+</p>
+
+<P>8. _____means seeking coverage from and having been rejected by at least three authorized insurers currently writing this type of coverage and documenting these rejections. <BR>
+  <input type="radio" name="8" value="maison"> Insurer effort<BR>
+  <input type="radio" name="8" value="quatre"> Personal coverage<BR>
+  <input type="radio" name="8" value="correct"> Diligent effort<BR>
+  <input type="radio" name="8" value="poisson"> Rejected coverage<BR>
+</p>
+
+<P>9.  Which Division protects the investing public from unlawful securities activities through regulating the sale of securities in, to or from Florida?<BR>
+  <input type="radio" name="9" value="maison">  Division of Budget<BR>
+  <input type="radio" name="9" value="correct"> Division of Securities<BR>
+  <input type="radio" name="9" value="soleil"> Division of Licensing<BR>
+  <input type="radio" name="9" value="poisson"> Division of Finance<BR>
+</p>
+
+<P>10.  What is the minimum age for a Health Insurance Agent License?<BR>
+  <input type="radio" name="10" value="ccc">  21<BR>
+  <input type="radio" name="10" value="correct"> 18<BR>
+  <input type="radio" name="10" value="wrong"> 25<BR>
+  <input type="radio" name="10" value=""> None of the above <BR>
+</p>
+
+<P>11.  The Department’s Division of Insurance Agent and Agency Services is made up of the Bureau of Licensing and what else?<BR>
+  <input type="radio" name="11" value="correct">  Bureau of Investigation<BR>
+  <input type="radio" name="11" value="coct"> Bureau of Fraud<BR>
+  <input type="radio" name="11" value="wrong"> Bureau of Insurance<BR>
+  <input type="radio" name="11" value="wrong"> Bureau of Agents<BR>
+</p>
+
+<P>12.  Which of the following is an account maintained by FIGA?<BR>
+  <input type="radio" name="12" value="correct">  Health insurance account<BR>
+  <input type="radio" name="12" value="coct"> Auto insurance account<BR>
+  <input type="radio" name="12" value="wrong"> Property insurance account<BR>
+  <input type="radio" name="12" value="wrong"> Home insurance account<BR>
+</p>
+
+<P>13.  Which position will prevent someone from getting a Health Insurance Agent License?<BR>
+  <input type="radio" name="13" value="coct"> Lawyer<BR>
+  <input type="radio" name="13" value="wrong"> Nurse<BR>
+  <input type="radio" name="13" value="correct">  Funeral Director<BR>
+  <input type="radio" name="13" value="wrong"> Doctor<BR>
+</p>
+
+<P>14.  _________ is the fee an appointing entity is charged to renew each licensee's appointment after
+  the expiration date of the appointment, but before the licensee's appointment is cancelled.<BR>
+  <input type="radio" name="14" value="coct"> Renewal fee<BR>
+  <input type="radio" name="14" value="wrong"> Cancellation fee<BR>
+  <input type="radio" name="14" value="correct"> Continuation fee<BR>
+  <input type="radio" name="14" value="wrong"> Penalty fee<BR>
+</p>
+
+<P>15.  To qualify for a license transfer, an individual applicant must become a resident of this state, this is:<BR>
+  <input type="radio" name="15" value="coct"> Never true<BR>
+  <input type="radio" name="15" value="correct">  Always true<BR>
+  <input type="radio" name="15" value="wrong"> Sometimes true<BR>
+  <input type="radio" name="15" value="wrong"> Always false<BR>
+</p>
+
+<P>16.  What is the maximum suspension length of a license?<BR>
+  <input type="radio" name="16" value="correct">  2 years<BR>
+  <input type="radio" name="16" value="quatre"> 1 year<BR>
+  <input type="radio" name="16" value="corre"> 5 years<BR>
+  <input type="radio" name="16" value=""> Indefinite<BR>
+</p>
+
+<P>17.   The existence of a Guaranty Association lessens the burden on policyholders and claimants of insolvent insurers by doing which of the following?<BR>
+    <input type="radio" name="17" value="maison">  Standing behind decisions of adjusters<BR>
+    <input type="radio" name="17" value="quatre"> Establishing claims<BR>
+    <input type="radio" name="17" value="correct"> Guarantee, assume, or reinsure, or cause to be guaranteed, assumed, or reinsured, the covered policies of residents of this state<BR>
+    <input type="radio" name="17" value="corr"> All of the above<BR>
+</p>
+
+<P>18.  Which of the following is a power of the Guaranty Association?<BR>
+  <input type="radio" name="18" value="correct"> Negotiate and contract with any liquidator, rehabilitator, conservator, or ancillary receiver to carry out the powers and duties of the association<BR>
+  <input type="radio" name="18" value="maison">  Suspend licensees<BR>
+  <input type="radio" name="18" value="quatre"> Form new insurance associations<BR>
+  <input type="radio" name="18" value="corre"> Adjust losses<BR>
+</p>
+
+<P>19.  A licensee must notify the department, in writing, within _____ after a change of name, residence address, principal business
+  street address, mailing address, contact telephone numbers, including a business telephone number, or e-mail address.<BR>
+  <input type="radio" name="19" value="maison"> 1 week<BR>
+  <input type="radio" name="19" value="quatre"> 7 days <BR>
+  <input type="radio" name="19" value="corre"> 1 month<BR>
+  <input type="radio" name="19" value="correct"> 30 days  <BR>
+</p>
+
+<P>20.   Any person who knowingly transacts insurance or otherwise engages in insurance activities
+  in this state without a license can be charged with what?<BR>
+  <input type="radio" name="20" value="maison">  Fine <BR>
+  <input type="radio" name="20" value="quatre"> Suspension <BR>
+  <input type="radio" name="20" value="correct"> Felony of the third degree<BR>
+  <input type="radio" name="20" value="corr"> Misdemeanor<BR>
+</p>
+
+<P>21.  What is not a qualification for Health agent licensure?<BR>
+  <input type="radio" name="21" value="maison">  Must be a United States citizen<BR>
+  <input type="radio" name="21" value="quatre"> Must be a natural person of at least 18 years of age<BR>
+  <input type="radio" name="21" value="corre"> Must take and pass any examination for license required<BR>
+  <input type="radio" name="21" value="correct"> Must pass a driver safety test<BR>
+</p>
+
+<P>22.  An individual appointed by a general lines agent or agency to assist that
+  agent or agency in transacting the business of insurance from the office of that agent or agency is called:<BR>
+  <input type="radio" name="22" value="maison"> Insurer<BR>
+  <input type="radio" name="22" value="quatre"> Agent<BR>
+  <input type="radio" name="22" value="correct"> Customer representative<BR>
+  <input type="radio" name="22" value=""> All of the above <BR>
+</p>
+
+<P>23.   ______ means any person managing all or part of the insurance business of an insurer, including the
+  management of a separate division, department, or underwriting office, and acting as an agent for that insurer.<BR>
+  <input type="radio" name="23" value="maison">  Customer representative<BR>
+  <input type="radio" name="23" value="correct"> Managing general agent <BR>
+  <input type="radio" name="23" value="quatre"> Insuring agent<BR>
+  <input type="radio" name="23" value="cort"> Health adjuster<BR>
+</p>
+
+<P>24.  Making, publishing or circulating any oral, written or printed statement which is
+  false, or maliciously critical of or derogatory to the financial condition of any insurance company is called:<BR>
+  <input type="radio" name="24" value="maison">  Editing<BR>
+  <input type="radio" name="24" value="quatre"> Trolling<BR>
+  <input type="radio" name="24" value="corre"> Rebating<BR>
+  <input type="radio" name="24" value="correct"> Defamation<BR>
+</p>
+
+<P>25.  Charging an applicant for a specific ancillary coverage or
+  product, in addition to the cost of the insurance coverage applied for, without the informed consent of the applicant is?<BR>
+  <input type="radio" name="25" value="maison">  False Claim<BR>
+  <input type="radio" name="25" value="quatre"> Twisting<BR>
+  <input type="radio" name="25" value="corre">  Rebating<BR>
+  <input type="radio" name="25" value="correct"> Sliding<BR>
+</p>
+
+<P>26.  An  _____ is a standard developed by the Federal Insurance Office to measure the affordability of personal auto liability insurance.<BR>
+  <input type="radio" name="26" value="correct"> Affordability index <BR>
+  <input type="radio" name="26" value="quatre"> Out of state index<BR>
+  <input type="radio" name="26" value="soleil"> Surplus index<BR>
+  <input type="radio" name="26" value="poisson">  Out of state index<BR>
+</p>
+
+<P>27. An agent in the process of placing a policy through an
+  insurance company with whom he or she does not hold an appointment is called a:<BR>
+  <input type="radio" name="27" value="quatre"> Authorized Agent<BR>
+  <input type="radio" name="27" value="soleil"> Adjusting Agent<BR>
+  <input type="radio" name="27" value="correct"> Brokering Agent<BR>
+  <input type="radio" name="27" value="poisson">  Customer Agent<BR>
+</p>
+
+<P>28. Who is the full-time licensed general lines, life, or health agent who manages an insurance agency?<BR>
+  <input type="radio" name="28" value="quatre"> Managing agent<BR>
+  <input type="radio" name="28" value="correct"> Agent-in-charge<BR>
+  <input type="radio" name="28" value="soleil"> Authorized agent  <BR>
+  <input type="radio" name="28" value="poisson">  Claims adjuster<BR>
+</p>
+
+<P>29. Which is a type of vehicle insurance whereby the cost depends on the
+  time the vehicle is used, the distance traveled, and driving behaviors?<BR>
+  <input type="radio" name="29" value="quatre"> Behavioral insurance<BR>
+  <input type="radio" name="29" value="soleil"> Guaranty insurance<BR>
+  <input type="radio" name="29" value="poisson">  Digitized insurance<BR>
+  <input type="radio" name="29" value="correct"> Usage based insurance<BR>
+</p>
+
+<P>30. Annuities are traditionally viewed as retirement vehicles, which is why the Internal Revenue
+  Service has placed a 10 percent penalty on funds withdrawn prior to what age?<BR>
+  <input type="radio" name="30" value="quatre"> 65<BR>
+  <input type="radio" name="30" value="soleil"> 60<BR>
+  <input type="radio" name="30" value="correct">  59.5<BR>
+  <input type="radio" name="30" value="poisson">  55<BR>
+</p>
+</div>
+
+
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+<!-- <input type="radio" name="21" value="maison">   Adjusters may handle investigations, or handle loss and claim adjustments and settlements in any manner<BR> -->
+<!-- <input type="radio" name="21" value="quatre"> Adjusters must report the facts after making a complete investigation in a truthful and unbiased manner.<BR> -->
+<!-- <input type="radio" name="21" value="correct"> Adjusters may refer claimants who need repairs or other services related to a loss to an individual or organization with which the adjuster has an undisclosed financial interest or that might reasonably be expected to compensate the adjuster for the referral.<BR> -->
+<!-- <input type="radio" name="21" value="corre"> All of thee Above<BR> -->

@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Florida Discount: User </title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-111789653-4');
+		</script>
+		 <script src="https://js.stripe.com/v3"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<style>
+				body {
+					height: 100%;
+					margin-left: 10%;
+					margin-right: 10%;
+					margin-bottom: 100px;
+					padding: 0;
+					font-family: verdana;
+					background-color: white ;
+				}
+
+				ul{
+					font-size:20px;
+					list-style-type: none;
+				}
+				button{
+					margin:10px;
+				}
+				nav ul {
+				  	margin-right:7%;
+				}
+				nav ul li {
+					margin-left:7%;
+					font-size: 24px;
+				}
+				p{
+					margin-top: 20px;
+					margin-bottom: -40px;
+				}
+				form{
+					margin-top:20px;
+				}
+				#checkout-button-sku_FcHw7FKSPC1lTa{
+					/* margin-top: 500px */
+				}
+
+		</style>
+		</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+	    <div class="container">
+	      <a class="navbar-brand" href="{{ url_for('index') }}">
+	            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+	      </a>
+	      <ul class="navbar-nav ml-auto">
+	          <li class="nav-item ">
+	            <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+	          </li>
+	          <li class="nav-item ">
+	            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+	          </li>
+	          <li class="nav-item  ">
+	            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+	          </li>
+	        </ul>
+	    </div>
+	  </nav>
+		<div class="container-fluid text-center jumbotron">
+			<h3>Account Details</h3>
+			<ul>
+
+				<li><b>Username:</b> {{user['name']}}</li>
+				<li><b>Name:</b> {{user['full_name']}}</li>
+				<li><b>License #:</b> {{user['license_no']}}</li>
+				<!-- <li><b>Address:</b> {{user['address']}}</li> -->
+				<li><b>Email:</b> {{user['email']}}</li>
+				<li><b>Field:</b> {{discipline}}</li>
+
+			</ul>
+		{% if discipline == "Public Adjuster" %}
+			{% if course == "pa-ethics" %}
+					<h3>5-Hour Law & Ethics Update</h3>
+					 <h4>Price $9.50</h4>
+					  <button class=" btn-primary btn-lg " id="checkout-button-sku_GPomr8yiP2babN" role="link">
+ 						 	Checkout
+ 						 </button>
+ 						 <div id="error-message"></div>
+ 						 <script>
+ 						 (function() {
+ 						 	var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+ 						 	var checkoutButton = document.getElementById('checkout-button-sku_GPomr8yiP2babN');
+ 						 	checkoutButton.addEventListener('click', function () {
+ 						 		stripe.redirectToCheckout({
+ 						 			items: [{sku: 'sku_GPomr8yiP2babN', quantity: 1}],
+ 						 			successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+ 						 			cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+ 						 		})
+ 						 		.then(function (result) {
+ 						 			if (result.error) {
+ 						 				var displayError = document.getElementById('error-message');
+ 						 				displayError.textContent = result.error.message;
+ 						 			}
+ 						 		});
+ 						 	});
+ 						 })();
+ 						 </script>
+
+				{% elif course == "pa-flood" %}
+							 <h3>8-Hour Flood & Homeowner's Insurance Update</h3>
+							 <h4>Price $15.20</h4>
+							 <button class=" btn-primary btn-lg " id="checkout-button-sku_GPoqHkwVweWd99"role="link">
+								 Checkout	</button>
+						 	 <div id="error-message"></div>
+						 		<script>
+								 (function() {
+									 var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+								 	var checkoutButton = document.getElementById('checkout-button-sku_GPoqHkwVweWd99');
+									 checkoutButton.addEventListener('click', function () {
+										 stripe.redirectToCheckout({
+											 items: [{sku: 'sku_GPoqHkwVweWd99', quantity: 1}],
+											 successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+	   						 			cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+	   						 		})
+	   						 		.then(function (result) {
+	   						 			if (result.error) {
+	   						 				var displayError = document.getElementById('error-message');
+	   						 				displayError.textContent = result.error.message;
+	   						 			}
+	   						 		});
+	   						 	});
+	   						 })();
+	   						 </script>
+
+				{% elif course == "pa-course-4" %}
+							<h3>4-hour National Flood Insurance Program</h3>
+							<h4>Price $7.60</h4>
+							<button class=" btn-primary btn-lg " id="checkout-button-sku_H6OpbxImkJa3KA" role="link">
+									Checkout</button>
+							<div id="error-message"></div>
+							<script>
+								(function() {
+								var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+								var checkoutButton = document.getElementById('checkout-button-sku_H6OpbxImkJa3KA');
+								checkoutButton.addEventListener('click', function () {
+										stripe.redirectToCheckout({
+												items: [{sku: 'sku_H6OpbxImkJa3KA', quantity: 1}],
+												successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+												cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+												})
+													.then(function (result) {
+													if (result.error) {
+														var displayError = document.getElementById('error-message');
+													displayError.textContent = result.error.message;
+													}
+												});
+											});
+										})();
+								</script>
+
+			{% elif course == "pa-property" %}
+					 <h3>11-Hour Personal Property & Umbrella Insurance Update</h3>
+					 <h4>Price $20.90</h4>
+						 <button class=" btn-primary btn-lg " id="checkout-button-sku_GPoplXJAqAZIRj"	 role="link">
+						 Checkout
+						 </button>
+						 <div id="error-message"></div>
+						 <script>
+						 (function() {
+						   var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+						   var checkoutButton = document.getElementById('checkout-button-sku_GPoplXJAqAZIRj');
+						   checkoutButton.addEventListener('click', function () {
+						     stripe.redirectToCheckout({
+						       items: [{sku: 'sku_GPoplXJAqAZIRj', quantity: 1}],
+						       successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+						       cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+						     })
+						     .then(function (result) {
+						       if (result.error) {
+						         var displayError = document.getElementById('error-message');
+						         displayError.textContent = result.error.message;
+						       }
+						     });
+						   });
+						 })();
+						 </script>
+
+				{% elif course == "pa-bundle-24" %}
+	 						 <h3>Public Adjuster 24-Hour 3-Course Bundle</h3>
+	 							 <h4>Price $25.00</h4>
+								 <button
+								   class=" btn-primary btn-lg " id="checkout-button-sku_GPhWCIT69cDpxV"role="link" >
+								   Checkout </button>
+								 <div id="error-message"></div>
+								 <script>
+								 (function() {
+								   var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+								   var checkoutButton = document.getElementById('checkout-button-sku_GPhWCIT69cDpxV');
+								   checkoutButton.addEventListener('click', function () {
+								     stripe.redirectToCheckout({
+								       items: [{sku: 'sku_GPhWCIT69cDpxV', quantity: 1}],
+
+								       successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+								       cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+								     })
+								     .then(function (result) {
+								       if (result.error) {
+
+								         var displayError = document.getElementById('error-message');
+								         displayError.textContent = result.error.message;
+								       }
+								     });
+								   });
+								 })();
+								 </script>
+
+						 {% elif course == "pa-bundle-20" %}
+		 	 						 <h3>Public Adjuster 20-Hour 3-Course Bundle</h3>
+		 	 							 <h4>Price $21.00</h4>
+										 <button class=" btn-primary btn-lg " id="checkout-button-sku_H9lG0JY2vZJoty" role="link" >
+										   Checkout
+										 </button>
+										 <div id="error-message"></div>
+									 <script>
+										 (function() {
+										   var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+										   var checkoutButton = document.getElementById('checkout-button-sku_H9lG0JY2vZJoty');
+										   checkoutButton.addEventListener('click', function () {
+										     stripe.redirectToCheckout({
+										       items: [{sku: 'sku_H9lG0JY2vZJoty', quantity: 1}],
+													 successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+				 						 			cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+				 						 		})
+				 						 		.then(function (result) {
+				 						 			if (result.error) {
+				 						 				var displayError = document.getElementById('error-message');
+				 						 				displayError.textContent = result.error.message;
+				 						 			}
+				 						 		});
+				 						 	});
+				 						 })();
+				 						 </script>
+			{% endif %}
+
+		{% elif discipline == "All-Lines Adjuster" %}
+			{% if course == "ia-ethics" %}
+				<h3>5-Hour Law & Ethics Update</h3>
+				<h4>Price $9.50</h4>
+				<button class=" btn-primary btn-lg " id="checkout-button-sku_GPomr8yiP2babN" role="link">
+				Checkout
+				</button>
+				<div id="error-message"></div>
+				<script>
+						 (function() {
+						 	var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+						 	var checkoutButton = document.getElementById('checkout-button-sku_GPomr8yiP2babN');
+						 	checkoutButton.addEventListener('click', function () {
+						 		stripe.redirectToCheckout({
+						 			items: [{sku: 'sku_GPomr8yiP2babN', quantity: 1}],
+						 			successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+						 			cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+						 		})
+						 		.then(function (result) {
+						 			if (result.error) {
+						 				var displayError = document.getElementById('error-message');
+						 				displayError.textContent = result.error.message;
+						 			}
+						 		});
+						 	});
+						 })();
+						 </script>
+
+			{% elif course == "ia-homeowners" %}
+				<h3>7-Hour Property & Homeowners' Insurance Update</h3>
+			 	<h4>Price $13.30</h4>
+				<button class=" btn-primary btn-lg " id="checkout-button-sku_GPhIBwNhMr5qqE" role="link">
+					Checkout
+				</button>
+						 <div id="error-message"></div>
+						 <script>
+						 (function() {
+						   var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+						   var checkoutButton = document.getElementById('checkout-button-sku_GPhIBwNhMr5qqE');
+						   checkoutButton.addEventListener('click', function () {
+						     stripe.redirectToCheckout({
+						       items: [{sku: 'sku_GPhIBwNhMr5qqE', quantity: 1}],
+						       successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+						       cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+						     })
+						     .then(function (result) {
+						       if (result.error) {
+						         var displayError = document.getElementById('error-message');
+						         displayError.textContent = result.error.message;
+						       }
+						     });
+						   });
+						 })();
+						 </script>
+
+ 			{% elif course == "ia-umbrella" %}
+			<h3>12-Hour Flood, Umbrella, & Underwriting Insurance Update</h3>
+		 	<h4>Price $22.80</h4>
+			<button class=" btn-primary btn-lg " id="checkout-button-sku_GQ3srQ53QDQTq9" role="link">
+			Checkout
+			</button>
+			<div id="error-message"></div>
+			<script>
+				 (function() {
+					 var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+					 var checkoutButton = document.getElementById('checkout-button-sku_GQ3srQ53QDQTq9');
+					 checkoutButton.addEventListener('click', function () {
+						 stripe.redirectToCheckout({
+							 items: [{sku: 'sku_GQ3srQ53QDQTq9', quantity: 1}],
+							 successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+							 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+						 })
+						 .then(function (result) {
+							 if (result.error) {
+								 var displayError = document.getElementById('error-message');
+								 displayError.textContent = result.error.message;
+							 }
+						 });
+					 });
+				 })();
+				 </script>
+
+				 {% elif course == "ia-course-4" %}
+	 			<h3>3-Hour National Flood Insurance Program</h3>
+	 		 	<h4>Price $5.70</h4>
+
+				<script src="https://js.stripe.com/v3"></script>
+				<button class=" btn-primary btn-lg " id="checkout-button-price_HNFrVGKn50qGUP" role="link">
+
+				  Checkout
+				</button>
+
+				<div id="error-message"></div>
+
+				<script>
+				(function() {
+				  var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+
+				  var checkoutButton = document.getElementById('checkout-button-price_HNFrVGKn50qGUP');
+				  checkoutButton.addEventListener('click', function () {
+				    // When the customer clicks on the button, redirect
+				    // them to Checkout.
+				    stripe.redirectToCheckout({
+				      lineItems: [{price: 'price_HNFrVGKn50qGUP', quantity: 1}],
+				      mode: 'payment',
+
+				      successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+				      cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+				    })
+				    .then(function (result) {
+				      if (result.error) {
+				        // If `redirectToCheckout` fails due to a browser or network
+				        // error, display the localized error message to your customer.
+				        var displayError = document.getElementById('error-message');
+				        displayError.textContent = result.error.message;
+				      }
+				    });
+				  });
+				})();
+				</script>
+
+				{% elif course == "ia-bundle-20" %}
+							<h3>All-Lines Adjuster 20-hour 3-Course Bundle</h3>
+							<h4>Price $21.00</h4>
+							<button class=" btn-primary btn-lg " id="checkout-button-sku_H9lG0JY2vZJoty" role="link" >
+								Checkout
+							</button>
+							<div id="error-message"></div>
+						<script>
+							(function() {
+								var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+								var checkoutButton = document.getElementById('checkout-button-sku_H9lG0JY2vZJoty');
+								checkoutButton.addEventListener('click', function () {
+									stripe.redirectToCheckout({
+										items: [{sku: 'sku_H9lG0JY2vZJoty', quantity: 1}],
+										successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+									 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+								 })
+								 .then(function (result) {
+									 if (result.error) {
+										 var displayError = document.getElementById('error-message');
+										 displayError.textContent = result.error.message;
+									 }
+								 });
+							 });
+							})();
+							</script>
+
+			 {% elif course == "ia-bundle-24" %}
+		 				 <h3>All-Lines Adjuster 24-hour 3-Course Bundle</h3>
+	 					 <h4>Price $25.00</h4>
+	 					 <button class=" btn-primary btn-lg " id="checkout-button-sku_GPhWCIT69cDpxV" role="link">
+		 						Checkout
+		 				</button>
+		 					 <div id="error-message"></div>
+		 					 <script>
+		 					 (function() {
+		 						 var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+	 						 	var checkoutButton = document.getElementById('checkout-button-sku_GPhWCIT69cDpxV');
+		 						 checkoutButton.addEventListener('click', function () {
+		 							 stripe.redirectToCheckout({
+		 								 items: [{sku: 'sku_GPhWCIT69cDpxV', quantity: 1}],
+										 successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+										 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+									 })
+									 .then(function (result) {
+										 if (result.error) {
+											 var displayError = document.getElementById('error-message');
+											 displayError.textContent = result.error.message;
+										 }
+									 });
+								 });
+							 })();
+							 </script>
+
+
+
+			{% endif %}
+
+		{% elif discipline == "Health Agent" %}
+				{% if course == "health-ethics" %}
+				<h3>5-Hour Law & Ethics Update</h3>
+			 <h4>Price $9.50</h4>
+				<button class=" btn-primary btn-lg " id="checkout-button-sku_GPomr8yiP2babN" role="link">
+				Checkout
+				</button>
+				<div id="error-message"></div>
+				<script>
+						 (function() {
+							var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+							var checkoutButton = document.getElementById('checkout-button-sku_GPomr8yiP2babN');
+							checkoutButton.addEventListener('click', function () {
+								stripe.redirectToCheckout({
+									items: [{sku: 'sku_GPomr8yiP2babN', quantity: 1}],
+									successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+									cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+								})
+								.then(function (result) {
+									if (result.error) {
+										var displayError = document.getElementById('error-message');
+										displayError.textContent = result.error.message;
+									}
+								});
+							});
+						 })();
+						 </script>
+
+						 {% elif course == "health-course-2" %}
+					 		<h3>10-hour Long Term Care</h3>
+					 		 <h4>Price $19.00</h4>
+					 		 <!-- Load Stripe.js on your website. -->
+
+					 		 <button
+					 		 class=" btn-primary btn-lg "
+
+					 			 id="checkout-button-sku_Gvvgv49KPhBI0r"
+					 			 role="link"
+					 		 >
+					 			 Checkout
+					 		 </button>
+
+					 		 <div id="error-message"></div>
+
+					 		 <script>
+					 		 (function() {
+					 			 var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+
+					 			 var checkoutButton = document.getElementById('checkout-button-sku_Gvvgv49KPhBI0r');
+					 			 checkoutButton.addEventListener('click', function () {
+					 				 // When the customer clicks on the button, redirect
+					 				 // them to Checkout.
+					 				 stripe.redirectToCheckout({
+					 					 items: [{sku: 'sku_Gvvgv49KPhBI0r', quantity: 1}],
+
+					 					 // Do not rely on the redirect to the successUrl for fulfilling
+					 					 // purchases, customers may not always reach the success_url after
+					 					 // a successful payment.
+					 					 // Instead use one of the strategies described in
+					 					 // https://stripe.com/docs/payments/checkout/fulfillment
+					 					 successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+					 					 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+					 				 })
+					 				 .then(function (result) {
+					 					 if (result.error) {
+					 						 // If `redirectToCheckout` fails due to a browser or network
+					 						 // error, display the localized error message to your customer.
+					 						 var displayError = document.getElementById('error-message');
+					 						 displayError.textContent = result.error.message;
+					 					 }
+					 				 });
+					 			 });
+					 		 })();
+					 		 </script>
+
+							 {% elif course == "health-course-3" %}
+						 		<h3>9-hour Medicare & Medicaid</h3>
+						 		 <h4>Price $17.10</h4>
+								 <button class=" btn-primary btn-lg " id="checkout-button-sku_GxOjG8YHdoBzRK"role="link"	>
+									 Checkout
+								 </button>
+								 <div id="error-message"></div>
+								 <script>
+								 (function() {
+									 var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+									 var checkoutButton = document.getElementById('checkout-button-sku_GxOjG8YHdoBzRK');
+									 checkoutButton.addEventListener('click', function () {
+										 stripe.redirectToCheckout({
+											 items: [{sku: 'sku_GxOjG8YHdoBzRK', quantity: 1}],
+											 successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+											 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+										 })
+										 .then(function (result) {
+											 if (result.error) {
+												 var displayError = document.getElementById('error-message');
+												 displayError.textContent = result.error.message;
+											 }
+										 });
+									 });
+								 })();
+								 </script>
+
+								 {% elif course == "health-bundle-24" %}
+							 			 <h2>Health Agent 24-Hour 3-Course Bundle</h2>
+							 			<h3>Price $25.00</h3>
+							 				<button
+							 					class=" btn-primary btn-lg "
+							 					 id="checkout-button-sku_GPhWCIT69cDpxV" role="link"> Checkout </button>
+							 				<div id="error-message"></div>
+							 			 <script>
+							 				 (function() {
+							 					 var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+							 					 var checkoutButton = document.getElementById('checkout-button-sku_GPhWCIT69cDpxV');
+							 					 checkoutButton.addEventListener('click', function () {
+							 						 stripe.redirectToCheckout({
+							 							 items: [{sku: 'sku_GPhWCIT69cDpxV', quantity: 1}],
+							 								successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+							 							 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+							 						 })
+							 						 .then(function (result) {
+							 							 if (result.error) {
+							 								 var displayError = document.getElementById('error-message');
+							 								 displayError.textContent = result.error.message;
+							 							 }
+							 						 });
+							 					 });
+							 				 })();
+							 				 </script>
+
+			{% endif %}
+
+				{% elif discipline == "Life Health Agent" %}
+						{% if course == "life-health-ethics" %}
+						<h3>5-Hour Law & Ethics Update</h3>
+						<h4>Price $9.50</h4>
+						<button class=" btn-primary btn-lg " id="checkout-button-sku_GPomr8yiP2babN" role="link">
+						Checkout
+						</button>
+						<div id="error-message"></div>
+						<script>
+								 (function() {
+									var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+									var checkoutButton = document.getElementById('checkout-button-sku_GPomr8yiP2babN');
+									checkoutButton.addEventListener('click', function () {
+										stripe.redirectToCheckout({
+											items: [{sku: 'sku_GPomr8yiP2babN', quantity: 1}],
+											successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+											cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+										})
+										.then(function (result) {
+											if (result.error) {
+												var displayError = document.getElementById('error-message');
+												displayError.textContent = result.error.message;
+											}
+										});
+									});
+								 })();
+								 </script>
+
+						{% elif course == "life-health-course-2" %}
+							<h3>10-hour Long Term Care</h3>
+							 <h4>Price $19.00</h4>
+							 <!-- Load Stripe.js on your website. -->
+
+							 <button
+							 class=" btn-primary btn-lg "
+
+							   id="checkout-button-sku_Gvvgv49KPhBI0r"
+							   role="link"
+							 >
+							   Checkout
+							 </button>
+
+							 <div id="error-message"></div>
+
+							 <script>
+							 (function() {
+							   var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+
+							   var checkoutButton = document.getElementById('checkout-button-sku_Gvvgv49KPhBI0r');
+							   checkoutButton.addEventListener('click', function () {
+							     // When the customer clicks on the button, redirect
+							     // them to Checkout.
+							     stripe.redirectToCheckout({
+							       items: [{sku: 'sku_Gvvgv49KPhBI0r', quantity: 1}],
+
+							       // Do not rely on the redirect to the successUrl for fulfilling
+							       // purchases, customers may not always reach the success_url after
+							       // a successful payment.
+							       // Instead use one of the strategies described in
+							       // https://stripe.com/docs/payments/checkout/fulfillment
+							       successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+							       cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+							     })
+							     .then(function (result) {
+							       if (result.error) {
+							         // If `redirectToCheckout` fails due to a browser or network
+							         // error, display the localized error message to your customer.
+							         var displayError = document.getElementById('error-message');
+							         displayError.textContent = result.error.message;
+							       }
+							     });
+							   });
+							 })();
+							 </script>
+
+							 {% elif course == "life-health-course-3" %}
+								 <h2>9-hour Medicare & Medicaid</h2>
+
+									<h3>Price $17.10</h3>
+									<button class=" btn-primary btn-lg " id="checkout-button-sku_GxOjG8YHdoBzRK"role="link"	>
+										Checkout
+									</button>
+									<div id="error-message"></div>
+									<script>
+									(function() {
+										var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+										var checkoutButton = document.getElementById('checkout-button-sku_GxOjG8YHdoBzRK');
+										checkoutButton.addEventListener('click', function () {
+											stripe.redirectToCheckout({
+												items: [{sku: 'sku_GxOjG8YHdoBzRK', quantity: 1}],
+												successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+												cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+											})
+											.then(function (result) {
+												if (result.error) {
+													var displayError = document.getElementById('error-message');
+													displayError.textContent = result.error.message;
+												}
+											});
+										});
+									})();
+									</script>
+
+									{% elif course == "life-health-course-4" %}
+									<h3>5-Hour Insurance Claimss Update</h3>
+									<h4>Price $9.50</h4>
+									<button class=" btn-primary btn-lg " id="checkout-button-sku_GPomr8yiP2babN" role="link">
+									Checkout
+									</button>
+									<div id="error-message"></div>
+									<script>
+											 (function() {
+												var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+												var checkoutButton = document.getElementById('checkout-button-sku_GPomr8yiP2babN');
+												checkoutButton.addEventListener('click', function () {
+													stripe.redirectToCheckout({
+														items: [{sku: 'sku_GPomr8yiP2babN', quantity: 1}],
+														successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+														cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+													})
+													.then(function (result) {
+														if (result.error) {
+															var displayError = document.getElementById('error-message');
+															displayError.textContent = result.error.message;
+														}
+													});
+												});
+											 })();
+											 </script>
+
+
+									{% elif course == "life-health-bundle-24" %}
+								 			 <h2>Life/Health/Annuity 24-Hour 3-Course Bundle</h2>
+						 				 	<h3>Price $25.00</h3>
+				 				 		 		<button
+								 					class=" btn-primary btn-lg "
+								 					 id="checkout-button-sku_GPhWCIT69cDpxV" role="link"> Checkout </button>
+						 				 	 	<div id="error-message"></div>
+							 				 <script>
+								 				 (function() {
+								 					 var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+								 					 var checkoutButton = document.getElementById('checkout-button-sku_GPhWCIT69cDpxV');
+								 					 checkoutButton.addEventListener('click', function () {
+								 						 stripe.redirectToCheckout({
+								 							 items: [{sku: 'sku_GPhWCIT69cDpxV', quantity: 1}],
+							 							 		successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+								 							 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+								 						 })
+								 						 .then(function (result) {
+								 							 if (result.error) {
+							 								 	 var displayError = document.getElementById('error-message');
+								 								 displayError.textContent = result.error.message;
+								 							 }
+								 						 });
+								 					 });
+								 				 })();
+								 				 </script>
+
+												 {% elif course == "life-health-bundle-20" %}
+								 							<h3>Life/Health/Annuity 20-Hour 3-Course Bundle</h3>
+								 							<h4>Price $21.00</h4>
+								 							<button class=" btn-primary btn-lg " id="checkout-button-sku_H9lG0JY2vZJoty" role="link" >
+								 								Checkout
+								 							</button>
+								 							<div id="error-message"></div>
+								 						<script>
+								 							(function() {
+								 								var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+								 								var checkoutButton = document.getElementById('checkout-button-sku_H9lG0JY2vZJoty');
+								 								checkoutButton.addEventListener('click', function () {
+								 									stripe.redirectToCheckout({
+								 										items: [{sku: 'sku_H9lG0JY2vZJoty', quantity: 1}],
+								 										successUrl: window.location.protocol + '//www.floridadiscountce.org/success',
+								 									 cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+								 								 })
+								 								 .then(function (result) {
+								 									 if (result.error) {
+								 										 var displayError = document.getElementById('error-message');
+								 										 displayError.textContent = result.error.message;
+								 									 }
+								 								 });
+								 							 });
+								 							})();
+								 							</script>
+
+
+
+										{% endif %}
+								{% endif %}
+
+</div>
+</body>
+
+</html>

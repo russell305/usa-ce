@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: FAQ </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+
+h1{
+  margin-top: -25px;
+  margin-bottom: 10px;
+}
+#list{
+  margin-bottom: 30px;
+}
+#small{
+  font-size: 8px;
+}
+
+
+</style>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home
+
+                </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+
+    </div>
+  </nav>
+  <div class="container-fluid jumbotron">
+<div class="text-center ">
+  <h1>FAQ</h1>
+</div>
+
+<p><b>What does the course look like?</b><BR>
+To view a sample page, click here: <a href="{{ url_for('sample_page') }}">Sample Page </a>
+</p>
+
+<p><b>How much does each course cost?</b><BR>
+  Each credit hour costs $1.90. So a 5-hour course costs $9.50.
+  We also have 3-course bundles which offer significant savings.
+</p>
+
+<p><b>Are your continuing education courses all online?</b><BR>
+  The courses are 100% online. Course are textbook based reading material with multiple choice questions.
+</p>
+
+<p><b>How many continuing education Hours/Credits do I need?</b><BR>
+  You can see how many hours you need here: <a href="https://licenseesearch.fldfs.com/">Licensee Hours</a>
+</p>
+
+<p><b>Do you report course completion hours to the state?</b><BR>
+  Yes, when you pass the final exam the state will be notified of your completion the next day.
+</p>
+
+<p><b>Will I receive a course completion certificate?</b><BR>
+  Yes, upon successful completion of each course, a course certificate available to
+  print or screenshot. You must pass the course’s final exam in order to receive a certificate.
+</p>
+
+<p><b>How long are the Courses/Final Exam?</b><BR>
+  Online courses are required to have a word-count and final exam that match the hourly amount.  So a 5-hour course is approximately
+  36,000 words with a 30-question multiple choice Final Exam. A 10-hour course is about 72,000 words with a 60-question Final Exam.
+  Courses are between 6-12 chapters..
+</p>
+
+<p><b>Can I retake the Final Exam if I fail?</b><BR>
+  Yes, you get unlimited re-takes of the final exam until you score above a 70%.
+</p>
+
+<p><b>How quickly can I complete the coursework?</b><BR>
+  That depends on the student, and their experience.
+  The faster you are able to work through the material, the faster you can finish the course.
+</p>
+
+<p><b>Its 11:45pm on July, 31 and I just finished my courses and my hours are do tomorrow, August 1.  Will the hours be uploaded in time so I dont get penalized?</b><BR>
+  Yes, even if we do not upload the hours until the next day August 1, the course completion date of July 31 would be used and not the actual date.
+</p>
+
+<p><b>What forms of payment do you accept?</b><BR>
+  Florida Discount Continuing Education accepts all four major credit cards (Visa, MasterCard, American Express & Discover). You may also fax or mail us a check.
+  Money orders and cashier’s checks must be mailed.
+</p>
+
+<p><b>Am I able to start and stop the course/test?</b><BR>
+  Yes, the website will automatically save your course completion. You may then log out at any point and return to where you left off.
+</p>
+
+<p><b>What do I do if I’ve forgotten my Username & Password?</b><BR>
+  Goto -> Home -> Sign-In -> Forgot username or password
+</p>
+
+<p><b>Do you offer group discounts or corporate accounts?</b><BR>
+  Yes, call or email Russell at 786-873-7526 or russell@floridadiscountce.org
+</p>
+
+<p><b>Is there a phone number to call if I'm having technical trouble with the website</b><BR>
+  Call 786-873-7526
+</p>
+
+
+</ul>
+
+ </div>
+</body>
+</html>

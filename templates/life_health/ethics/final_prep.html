@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Ethics Final Prep </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+object{
+margin-top: 20px;
+margin-left: 40px;
+margin-right: 40px;
+}
+h1{
+  margin-top: -50px;
+}
+h3{
+  margin-bottom: 30px;
+}
+button{
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="jumbotron container-fluid text-center ">
+
+  <h1>Life/Health Agents 5-Hour Law & Ethics Final Exam</h1>
+<div class="">
+<h3>You need 70% correct to pass the Final Exam.</h3>
+<p>By clicking the ‘Continue To Test’ button you are certifying that you are the actual registered student
+for this course and that you will complete the exam independently without the assistance of another person.
+Violating these conditions will result in administrative sanction by the state governing your license
+and the loss of course credit.</p><BR>
+<p>Your progress has been saved up to this point</p>
+
+  <form action="{{ url_for('life_health_ethics_final_exam', name=name) }}" method="post">
+    <button id ="su" class="btn btn-primary btn-md ">Continue To Test</button>
+  </form>
+
+  <form action="{{ url_for('life_health_ethics_review', name=name) }}" method="post">
+    <button id ="su" class="btn btn-primary btn-md ">Review Material</button>
+  </form>
+
+</div>
+
+
+</form>
+
+ </div>
+</body>
+</html>

@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Ethics Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -60px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('pa_ethics_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('pa_ethics_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1.  Which department is primarily responsible for regulating adjusters and agents,
+  combating insurance fraud, and protecting consumers? <BR>
+  <input type="radio" name="1" value="maison"> Department of Federal Insurance<BR>
+  <input type="radio" name="1" value="correct"> Department of Financial Services<BR>
+  <input type="radio" name="1" value="quatre"> Federal Department of Finance<BR>
+  <input type="radio" name="1" value="poisson"> Department of Insurance<BR>
+</p>
+<P>2.  What is the Department of Financial Services responsible for?<BR>
+  <input type="radio" name="2" value="maison">  Regulating Florida’s banking<BR>
+  <input type="radio" name="2" value="quatre"> Regulating Florida’s securities<BR>
+  <input type="radio" name="2" value="corre"> Regulating Florida’s insurance<BR>
+  <input type="radio" name="2" value="correct"> All of the above<BR>
+</p>
+
+<P>3. ____________ occurs when a public adjuster knowingly makes any type of statement—in writing
+  or verbally—that is false or maliciously critical to any person and does so with the intent to harm that person.<BR>
+  <input type="radio" name="3" value="maison"> A false claim<BR>
+  <input type="radio" name="3" value="quatre"> Coercion<BR>
+    <input type="radio" name="3" value="correct"> Defamation<BR>
+  <input type="radio" name="3" value="soleil"> Intimidation<BR>
+</p>
+<P>4. Public adjusters records relating to claims and losses must be kept for how many years? <BR>
+  <input type="radio" name="4" value="maison"> 2<BR>
+  <input type="radio" name="4" value="quatre"> 4<BR>
+  <input type="radio" name="4" value="correct"> 3<BR>
+  <input type="radio" name="4" value="poisson"> 10<BR>
+</p>
+<P>5. What is not a responsibility of a public adjuster? <BR>
+  <input type="radio" name="5" value="maison"> Prepare, complete, or file an insurance claim.<BR>
+  <input type="radio" name="5" value="quatre"> Negotiate, or assist with, the negotiation or
+  settlement of a claim.<BR>
+  <input type="radio" name="5" value="xxx"> Advertise for employment as an adjuster of claims.<BR>
+  <input type="radio" name="5" value="correct"> Assist in reconstruction efforts.<BR>
+</p>
+<P>6. Which of following designations must a public adjuster applicant must be conferred with? <BR>
+  <input type="radio" name="6" value="maison"> Specified Public Adjuster (SPA)<BR>
+  <input type="radio" name="6" value="quatre"> Accredited Public Adjuster (APA)<BR>
+  <input type="radio" name="6" value="correct">  Accredited Claims Adjuster (ACA)<BR>
+  <input type="radio" name="6" value="poisson"> Public Adjuster Certification (PAC)<BR>
+</p>
+
+<P>7.  Which of the following is not a way a public adjusters license can be revoked? <BR>
+  <input type="radio" name="7" value="maison"> Making any material misstatement,
+  misrepresentation, or fraud during the process of obtaining a license or appointment.<BR>
+  <input type="radio" name="7" value="quatre"> Using a license or appointment to willfully circumvent the insurance code.<BR>
+  <input type="radio" name="7" value="correct"> Not having license on your person at all times.<BR>
+  <input type="radio" name="7" value="poisson"> Failing to maintain qualifications required for a license or appointment.<BR>
+</p>
+
+<P>8.  An insured or claimant may cancel a public adjuster’s contract to adjust
+  their claim without penalty or obligation within _____ business days after the
+  date the contract was executed. <BR>
+  <input type="radio" name="8" value="maison"> Seven<BR>
+  <input type="radio" name="8" value="quatre"> One<BR>
+  <input type="radio" name="8" value="correct"> Three<BR>
+  <input type="radio" name="8" value="poisson"> Ten<BR>
+</p>
+
+<P>9.  “Once an adjuster license or appointment is issued, it is valid for use by the adjuster to whom
+  it is issued. The adjuster now has the right to allow others to use their license or appointment to
+   transact insurance business.” This statement is…<BR>
+  <input type="radio" name="9" value="maison">  Sometimes true<BR>
+  <input type="radio" name="9" value="correct"> Never true<BR>
+  <input type="radio" name="9" value="soleil"> Always true<BR>
+  <input type="radio" name="9" value="poisson"> None of the above<BR>
+</p>
+<P>10.  What are ways the Department may punish a public adjuster for misconduct?<BR>
+  <input type="radio" name="10" value="ccc">  Fine up to $500<BR>
+  <input type="radio" name="10" value="coct"> Suspension of public adjuster's license<BR>
+  <input type="radio" name="10" value="wrong"> Refusing to renew a public adjuster's license<BR>
+  <input type="radio" name="10" value="correct"> All of the above<BR>
+</p>
+<P>11.  Which of the following does a continuing education requirement not apply to?<BR>
+  <input type="radio" name="11" value="correct">  Individuals who hold limited lines licenses for which no exam is required.<BR>
+  <input type="radio" name="11" value="coct"> Individuals over the age of 50.<BR>
+  <input type="radio" name="11" value="wrong"> Individuals who have taken at least 10 continuing education courses.<BR>
+  <input type="radio" name="11" value="wrong"> Individuals who have taken at least 15 continuing education courses.<BR>
+</p>
+<P>12.  “Licensees must report an action if it relates to the insurance business, selling securities,
+  or activity involving fraud, dishonesty, lack of trustworthiness, or breach of fiduciary duty.” This statement is…<BR>
+  <input type="radio" name="12" value="correct">  Always true<BR>
+  <input type="radio" name="12" value="coct"> Sometime true<BR>
+  <input type="radio" name="12" value="wrong"> Sometimes false<BR>
+  <input type="radio" name="12" value="wrong"> Always false<BR>
+</p>
+<P>13.  The existence of a Guaranty Association lessens the burden on policyholders
+  and claimants of insolvent insurers by doing which of the following?<BR>
+  <input type="radio" name="13" value="coct"> Standing behind decisions of public adjusters<BR>
+  <input type="radio" name="13" value="wrong"> Establishing claims<BR>
+  <input type="radio" name="13" value="correct">  Stepping in after liquidation to assume financial responsibility for most claims<BR>
+  <input type="radio" name="13" value="wrong"> All of the above<BR>
+</p>
+<P>14.  Which of the following is a power of the Guaranty Association?<BR>
+  <input type="radio" name="14" value="coct"> Adjust losses<BR>
+  <input type="radio" name="14" value="wrong"> Form new insurance associations<BR>
+  <input type="radio" name="14" value="correct"> Take such legal action as may be necessary to avoid payment of improper claims.<BR>
+  <input type="radio" name="14" value="wrong"> Suspend licensees<BR>
+</p>
+<P>15.  Which of the following specific rules regarding the types of behavior is
+  permissible when working in the state as an adjuster?<BR>
+  <input type="radio" name="15" value="coct"> Adjusters may refer claimants who need
+  repairs to a loss to an individual with which the adjuster has an undisclosed financial interest.<BR>
+  <input type="radio" name="15" value="correct">  Adjusters must report the facts
+  after making a complete investigation in a truthful and unbiased manner.<BR>
+  <input type="radio" name="15" value="wrong"> Adjusters must report their opinions after
+  making a complete investigation in a manner that will help insurers.<BR>
+  <input type="radio" name="15" value="wrong"> Adjusters may seek extra compensation in emergency events.<BR>
+</p>
+
+<P>16.  Which of the following is a public adjuster duty required by law?<BR>
+  <input type="radio" name="16" value="maison">  Act in the best interest of the insurer<BR>
+  <input type="radio" name="16" value="quatre"> Honestly and accurately represent the features
+  and benefits of applicable insurance policies<BR>
+  <input type="radio" name="16" value="corre"> Renegotiate the insurance policy<BR>
+  <input type="radio" name="16" value="correct"> Provide prompt and conscientious service<BR>
+</p>
+<P>17.   Public adjusters have additional duties if the Governor issues an executive
+  order declaring that a state of emergency exists in Florida. Law states that
+  Public Adjusters may require, demand, charge, or accept a fee, retainer,
+  compensation, commission, or other item of value before the insured or claimant
+  receives payment from the insurer on a claim.” The preceding statement is:<BR>
+    <input type="radio" name="17" value="maison">  Sometimes true<BR>
+    <input type="radio" name="17" value="quatre"> Always true<BR>
+    <input type="radio" name="17" value="correct"> Always false<BR>
+    <input type="radio" name="17" value="corr"> Sometimes false<BR>
+</p>
+
+<P>18.  What are the potential consequences of a public adjuster negotiating or effecting the settlement of an insurance claim on behalf
+  of an insured for money, commission or anything of value without being licensed as a public adjuster?<BR>
+  <input type="radio" name="18" value="correct"> Subject to arrest and may be charged with a third-degree felony.<BR>
+  <input type="radio" name="18" value="maison">  Chance of being arrested<BR>
+  <input type="radio" name="18" value="quatre"> No consequences<BR>
+  <input type="radio" name="18" value="corre"> Receive a warning<BR>
+</p>
+
+<P>19.  Which of the following is not one of the defining qualities of a public adjuster?<BR>
+  <input type="radio" name="19" value="maison"> Someone who prepares, completes or files an insurance claim form for an insured.<BR>
+  <input type="radio" name="19" value="quatre"> Someone who aids an insured negotiating for or effecting the settlement of a claim.<BR>
+  <input type="radio" name="19" value="corre"> Someone who advertises for employment as an adjuster of such claims.<BR>
+  <input type="radio" name="19" value="correct"> Someone who does all of the above but is also an attorney.<BR>
+</p>
+
+<P>20.  “Essentially, bad faith involves unfair dealing and deception—an adjuster’s
+  or insurer’s method of precluding a claimant from receiving all or some of the
+  benefits to which he or she is entitled under an insurance policy.” This statement is:<BR>
+  <input type="radio" name="20" value="maison">  Sometimes true<BR>
+  <input type="radio" name="20" value="quatre"> Never true<BR>
+  <input type="radio" name="20" value="correct"> Always true<BR>
+  <input type="radio" name="20" value="corr"> None of the above<BR>
+</p>
+
+<P>21.  Which of the following would ensure your license is in good standing?<BR>
+  <input type="radio" name="21" value="maison">  Your license is active<BR>
+  <input type="radio" name="21" value="quatre"> You have the required $50,000 surety bond<BR>
+  <input type="radio" name="21" value="corre"> All contact information is up to date<BR>
+  <input type="radio" name="21" value="correct"> All of the above<BR>
+</p>
+<P>22.  Public Adjuster may participate, directly or indirectly in the reconstruction, repair,
+  or restoration of damaged property that is the subject of a claim adjusted by the license.<BR>
+  <input type="radio" name="22" value="maison"> Sometimes true<BR>
+  <input type="radio" name="22" value="quatre"> Always true<BR>
+  <input type="radio" name="22" value="cot"> Sometimes false<BR>
+  <input type="radio" name="22" value="correct"> None of the above<BR>
+</p>
+<P>23.  To obtain a public adjuster’s license in Florida, an applicant must be all of the following EXCEPT:<BR>
+  <input type="radio" name="23" value="maison">  At least 18 years old<BR>
+  <input type="radio" name="23" value="correct"> Be a licensed insurance agent<BR>
+  <input type="radio" name="23" value="quatre"> A licensed independent adjuster or company adjuster for the past 12 months<BR>
+  <input type="radio" name="23" value="cort"> A U.S. citizen or legal immigrant<BR>
+</p>
+<P>24.  The existence of a(n) ________ lessens the burden on policyholders and
+  claimants of insolvent insurers by stepping in after liquidation to assume financial responsibility for most claims.<BR>
+  <input type="radio" name="24" value="maison">  Annual report<BR>
+  <input type="radio" name="24" value="quatre"> Insolvency board<BR>
+  <input type="radio" name="24" value="corre"> Membership council<BR>
+  <input type="radio" name="24" value="correct"> Guaranty association<BR>
+</p>
+<P>25.  Which of these is not a general prohibited practice when adjusting losses and claims on residential policies?<BR>
+  <input type="radio" name="25" value="maison">  Charge an additional fee for an original claim<BR>
+  <input type="radio" name="25" value="quatre"> Giving legal advice<BR>
+  <input type="radio" name="25" value="corre">  Solicit an insured at 10 p.m. on Sunday<BR>
+  <input type="radio" name="25" value="correct"> Turn down referrals from a non-licensed adjuster<BR>
+</p>
+<P>26. Continuing education requirements apply to all the following lines of insurance EXCEPT:<BR>
+  <input type="radio" name="26" value="correct"> Crop and Hail limited lines<BR>
+  <input type="radio" name="26" value="quatre"> Health and Automobile<BR>
+  <input type="radio" name="26" value="soleil"> Life Insurance and Annuities<BR>
+  <input type="radio" name="26" value="poisson">  Title and Property<BR>
+</p>
+<P>27. Which is not one of the topics covered by approved continuing education courses?<BR>
+  <input type="radio" name="27" value="quatre"> Disciplinary trends<BR>
+  <input type="radio" name="27" value="soleil"> Law updates<BR>
+  <input type="radio" name="27" value="correct"> Website development<BR>
+  <input type="radio" name="27" value="poisson">  Ethics<BR>
+</p>
+<P>28. Avoiding __________ is the foundation of ethical conduct.<BR>
+  <input type="radio" name="28" value="quatre"> Unnecessary communication<BR>
+  <input type="radio" name="28" value="correct"> Conflicts of interest<BR>
+  <input type="radio" name="28" value="soleil"> Excess profits<BR>
+  <input type="radio" name="28" value="poisson">  Difficult claims<BR>
+</p>
+<P>29. Who may a public adjuster represent?<BR>
+  <input type="radio" name="29" value="quatre"> A client from a previous job as an independent agent<BR>
+  <input type="radio" name="29" value="soleil"> A general lines agency<BR>
+  <input type="radio" name="29" value="poisson">  An insurance company<BR>
+  <input type="radio" name="29" value="correct"> The public<BR>
+</p>
+<P>30. Where can adjusters verify their continuing education status?<BR>
+  <input type="radio" name="30" value="quatre"> Office of Insurance Regulation<BR>
+  <input type="radio" name="30" value="soleil"> Florida Insurance Guaranty Association<BR>
+  <input type="radio" name="30" value="correct">  MyProfile<BR>
+  <input type="radio" name="30" value="poisson">  eAppoint<BR>
+</p>
+</div>
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+<!-- <input type="radio" name="21" value="maison">   Adjusters may handle investigations, or handle loss and claim adjustments and settlements in any manner<BR> -->
+<!-- <input type="radio" name="21" value="quatre"> Adjusters must report the facts after making a complete investigation in a truthful and unbiased manner.<BR> -->
+<!-- <input type="radio" name="21" value="correct"> Adjusters may refer claimants who need repairs or other services related to a loss to an individual or organization with which the adjuster has an undisclosed financial interest or that might reasonably be expected to compensate the adjuster for the referral.<BR> -->
+<!-- <input type="radio" name="21" value="corre"> All of thee Above<BR> -->

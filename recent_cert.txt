@@ -1,0 +1,216 @@
+
+pass_course ('86/6/28/2020/pa-ethics-5-1112515', 'Cynthia', 'Gneiser', 'W44525')W445275
+pass_course ('100/6/28/2020/pa-ethics-5-1112515', 'Jeff', 'Gneiser', 'W44527')W445274
+
+pass_course ('93/6/28/2020/ia-fu-12-1120510', 'Jason ', 'Spath ', 'W505072')
+pass_course ('80/6/28/2020/lh-ltc-10-1123660', 'Amy', 'Simmons', 'W188686')
+pass_course ('98/6/28/2020/lh-medicare-9-1124489', 'Camille ', 'Torres', 'W470961')
+_____________________________________________________________________________________________________
+pass_course ('95/6/29/2020/pa-fh-8-1113898', 'Wondirad ', 'Hailemariam', 'W081873')
+pass_course ('100/6/29/2020/pa-pu-11-1115583', 'Wondirad ', 'Hailemariam', 'W081873')
+
+pass_course ('76/6/29/2020/ia-le-5-1117773', 'Mark ', 'Ladewig', 'W161513')
+pass_course ('86/6/29/2020/ia-le-5-1117773', 'Andy', 'Lazar', 'w099248')
+
+pass_course ('70/6/29/2020/ia-hp-7-1119751', 'Mark ', 'Ladewig', 'W161513')
+
+pass_course ('100/6/29/2020/ia-fu-12-1120510', 'Mark ', 'Ladewig', 'W161513')
+pass_course ('84/6/29/2020/ia-fu-12-1120510', 'Marvin', 'Dorisca', 'W457678')
+
+pass_course ('73/6/29/2020/lh-le-5-1122094', 'Timothy', 'Barto', 'P131400')
+pass_course ('80/6/29/2020/lh-le-5-1122094', 'WALTER', 'CARTER', 'W410631')
+pass_course ('92/6/29/2020/lh-le-5-1122094', 'Sarah ', 'Caviggia', 'W176996')
+pass_course ('90/6/29/2020/lh-le-5-1122094', 'Margaret', 'Gachelin', 'W085822')
+pass_course ('100/6/29/2020/lh-le-5-1122094', 'Yanilse', 'Hechavarria ', 'W438642')
+
+pass_course ('83/6/29/2020/lh-ltc-10-1123660', 'Rachel', 'Wick', 'W436662')
+pass_course ('100/6/29/2020/lh-ltc-10-1123660', 'Sarah ', 'Caviggia', 'W176996')
+pass_course ('85/6/29/2020/lh-ltc-10-1123660', 'Eduardo', 'Villalobos', 'W479233')
+
+pass_course ('86/6/29/2020/lh-medicare-9-1124489', 'Rachel', 'Wick', 'W436662')
+pass_course ('98/6/29/2020/lh-medicare-9-1124489', 'Sarah ', 'Caviggia', 'W176996')
+
+__________________________________________________________________________________________________
+pass_course ('100/6/30/2020/ia-le-5-1117773', 'James', 'Castonguay', 'W501044')
+pass_course ('93/6/30/2020/ia-le-5-1117773', 'Jenelle', 'Scrivens ', 'W493440')
+
+pass_course ('95/6/30/2020/ia-hp-7-1119751', 'James', 'Castonguay', 'W501044')
+pass_course ('100/6/30/2020/ia-hp-7-1119751', 'Jenelle', 'Scrivens ', 'W493440')
+
+pass_course ('73/6/30/2020/lh-le-5-1122094', 'Philip ', 'Fabella', 'A080133')
+pass_course ('70/6/30/2020/lh-le-5-1122094', 'Grace', 'Fiornascente', 'P033151')
+
+pass_course ('91/6/30/2020/lh-ltc-10-1123660', 'Juan', 'Morillo', 'W437400')
+pass_course ('75/6/30/2020/lh-ltc-10-1123660', 'WALTER', 'CARTER', 'W410631')
+pass_course ('70/6/30/2020/lh-ltc-10-1123660', 'Grace', 'Fiornascente', 'P033151')
+pass_course ('100/6/30/2020/lh-ltc-10-1123660', 'Yanilse', 'Hechavarria ', 'W438642')
+pass_course ('76/6/30/2020/lh-ltc-10-1123660', 'Michelle', 'Senior', 'W534901')
+
+pass_course ('82/6/30/2020/lh-medicare-9-1124489', 'Juan', 'Morillo', 'W437400')
+pass_course ('70/6/30/2020/lh-medicare-9-1124489', 'Randell', 'Weinberg', 'W471589')
+pass_course ('82/6/30/2020/lh-medicare-9-1124489', 'WALTER', 'CARTER', 'W410631')
+pass_course ('70/6/30/2020/lh-ltc-10-1123660', 'Grace', 'Fiornascente', 'P033151')
+pass_course ('78/6/30/2020/lh-medicare-9-1124489', 'Eduardo', 'Villalobos', 'W479233')
+pass_course ('82/6/30/2020/lh-medicare-9-1124489', 'Michelle', 'Senior', 'W534901')
+pass_course ('96/6/30/2020/lh-medicare-9-1124489', 'Edward', 'Paluga', 'W409089')
+
+____________________________________________________________________________________________________
+
+
+
+pass_course ('91/6/30/2020/lh-ltc-10-1123660', 'Juan', 'Morillo', 'W437400')
+pass_course ('75/6/30/2020/lh-ltc-10-1123660', 'WALTER', 'CARTER', 'W410631')
+pass_course ('70/6/30/2020/lh-ltc-10-1123660', 'Grace', 'Fiornascente', 'P033151')
+pass_course ('100/6/30/2020/lh-ltc-10-1123660', 'Yanilse', 'Hechavarria ', 'W438642')
+pass_course ('76/6/30/2020/lh-ltc-10-1123660', 'Michelle', 'Senior', 'W534901')
+
+pass_course ('82/6/30/2020/lh-medicare-9-1124489', 'Juan', 'Morillo', 'W437400')
+pass_course ('70/6/30/2020/lh-medicare-9-1124489', 'Randell', 'Weinberg', 'W471589')
+pass_course ('82/6/30/2020/lh-medicare-9-1124489', 'WALTER', 'CARTER', 'W410631')
+pass_course ('78/6/30/2020/lh-medicare-9-1124489', 'Eduardo', 'Villalobos', 'W479233')
+pass_course ('78/6/30/2020/lh-medicare-9-1124489', 'Grace', 'Fiornascente', 'P033151')
+
+pass_course ('82/6/30/2020/lh-medicare-9-1124489', 'Michelle', 'Senior', 'W534901')
+pass_course ('96/6/30/2020/lh-medicare-9-1124489', 'Edward', 'Paluga', 'W409089')
+
+_______________________________________________________________________________________
+pass_course ('95/6/30/2020/ia-fu-12-1120510', 'James', 'Castonguay', 'W501044')
+pass_course ('96/6/30/2020/ia-fu-12-1120510', 'Jenelle', 'Scrivens ', 'W493440')
+pass_course ('94/6/30/2020/lh-medicare-9-1124489', 'Yanilse', 'Hechavarria ', 'W438642')
+
+-----------------------------------------------------------------------------------------
+
+pass_course ('83/7/2/2020/ia-le-5-1117773', 'Maikel', 'Soto', 'W456929')
+pass_course ('76/7/2/2020/ia-le-5-1117773', 'James', 'Drayton', 'W142078')
+
+pass_course ('92/7/3/2020/ia-hp-7-1119751', 'James', 'Drayton', 'W142078')
+
+pass_course ('100/7/3/2020/ia-fu-12-1120510', 'James', 'Drayton', 'W142078')
+
+
+pass_course ('70/7/1/2020/h-le-5-1125614', 'ALINA', 'BRYAN', 'A033624')
+
+
+pass_course ('70/7/1/2020/lh-le-5-1122094', 'harry', 'ehrlich', 'DO51993')
+pass_course ('100/7/1/2020/lh-le-5-1122094', 'Ernest ', 'Richardson ', 'A219659')
+pass_course ('70/7/1/2020/lh-le-5-1122094', 'Grace', 'Fiornascente', 'P033151')
+
+pass_course ('93/7/1/2020/lh-ltc-10-1123660', 'Ernest ', 'Richardson ', 'A219659')
+pass_course ('70/7/1/2020/lh-ltc-10-1123660', 'Grace', 'Fiornascente', 'P033151')
+
+pass_course ('98/7/1/2020/lh-medicare-9-1124489', 'Ernest ', 'Richardson ', 'A219659')
+pass_course ('78/7/1/2020/lh-medicare-9-1124489', 'Grace', 'Fiornascente', 'P033151')
+
+pass_course ('76/7/3/2020/lhv-i-claims-5-1127419', 'Jeffrey', 'Tart', 'A260949')
+__________________________________________________________________________________________________
+pass_course ('70/7/5/2020/ia-le-5-1117773', 'PAULINE', 'REARDON', 'W497721')
+pass_course ('76/7/6/2020/ia-le-5-1117773', 'Jennifer', 'Powers', 'A210762')
+
+pass_course ('92/7/6/2020/ia-hp-7-1119751', 'Jennifer', 'Powers', 'A210762')
+pass_course ('77/7/6/2020/ia-hp-7-1119751', 'cody', 'hunt', 'w497442')
+
+pass_course ('81/7/4/2020/ia-fu-12-1120510', 'michael', 'astalos', 'E141269')
+pass_course ('90/7/6/2020/ia-fu-12-1120510', 'Jennifer', 'Powers', 'A210762')
+
+pass_course ('90/7/6/2020/lhv-le-5-1122094', 'Daniel', 'Dragan', 'P205652')
+pass_course ('73/7/6/2020/lhv-le-5-1122094', 'Sunni', 'Burke', 'W527190')
+pass_course ('100/7/6/2020/lhv-le-5-1122094', 'Marie', 'Saint Preux', 'A294956')
+
+pass_course ('96/7/6/2020/lhv-ltc-10-1123660', 'Daniel', 'Dragan', 'P205652')
+pass_course ('90/7/5/2020/lh-ltc-10-1123660', 'Timothy', 'Barto', 'P131400')
+pass_course ('100/7/6/2020/lh-ltc-10-1123660', 'Marie', 'Saint Preux', 'A294956')
+
+pass_course ('96/7/6/2020/lhv-medicare-9-1124489', 'Marie', 'Saint Preux', 'A294956')
+
+pass_course ('93/7/6/2020/lhv-i-claims-5-1127419', 'Daniel', 'Dragan', 'P205652')
+
+_____________________________________________________________________________________________
+pass_course ('76/7/7/2020/pa-ethics-5-1112515', 'Cameron', 'Banhan', 'W469230')
+
+pass_course ('80/7/8/2020/pa-fh-8-1113898', 'Cameron', 'Banhan', 'W469230')
+
+pass_course ('80/7/8/2020/ia-le-5-1117773', 'LaTanya', 'Joseph', 'E098674')
+pass_course ('100/7/7/2020/ia-le-5-1117773', 'Robert', 'June ', 'W370638')
+pass_course ('90/7/8/2020/ia-le-5-1117773', 'Gerald', 'Alvarez', 'P106632')
+
+pass_course ('100/7/8/2020/ia-hp-7-1119751', 'Robert', 'June ', 'W370638')
+
+pass_course ('100/7/7/2020/ia-fu-12-1120510', 'Sam', 'Hanna', ' W637515')
+pass_course ('92/7/8/2020/ia-fu-12-1120510', 'Robert', 'June ', 'W370638')
+
+pass_course ('93/7/8/2020/lhv-le-5-1122094', 'Emilio', 'Lopez', 'P142216')
+pass_course ('83/7/7/2020/lhv-le-5-1122094', 'Jorge', 'Novoa', 'A193733')
+pass_course ('96/7/8/2020/lhv-le-5-1122094', 'Ernesto', 'Cuesta', 'W521307')
+pass_course ('76/7/8/2020/lhv-le-5-1122094', 'Susan', 'Messina', 'P026881')
+
+pass_course ('75/7/7/2020/lhv-ltc-10-1123660', 'Jorge', 'Novoa', 'A193733')
+pass_course ('93/7/8/2020/lhv-ltc-10-1123660', 'Ernesto', 'Cuesta', 'W521307')
+pass_course ('73/7/8/2020/lhv-ltc-10-1123660', 'Susan', 'Messina', 'P026881')
+
+pass_course ('100/7/8/2020/lhv-medicare-9-1124489', 'Ernesto', 'Cuesta', 'W521307')
+pass_course ('92/7/8/2020/lhv-medicare-9-1124489', 'Farah', 'Luccin', 'W513625')
+pass_course ('78/7/8/2020/lhv-medicare-9-1124489', 'Susan', 'Messina', 'P026881')
+pass_course ('83/7/7/2020/lhv-i-claims-5-1127419', 'Jorge', 'Novoa', 'A193733')
+_________________________________________________________________________________________
+pass_course ('86/7/11/2020/pa-ethics-5-1112515', 'Seth ', 'Adams', 'W509583 ')
+pass_course ('76/7/9/2020/pa-ethics-5-1112515', 'Rafael', 'Lugo', 'W550772')
+
+pass_course ('84/7/9/2020/pa-fh-8-1113898', 'Rafael', 'Lugo', 'W550772')
+
+pass_course ('90/7/9/2020/pa-pu-11-1115583', 'rodolfo j', 'urizar', 'W579003')
+pass_course ('90/7/10/2020/pa-pu-11-1115583', 'Rafael', 'Lugo', 'W550772')
+
+pass_course ('83/7/11/2020/ia-le-5-1117773', 'Caesar', 'Biancardi', 'E136041')
+pass_course ('93/7/10/2020/ia-le-5-1117773', 'William  ', 'Warrick', 'w298122')
+
+pass_course ('95/7/9/2020/ia-hp-7-1119751', 'Maikel', 'Soto', 'W456929')
+pass_course ('97/7/10/2020/ia-hp-7-1119751', 'William  ', 'Warrick', 'w298122')
+
+pass_course ('93/7/10/2020/ia-fu-12-1120510', 'Dionne', 'Merritt', 'W481683')
+pass_course ('96/7/10/2020/ia-fu-12-1120510', 'William  ', 'Warrick', 'w298122')
+
+
+pass_course ('80/7/9/2020/lhv-le-5-1122094', 'Angy', 'Granja', 'W370170')
+
+pass_course ('112336-1123660-95-Isurebroker-03-18-2021/7/11/2020/10-LHV-LTC', 'Emilio', 'Lopez', 'P142216')
+pass_course ('112336-1123660-80-Ocalasun33-03-18-2021/7/11/2020/10-LHV-LTC', 'Sunni', 'Burke', 'W527190')
+
+pass_course ('112648-1124489-80-Ocalasun33-04-17-2021/7/11/2020/9-LHV-Medicare', 'Sunni', 'Burke', 'W527190')
+
+__________________________________________________________________________________________________________________________
+
+pass_course ('109996-1112515-5-PublicAdj_Ethics-92-09-08-2020/7/12/2020', 'Lori', 'Bradshaw', 'P028697')
+
+
+pass_course ('110817-1115583-11-PublicAdj_Auto-92-11-07-2020/7/12/2020', 'Cameron', 'Banhan', 'W469230')
+
+pass_course ('83/7/11/2020/ia-le-5-1117773', 'Caesar', 'Biancardi', 'E136041')
+pass_course ('111049-1117773-5-AllLines_Ethics-92-12-05-2020/7/12/2020', 'russ', 'mckee', 'W504061')
+pass_course ('111049-1117773-5-AllLines_Ethics-100-12-05-2020/7/13/2020', 'CATHERINE', 'BANGERTER', 'W370248')
+pass_course ('111049-1117773-5-AllLines_Ethics-86-12-05-2020/7/13/2020', 'Michael', 'Shock', 'W051908')
+
+pass_course ('111341-1119751-7-AllLines_Homeowners-92-01-08-2021/7/12/2020', 'Dionne', 'Merritt', 'W481683')
+pass_course ('111341-1119751-7-AllLines_Homeowners-92-01-08-2021/7/13/2020', 'Sharron', 'Burton', 'w473469')
+pass_course ('111341-1119751-7-AllLines_Homeowners-100-01-08-2021/7/13/2020', 'CATHERINE', 'BANGERTER', 'W370248')
+pass_course ('85/7/12/2020/ia-hp-7-1119751', 'PAULINE', 'REARDON', 'W497721')
+
+pass_course ('111509-1120510-12-AllLines_Flood-92-01-22-2021/7/13/2020', 'Sharard', 'Tuff', 'W458145')
+pass_course ('111509-1120510-12-AllLines_Flood-100-01-22-2021/7/13/2020', 'cody', 'hunt', 'w497442')
+pass_course ('111509-1120510-12-AllLines_Flood-92-01-22-2021/7/13/2020', 'Sharron', 'Burton', 'w473469')
+pass_course ('111509-1120510-12-AllLines_Flood-87-01-22-2021/7/13/2020', 'PAULINE', 'REARDON', 'W497721')
+
+pass_course ('100/7/12/2020/ia-nfip-3-1126580', 'Caesar', 'Biancardi', 'E136041')
+
+pass_course ('112007-1122094-76-ninaboch1-02-21-2021/7/12/2020/5-LHV-Ethics', 'Nina', 'Thurston', 'W004188')
+pass_course ('112007-1122094-100-preciousmc-02-21-2021/7/12/2020/5-LHV-Ethics', 'Precious', 'Totanes-McIntosh', 'W523643')
+pass_course ('112007-1122094-5-LHV_Ethics-90-02-21-2021/7/13/2020', 'Jerry', 'Furst', 'E112716')
+
+
+
+pass_course ('112336-1123660-76-Angylove23-03-18-2021/7/12/2020/10-LHV-LTC', 'Angy', 'Granja', 'W370170')
+pass_course ('112336-1123660-96-preciousmc-03-18-2021/7/12/2020/10-LHV-LTC', 'Precious', 'Totanes-McIntosh', 'W523643')
+
+
+pass_course ('112648-1124489-90-preciousmc-04-17-2021/7/12/2020/9-LHV-Medicare', 'Precious', 'Totanes-McIntosh', 'W523643')
+
+pass_course ('113621-1127685-5-LHV_InsClaims-93-06-26-2021/7/13/2020', 'Jerry', 'Furst', 'E112716')

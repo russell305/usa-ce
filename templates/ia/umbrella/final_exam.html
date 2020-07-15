@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Homeowners Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -60px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('ia_umbrella_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('ia_umbrella_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+
+
+
+<P>1.  What would a Personal Umbrella Liability Coverage not be used for?<BR>
+  <input type="radio" name="1" value="maison">  A lawsuit <BR>
+  <input type="radio" name="1" value="quatre"> A judgment<BR>
+  <input type="radio" name="1" value="correct"> A fender bender <BR>
+  <input type="radio" name="1" value="corr"> A catastrophic claim<BR>
+</p>
+
+<P>2.  Generally, an umbrella policy pays all of the covered loss that_____ the limits of the base or underlying policy. <BR>
+  <input type="radio" name="2" value="">  Excludes <BR>
+  <input type="radio" name="2" value="coct"> Understates<BR>
+  <input type="radio" name="2" value="wrong"> Averages<BR>
+  <input type="radio" name="2" value="correct"> Exceeds<BR>
+</p>
+
+<P>3.   What is it called to make the best possible arrangements ahead of time so that one will not be seriously financially affected when a loss occurs?<BR>
+  <input type="radio" name="3" value="correct">  Risk management <BR>
+  <input type="radio" name="3" value="coct"> Collision protection<BR>
+  <input type="radio" name="3" value="wrong"> Liability management<BR>
+  <input type="radio" name="3" value="wrong"> Indemnity management<BR>
+</p>
+
+<P>4.  Which is not a step in the risk management process?<BR>
+  <input type="radio" name="4" value="coct"> Selecting the most economical way of handling the risk<BR>
+  <input type="radio" name="4" value="wrong"> Formulating a risk management plan<BR>
+  <input type="radio" name="4" value="correct">  Estimating appraisal values<BR>
+  <input type="radio" name="4" value="wrong"> Revising and monitoring the risk management plan<BR>
+</p>
+
+<P>5.  Insurance that provides protection against losses that could financially harm an individual but that would not completely destroy his or her savings is:<BR>
+  <input type="radio" name="5" value="correct"> Desirable insurance <BR>
+  <input type="radio" name="5" value="wrong"> Primary insurance<BR>
+  <input type="radio" name="5" value=""> Liability insurance<BR>
+  <input type="radio" name="5" value="wrong"> Catastrophic insurance<BR>
+</p>
+
+<P>6. The personal liability provided under the ISO homeowners’ policy specifically which these two types of liability?<BR>
+  <input type="radio" name="6" value="coct"> Dwelling & Auto<BR>
+  <input type="radio" name="6" value="correct">  Body & Property<BR>
+  <input type="radio" name="6" value="wrong"> Flood & Body<BR>
+  <input type="radio" name="6" value="wrong"> Dwelling & Property<BR>
+</p>
+
+<P>7.  How much is the personal umbrella liability coverage usually for?<BR>
+  <input type="radio" name="7" value="maison">  Less than 1 million<BR>
+  <input type="radio" name="7" value="quatre"> $10,000 - $100,000 <BR>
+  <input type="radio" name="7" value="corre"> Less than $10,000<BR>
+  <input type="radio" name="7" value="correct"> 1 million and up<BR>
+</p>
+
+<P>8.  In order to be enforceable, contracts must be made for some _____<BR>
+  <input type="radio" name="8" value="maison">  Two parties<BR>
+  <input type="radio" name="8" value="quatre"> Monetary exchange<BR>
+  <input type="radio" name="8" value="correct"> Legal purpose<BR>
+  <input type="radio" name="8" value="corr"> Special purpose<BR>
+</p>
+
+<P>9. What are the requirements of a legal contract?<BR>
+  <input type="radio" name="9" value="corre"> Consideration <BR>
+  <input type="radio" name="9" value="maison">  Offer and acceptance <BR>
+  <input type="radio" name="9" value="quatre"> Competent parties<BR>
+  <input type="radio" name="9" value="correct"> All of the above<BR>
+</p>
+
+<P>10.  In most umbrella policies, the term personal liability refers to all of the following except:<BR>
+  <input type="radio" name="10" value="maison"> False Imprisonment<BR>
+  <input type="radio" name="10" value="quatre"> Battery<BR>
+  <input type="radio" name="10" value="corre"> Bodily injury<BR>
+  <input type="radio" name="10" value="correct"> Vandalism  <BR>
+</p>
+
+
+
+<P>11.  In a Unilateral contract, an act is exchanged for a(n):<BR>
+  <input type="radio" name="11" value="maison">  Re-action<BR>
+  <input type="radio" name="11" value="quatre"> Action<BR>
+  <input type="radio" name="11" value="corre"> Avoidance<BR>
+  <input type="radio" name="11" value="correct"> Promise <BR>
+</p>
+
+<P>12. What kind of contract is an insurance contract?<BR>
+  <input type="radio" name="12" value="correct">  Unilateral contract<BR>
+  <input type="radio" name="12" value=""> Conditional contract <BR>
+  <input type="radio" name="12" value="quatre"> Collision contract<BR>
+  <input type="radio" name="12" value="corre"> Aleatory contract<BR>
+
+</p>
+
+<P>13. Most property and liability insurance is written on what type of basis? <BR>
+  <input type="radio" name="13" value=""> Liability basis<BR>
+  <input type="radio" name="13" value="maison"> Subrogation basis<BR>
+  <input type="radio" name="13" value="correct"> Indemnity basis<BR>
+  <input type="radio" name="13" value="cot"> Warranty basis<BR>
+
+</p>
+
+<P>14.  Adding additional zeroes to the amount of coverage applied for is a prohibited activity called what?<BR>
+  <input type="radio" name="14" value="maison">  Misrepresentation<BR>
+  <input type="radio" name="14" value="correct"> Altering applications<BR>
+  <input type="radio" name="14" value="corre"> Premium theft<BR>
+  <input type="radio" name="14" value=""> Unlicensed sales<BR>
+</p>
+
+<P>15.  Paying someone to make a false testimonial in an insurance ad is an example of: <BR>
+  <input type="radio" name="15" value="maison">  Discrimination<BR>
+  <input type="radio" name="15" value="quatre"> Illegal rebates<BR>
+  <input type="radio" name="15" value="corre">  Untruthful Policy Replacements<BR>
+  <input type="radio" name="15" value="correct"> Untruths in Advertising<BR>
+</p>
+
+<P>16. Which Act has provisions that are meant to protect insureds and claimants from claims settlements that are deceptive, misleading or unfair?<BR>
+  <input type="radio" name="16" value="correct"> The Unfair Claims Settlement Practices Act <BR>
+  <input type="radio" name="16" value="quatre"> The Fair Insurance Act<BR>
+  <input type="radio" name="16" value="soleil"> The Ethical Industry Act<BR>
+  <input type="radio" name="16" value="poisson">  The Insurer's Fairness Act<BR>
+</p>
+
+<P>17. For an underwriter, what is the most reliable data is that received from objective outside sources?<BR>
+  <input type="radio" name="17" value="quatre"> Subjective information<BR>
+  <input type="radio" name="17" value="correct"> Objective information <BR>
+  <input type="radio" name="17" value=""> Subrogation information<BR>
+  <input type="radio" name="17" value="poisson">  Aleatory information<BR>
+</p>
+
+<P>18. Statistics demonstrate that, as a group, drivers having accidents during one time period are substantially more likely to have accidents:<BR>
+  <input type="radio" name="18" value="quatre"> In a static period<BR>
+  <input type="radio" name="18" value="correct"> In a future period<BR>
+  <input type="radio" name="18" value=""> In a fluctuating period<BR>
+  <input type="radio" name="18" value="poisson">  In a past period<BR>
+</p>
+
+<P>19. Underwriters tend to divide traffic violations into the following groups, which is not one of them?<BR>
+  <input type="radio" name="19" value="quatre"> Major<BR>
+  <input type="radio" name="19" value="correct"> Equipment Violations<BR>
+  <input type="radio" name="19" value=""> Minor<BR>
+  <input type="radio" name="19" value="poisson">  Other Moving Violations<BR>
+</p>
+
+<P>20. Which is not a common feature of an umbrella policy?<BR>
+  <input type="radio" name="20" value="correct"> The umbrella policy pays before the limits of the underlying policy are exhausted<BR>
+  <input type="radio" name="20" value="soleil"> A self-insured retention must be met with certain losses covered by the umbrella policy but not covered by an underlying insurance<BR>
+  <input type="radio" name="20" value="corect">  The umbrella policy provides excess coverage over basic underlying policies, such as personal auto, and homeowners’ insurance<BR>
+  <input type="radio" name="20" value="poisson">  Coverage is broad and includes coverage for some losses not covered by underlying contracts<BR>
+</p>
+
+<P>21.  Typically, legal defense costs in addition to the policy limits are paid with the personal umbrella policy.  Defense costs include all these but:<BR>
+  <input type="radio" name="21" value="maison">  Payment of attorney’s fees<BR>
+  <input type="radio" name="21" value="quatre"> Premiums on appeal bonds<BR>
+  <input type="radio" name="21" value="corre"> Court costs<BR>
+  <input type="radio" name="21" value="correct"> Commissary <BR>
+</p>
+
+<P>22. All personal umbrella policies have this exclusion:<BR>
+  <input type="radio" name="22" value="correct">  Nuclear<BR>
+  <input type="radio" name="22" value="corect"> Electric<BR>
+  <input type="radio" name="22" value="quatre"> Solar<BR>
+  <input type="radio" name="22" value="corre"> Wind<BR>
+</p>
+
+<P>23. Which is a processes of risk management? <BR>
+  <input type="radio" name="23" value="corrct"> Determining what exposures to loss exist<BR>
+  <input type="radio" name="23" value="maison"> Determining the seriousness of exposures<BR>
+  <input type="radio" name="23" value="quatre"> Developing a way of minimizing the effect of the loss exposure<BR>
+  <input type="radio" name="23" value="correct"> All of the above <BR>
+
+</p>
+
+<P>24.  Moving the risk of an uncertainty of a loss from an individual to an insurer is known as?<BR>
+  <input type="radio" name="24" value="correct">  Transferring the risk<BR>
+  <input type="radio" name="24" value="quatre"> Insurable Interest<BR>
+  <input type="radio" name="24" value="corre"> Perils and Hazards<BR>
+  <input type="radio" name="24" value="corect"> Avoidance<BR>
+</p>
+
+<P>25. The unethical practice of inducing a client to replace an existing policy for a new one, even though the additional change is not to the benefit of the client, is called?<BR>
+  <input type="radio" name="25" value="maison">  Commission<BR>
+  <input type="radio" name="25" value="correct"> Churning <BR>
+  <input type="radio" name="25" value="corre">  Doctrine of Reasonable Expectations<BR>
+  <input type="radio" name="25" value="corret"> Errors and Omissions Coverage<BR>
+</p>
+
+
+<P>26. Recent NFIP risk-modeling efforts include Army Corps of Engineers flood-damage calculation metrics known by the acronyms PELV and DELV. These abbreviations stand for:<BR>
+  <input type="radio" name="26" value="maison">  "Predictive elevation value" and "deductive elevation value"<BR>
+  <input type="radio" name="26" value="quatre"> "Passive enforcement load vector" and "definitive enforcement load vector"<BR>
+  <input type="radio" name="26" value="corre"> "Precise elevation value" and "designated elevation value"<BR>
+  <input type="radio" name="26" value="correct"> "Probability of elevation" and "damage by elevation”<BR>
+</p>
+
+<P>27.  What would NFIP need to do to create a Catastrophic Loss Fund?<BR>
+  <input type="radio" name="27" value="maison">  Charge lower rates<BR>
+  <input type="radio" name="27" value="correct"> Charge much higher rates<BR>
+  <input type="radio" name="27" value="corre">  Wait for a catastrophe to hit<BR>
+  <input type="radio" name="27" value=""> Wait for a presidential declaration<BR>
+</p>
+
+<P>28. Because of the NFIP's actuarial problems, the Government Accountability Office (GAO) has placed the program on its high-risk list which means that:<BR>
+  <input type="radio" name="28" value="correct">  The NFIP is likely to cost taxpayers significantly more than its current financial reports indicate<BR>
+  <input type="radio" name="28" value="quatre"> The NFIP is subject to random financial audits from investigators with the Treasury Department's Office of the Inspector General (OIG) or the FBI<BR>
+  <input type="radio" name="28" value="corre"> The NFIP's annual budget must undergo additional review by the White House Office of Management and Budget (OMB)<BR>
+  <input type="radio" name="28" value=""> The NFIP cannot borrow short-term operational funds in the same manner that other government administered insurance programs can<BR>
+</p>
+
+<P>29. The NFIP is on which Government Accounting Offices's list?<BR>
+    <input type="radio" name="29" value="maison">  Top accounting programs<BR>
+    <input type="radio" name="29" value="quatre"> Most expensive programs<BR>
+    <input type="radio" name="29" value="correct"> High risk programs<BR>
+    <input type="radio" name="29" value="corr"> Most economical programs<BR>
+</p>
+
+<P>30.  What is the main purpose of the Floodsmart Program?<BR>
+  <input type="radio" name="30" value="correct"> Encourage the purchase of flood insurance<BR>
+  <input type="radio" name="30" value="maison">  Increase flood auditing<BR>
+  <input type="radio" name="30" value="quatre"> Better vendor relations<BR>
+  <input type="radio" name="30" value="corre"> Decrease government payouts<BR>
+</p>
+
+<P>31. What is a side issue that comes up in NFIP coverage? <BR>
+  <input type="radio" name="31" value="maison"> Flood auditing<BR>
+  <input type="radio" name="31" value="quatre"> Boat expenses<BR>
+  <input type="radio" name="31" value="correct"> Pollutants such as oil <BR>
+  <input type="radio" name="31" value="corre"> Agent Fees<BR>
+</p>
+
+<P>32. In most cases, NFIP policies offer only up to $10,000 in coverage for pollution damages-however, more pollution coverage is available if a standard section is present in the policy. This section is:<BR>
+  <input type="radio" name="32" value="correct">  Increased Cost of Compliance (ICC) coverage<BR>
+  <input type="radio" name="32" value="quatre"> Flood pollution rider <BR>
+  <input type="radio" name="32" value=""> Pollution exclusion exception <BR>
+  <input type="radio" name="32" value="corr"> Environmental Impairment Liability (Flood) rider<BR>
+</p>
+
+<P>33.  Why was the Mortgage Portfolio Protection Program (MPPP) created?<BR>
+  <input type="radio" name="33" value="maison">  To assist people obtains mortgages in flood prone areas<BR>
+  <input type="radio" name="33" value="quatre"> To protect increased flood damages in coastal areas<BR>
+  <input type="radio" name="33" value="corre"> To protect the mortgage industry from going bankrupt in a natural disaster<BR>
+  <input type="radio" name="33" value="correct"> To assist the mortgage lending and servicing industries in bringing their mortgage portfolios into compliance <BR>
+</p>
+
+<P>34. The NFIP's Increased Cost of Compliance (ICC) coverage pays for:<BR>
+  <input type="radio" name="34" value="maison"> The costs of regulatory compliance that must be paid by insurance companies, third-party administrators or other financial intermediaries involved in NFIP coverage claims<BR>
+  <input type="radio" name="34" value="quatre"> "Clear inequities or imbalances" that may occur from differences in the valuations of property located in different flood zones<BR>
+  <input type="radio" name="34" value="cot"> Fines or penalties that may be issued to a property that was not in compliance with state or local floodplain management laws or ordinances before the property suffered insured flood damage<BR>
+  <input type="radio" name="34" value="correct"> Complying with new state or local floodplain management
+  laws or ordinances that affect the costs of repair or reconstruction for a structure that's suffered insured flood damage <BR>
+</p>
+
+<P>35. Under NFIP policies, In the event of loss, the insured is required to:<BR>
+  <input type="radio" name="35" value="maison"> Provide evidence and documentation to substantiate the loss<BR>
+  <input type="radio" name="35" value=""> Give written notice of loss to the insurer, as soon as practicable, using the National Flood Insurance Program (NFIP) Notice of Loss form or similar form<BR>
+  <input type="radio" name="35" value="quatre"> Exhibit all remains of the property, as required<BR>
+  <input type="radio" name="35" value="correct"> All of the above<BR>
+</p>
+
+<P>36. Which of the following is not an example of the kind of documentation that FEMA requires after an emergency?<BR>
+  <input type="radio" name="36" value="maison">  Room-by-room itemized estimates from the adjuster (include contractors' estimates)<BR>
+  <input type="radio" name="36" value="quatre"> Financial statements<BR>
+  <input type="radio" name="36" value="corre"> Death certificates<BR>
+  <input type="radio" name="36" value="correct"> Weather reports<BR>
+</p>
+
+<P>37.  Agents/producers may request that any NFIP Direct claim be assigned to an NFIP-approved independent adjuster. The NFIP Direct makes all NFIP Direct claim assignments, except:<BR>
+  <input type="radio" name="37" value="maison">  When, in major flooding disasters, the Flood Insurance Claims Office (FICO) makes all assignments<BR>
+  <input type="radio" name="37" value="quatre"> When an Adjuster Control Office is established<BR>
+  <input type="radio" name="37" value="corre">  When a Claims Coordinating Office (CCO) is established<BR>
+  <input type="radio" name="37" value="correct"> All of the above<BR>
+</p>
+
+<P>38. In designing NFIP, Congress required that premiums for certain properties be offered at prices below those for full-risk premiums. Why?<BR>
+  <input type="radio" name="38" value="correct">  Encourage participation in the program <BR>
+  <input type="radio" name="38" value="quatre"> Pressure from consumer groups<BR>
+  <input type="radio" name="38" value="corre"> Lobbying by insurance companies<BR>
+  <input type="radio" name="38" value=""> It was a declared emergency<BR>
+</p>
+
+<P>39. When the program began, NFIP administrators set the subsidized rates on the basis of what they believed would be:<BR>
+    <input type="radio" name="39" value="maison">  Correct<BR>
+    <input type="radio" name="39" value="quatre"> Weather<BR>
+    <input type="radio" name="39" value="correct"> Affordable<BR>
+    <input type="radio" name="39" value="corr"> Amount of floods<BR>
+</p>
+
+<P>40.  Which event can significantly alter NFIP's financial landscape?<BR>
+  <input type="radio" name="40" value="corre"> Hurricane<BR>
+  <input type="radio" name="40" value="maison">  Flood<BR>
+  <input type="radio" name="40" value="quatre"> Tornandos<BR>
+  <input type="radio" name="40" value="correct"> All of the above<BR>
+</p>
+
+<P>41. Congress has modified the NFIP several times. The Biggert–Waters Flood Insurance Reform Act of 2012 designed:<BR>
+  <input type="radio" name="41" value="correct"> To allow premiums to rise to reflect the true risk of living in high-flood areas<BR>
+  <input type="radio" name="41" value="quatre"> A series of risk management procedures that raised NFIP premiums, ensuring the program's long-term financial stability<BR>
+  <input type="radio" name="41" value=""> More aggressive marketing and advertising of the NFIP, so that it would have an "even footing" with private-sector alternatives <BR>
+  <input type="radio" name="41" value=""> Hold-harmless agreements and other modifications that limit the NFIP's exposure to certain consumer-advocacy lawsuits<BR>
+</p>
+
+<P>42.  Any actual, lawful and substantial economic interest in the safety or preservation of the subject of the insurance from loss or destruction or financial damage or impairment is called:<BR>
+  <input type="radio" name="42" value="maison">  Risk aversion<BR>
+  <input type="radio" name="42" value="quatre"> Liability causation<BR>
+  <input type="radio" name="42" value="correct"> Insurable interest  <BR>
+  <input type="radio" name="42" value="corr"> Endorsement payback <BR>
+</p>
+
+<P>43. The National Flood Insurance Act of 1968 created the National Flood Insurance Plan (NFIP) as an alternative to: <BR>
+  <input type="radio" name="43" value="correct"> Providing direct government assistance to homeowners after floods<BR>
+  <input type="radio" name="43" value=""> An older government-run flood insurance scheme that had gone bankrupt<BR>
+  <input type="radio" name="43" value="quatre"> The adverse selection that had rendered previous flood insurance policies impossible for most consumers to afford<BR>
+  <input type="radio" name="43" value="poisson"> A "patchwork system" of state-administered flood programs that caused confusion when big floods affected multi-state regions<BR>
+</p>
+
+<P>44.  The NFIP offers two types of flood insurance premiums:<BR>
+  <input type="radio" name="44" value="maison">  Standard and preferred<BR>
+  <input type="radio" name="44" value="quatre"> Standard and substandard<BR>
+  <input type="radio" name="44" value="corre"> Standard and subsidized<BR>
+  <input type="radio" name="44" value="correct"> Subsidized and full-risk<BR>
+</p>
+
+<P>45. NFIP has traditionally identified flood hazard areas on maps that are provided to communities for carrying out their responsibilities. These maps assign flood zone designations based on:<BR>
+  <input type="radio" name="45" value="maison"> Local geography, socio-economic factors and relevant property values<BR>
+  <input type="radio" name="45" value="quatre"> Flooding histories, evaluations from the U.S. Army Corps of Engineers and/or National Weather Service and relevant property values<BR>
+  <input type="radio" name="45" value="correct"> Local geography, flooding histories and risk levels<BR>
+  <input type="radio" name="45" value="soleil"> Socio-economic factors, relevant property values and evaluations from the U.S. Army Corps of Engineers and/or National Weather Service<BR>
+</p>
+
+<P>46. Most NFIP policies require some type of waiting period (usually 30 days) before taking effect, these requirements are designed to:<BR>
+  <input type="radio" name="46" value="maison"> Encourage insureds from buying coverage in the hours before a major storm or flood event has been predicted to occur<BR>
+  <input type="radio" name="46" value="correct"> Prevent insureds from buying coverage in the hours before a major storm or flood event has been predicted to occur<BR>
+  <input type="radio" name="46" value=""> Prevent insureds from buying coverage in the hours after a major storm or flood event has occurred<BR>
+  <input type="radio" name="46" value="poisson"> Encourage insureds to buy coverage in the hours after a major storm or flood event has occurred<BR>
+</p>
+
+<P>47. Except for a couple of exceptions, flood insurance takes effect ___ from the date of application submission and premium payment. <BR>
+  <input type="radio" name="47" value="maison"> 60 days<BR>
+  <input type="radio" name="47" value="quatre"> 90 days<BR>
+  <input type="radio" name="47" value="xxx"> 7 days<BR>
+  <input type="radio" name="47" value="correct"> 30 days <BR>
+</p>
+
+<P>48. NFIP coverage is available to all owners of insurable property in a community participating in the NFIP. In this context, "insurable property" means: <BR>
+  <input type="radio" name="48" value="maison"> A building or its contents that has been confirmed as worthy of NFIP coverage by local community standards<BR>
+  <input type="radio" name="48" value="quatre"> Real property located in high-risk flood zones<BR>
+  <input type="radio" name="48" value="">  Real property located in low-risk flood zones<BR>
+  <input type="radio" name="48" value="correct"> A building or its contents, or both<BR>
+</p>
+
+<P>49.  Flood insurance may not be available for buildings and/or contents located in coastal barriers or otherwise protected areas. These areas are listed in a separate: <BR>
+  <input type="radio" name="49" value="maison"> High-Risk Flood Loss Properties System<BR>
+  <input type="radio" name="49" value="quatre"> Assigned-Risk Property Insurance System<BR>
+  <input type="radio" name="49" value=""> Flood-prone Loss Elimination System<BR>
+  <input type="radio" name="49" value="correct"> Coastal Barrier Resources System<BR>
+</p>
+
+
+
+<P>50.  From an actuarial standpoint, there are several major differences between the NFIP and conventional property insurance programs. Which of the following is NOT one of those differences?<BR>
+  <input type="radio" name="50" value="ccc">  The NFIP is not structured to build a capital surplus<BR>
+  <input type="radio" name="50" value="correct"> The NFIP is required to submit all "significant" management decisions to FEMA for approval<BR>
+  <input type="radio" name="50" value="wrong"> The NFIP is unable to reject high-risk applicants<BR>
+  <input type="radio" name="50" value=""> The NFIP is subject to statutory limits on rate increases<BR>
+</p>
+
+<P>51.  According to one watchdog agency NFIP's rate-setting process for some of its premiums may not ensure that those premium rates reflect the actual risk of flooding and therefore:<BR>
+  <input type="radio" name="51" value="">  May benefit certain NFIP policyholders, particularly lower-income policyholders<BR>
+  <input type="radio" name="51" value="coct"> May penalize certain NFIP policyholders, particularly lower-income policyholders<BR>
+  <input type="radio" name="51" value="correct"> May increase NFIP's financial risk<BR>
+  <input type="radio" name="51" value="wrong"> May decrease NFIP's financial risk<BR>
+</p>
+
+<P>52.  In the mid-2000s, Congress revised the NFIP in an effort to control its exposure claims involving "repetitive loss properties" which are defined as:<BR>
+  <input type="radio" name="52" value="">  Properties that have had three or more flood insurance claims payments of $25,000 or more over 5 years <BR>
+  <input type="radio" name="52" value="coct"> Properties that have had three or more flood insurance claims payments of $10,000 or more over 1 year<BR>
+  <input type="radio" name="52" value="wrong"> Properties that have had two or more flood insurance claims payments of $10,000 or more over 10 years<BR>
+  <input type="radio" name="52" value="correct"> Properties that have had two or more flood insurance claims payments of $1,000 or more over 10 years <BR>
+</p>
+
+<P>53. According to the NFIP's numbers, repetitive loss properties represent only about one percent of its total number of policies in force, but account for:<BR>
+  <input type="radio" name="53" value="coct"> 35 to 40 percent of claims<BR>
+  <input type="radio" name="53" value="correct"> 25 to 30 percent of claims<BR>
+  <input type="radio" name="53" value=""> 20 to 25 percent of claims<BR>
+  <input type="radio" name="53" value="wrong"> about 15 percent of claims<BR>
+</p>
+
+<P>54.  Most NFIP flood maps indicate SFHAs. These are:<BR>
+  <input type="radio" name="54" value="coct"> Seasonal Flood Height Averages<BR>
+  <input type="radio" name="54" value="wrong"> Seasonal Flood Histories and Aggregates<BR>
+  <input type="radio" name="54" value="correct"> Special Flood Hazard Areas<BR>
+  <input type="radio" name="54" value="wrong"> Synchronized Flood Height and Aggregate<BR>
+</p>
+
+<P>55.  Who can buy flood insurance? <BR>
+  <input type="radio" name="55" value="coct"> Those who live in a floodplain or high-flood-risk area <BR>
+  <input type="radio" name="55" value="">  Those who live outside a floodplain, or low to moderate flood risk area <BR>
+  <input type="radio" name="55" value="wrong"> Those who have experienced a past flood<BR>
+  <input type="radio" name="55" value="correct"> All of the above <BR>
+
+    <P>56. Why is flood insurance is better than disaster assistance? <BR>
+      <input type="radio" name="56" value="maison"> You can't be denied<BR>
+      <input type="radio" name="56" value="quatre"> Flood insurance pays out more money<BR>
+      <input type="radio" name="56" value="">  Their is a 60 day waiting period for disaster assistance<BR>
+      <input type="radio" name="56" value="correct"> Disaster assistance loans from SBA are usually more costly than flood insurance premiums<BR>
+    </p>
+
+
+    <P>57.  How much does Flood Loss Avoidance cover to move the insured property away from a flood or imminent danger of a flood?<BR>
+      <input type="radio" name="57" value="maison">  $5,000<BR>
+      <input type="radio" name="57" value="quatre"> $10,000<BR>
+      <input type="radio" name="57" value="correct"> $1,000<BR>
+      <input type="radio" name="57" value="corr"> $100,000<BR>
+
+        <P>58. NFIP underwriting and risk-management programs base many of their formulas, in part, on a geographic areas BFE. This abbreviation stands for:<BR>
+          <input type="radio" name="58" value="correct"> Base Flood Elevation<BR>
+          <input type="radio" name="58" value="maison">  Basic Financial Evaluation<BR>
+          <input type="radio" name="58" value="quatre"> Best Flood Estimate<BR>
+          <input type="radio" name="58" value="corre"> Biennial Floodwater Estuation<BR>
+
+            <P>59.  If a structure has a Base Flood Elevation (BFE) of 6ft.  What does that mean?<BR>
+              <input type="radio" name="59" value="maison"> The first 6 feet of damage will be a deductible<BR>
+              <input type="radio" name="59" value="quatre"> The flooding will not rise above 6 ft.<BR>
+              <input type="radio" name="59" value="corre"> It can handle 6 feet of flooding before sustaining damages<BR>
+              <input type="radio" name="59" value="correct"> The lowest floor would have to meet the requirements of 6 feet above mean sea level <BR>
+
+                <P>60.  In addition to policies written directly by the NFIP, the flood insurance marketplace includes so-called "Write-Your-Own" (WYO) policies. These WYO policies can be best described as:<BR>
+                  <input type="radio" name="60" value="maison">  Flood policies written by individual property owners that comply with NFIP guidelines and are accepted by the NFIP during an annual open-enrollment period <BR>
+                  <input type="radio" name="60" value="quatre"> Flood policies written by individual property owners that comply with NFIP guidelines and are accepted by private-sector insurance companies during an open-enrollment period <BR>
+                  <input type="radio" name="60" value="correct"> Flood policies written by private-sector insurance companies that comply with NFIP guidelines and are effectively guaranteed by the NFIP <BR>
+                  <input type="radio" name="60" value="corr"> Part of pilot program that FEMA indicates will be eliminated by 2016-though policies in force at that time may be "grandfathered in" and allowed to remain in force<BR>
+
+                    <P>61.  Who primarily implements NFIP coverage through the Write Your Own (WYO) program?<BR>
+                      <input type="radio" name="61" value="maison">  FEMA<BR>
+                      <input type="radio" name="61" value="quatre"> Department of Insurance<BR>
+                      <input type="radio" name="61" value="correct"> Private insurance companies<BR>
+                      <input type="radio" name="61" value=""> National Flood Insurers Association  <BR>
+
+                        <P>62.  Which is not considered a goal of the WYO Program? <BR>
+                          <input type="radio" name="62" value="maison"> Improve services <BR>
+                          <input type="radio" name="62" value="correct"> Monitor flood activity<BR>
+                          <input type="radio" name="62" value="cot"> Increase the policy base<BR>
+                          <input type="radio" name="62" value=""> Involve the insurance companies<BR>
+
+                            <P>63.  The NFIP and the Write-Your-Own (WYO) program are overseen by a staff of FEMA Mitigation Directorate employees, assisted by:<BR>
+                              <input type="radio" name="63" value="maison">  Auditors from the Treasury Department's Office of the Inspector General (OIG)<BR>
+                              <input type="radio" name="63" value=""> Auditors from the White House Office of Management and Budget (OMB)<BR>
+                              <input type="radio" name="63" value="correct"> Bureau and Statistical Agent (BSA) contractor employees<BR>
+                              <input type="radio" name="63" value="cort"> Public-sector insurance experts from the Government Accountability Office (GAO)<BR>
+
+                                <P>64.   NFIP Flood Maps include two main elements. These are: <BR>
+                                  <input type="radio" name="64" value="maison"> Socio-economic Characteristics Map (SECM) , Flood Insurance Rate Map (FIRM)<BR>
+                                  <input type="radio" name="64" value="quatre"> Predictive Incidence Rate Map (PIRM) , Flood Hazard Boundary Map (FHBM)<BR>
+                                  <input type="radio" name="64" value="correct"> Flood Hazard Boundary Map (FHBM) , Flood Insurance Rate Map (FIRM)<BR>
+                                  <input type="radio" name="64" value="poisson"> Geological Incidence Rate Map (GIRM) and Flood Hazard Boundary Map (FHBM) <BR>
+                                </p>
+
+                                <P>65.  The NFIP's full-risk rates (which apply to non-subsidized premiums) are:<BR>
+                                  <input type="radio" name="65" value="correct">  Often based on outdated information and processes, so even these rates may not reflect the actual risk of flood-related loss<BR>
+                                  <input type="radio" name="65" value=""> Subsidized in part under the Federal Flood Insurance Equalization Program (FFIEP)<BR>
+                                  <input type="radio" name="65" value="soleil"> Weighted, actuarially, to counterbalance the cost of the subsidized premiums-however, this weighting doesn't apply to Write-Your-Own policies.<BR>
+                                  <input type="radio" name="65" value="poisson"> Subject to administrative review and adjustment before policies can be put into force-which usually creates a backlog of pending coverage<BR>
+                                </p>
+
+</div>
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>

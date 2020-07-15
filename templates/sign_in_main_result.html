@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Main Page </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<style>
+
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: 	white ;
+}
+
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+
+@media (max-width: 500px) {
+  #top_header{
+    margin-top: 20px;
+  }
+        }
+h1{
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
+#list{
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+#user-info{
+  margin-bottom: 15px;
+}
+.row{
+  color: black;
+  margin-bottom: 5px;
+  margin-top: -50px;
+}
+#ll{
+  margin-bottom: -20px;
+}
+
+#adj{
+		width:200px;
+		height:120px;
+		margin-bottom: 20px;
+		}
+@media (min-width: 500px) {
+	#adj {
+		width:750px;
+		height:300px;
+		margin-bottom: 20px;
+					  }
+		}
+h5{
+
+  margin-bottom: -5px;
+}
+#pass{
+  color:green;
+}
+#nopass{
+  color:red;
+}
+
+</style>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home
+
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid  jumbotron">
+
+<div class="text-center">
+  <h2>Florida Discount Continuing Education</h2>
+  <h3>Account Details</h3>
+
+
+<div id="user-info">
+  <li><b>First:</b> {{user[0].first}}</li>
+  <li><b>Last:</b> {{user[0].last}}</li>
+  <li><b>Username:</b> {{user[0].name}}</li>
+  <!-- <li><b>Address:</b> {{user[0].address}}</li> -->
+  <li><b>Email:</b> {{user[0].email}}</li>
+</div>
+
+  <h3>Course Management</h3>
+<ul id="list">
+
+
+{% if pa1[0][0]==true %}
+  {% if pa1[0][1]!=none %}
+  <h5 id='pass'>{{passed}}</h5>
+{% else %}
+  <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('pa_ethics_chapter_1') }}" >Law & Ethics Update for Public Adjusters (5-320)</a><Br>
+{% endif %}
+
+{% if pa2[0][0]==true %}
+  {% if pa2[0][1]!=none %}
+  <h5 id='pass'>{{passed}}</h5>
+{% else %}
+  <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('pa_flood_chapter_1') }}" >Flood and Homeowner's Insurance Update for Public Adjusters (3-20)</a><Br>
+{% endif %}
+
+{% if pa3[0][0]==true %}
+  {% if pa3[0][1]!=none %}
+  <h5 id='pass'>{{passed}}</h5>
+{% else %}
+  <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('pa_property_chapter_1') }}" >Auto, Personal Property, and Umbrella Insurance (3-20)</a><Br>
+{% endif %}
+
+{% if pa4[0][0]==true %}
+  {% if pa4[0][1]!=none %}
+  <h5 id='pass'>{{passed}}</h5>
+{% else %}
+  <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('pa_course_4_chapter_1') }}" >National Flood Insurance Program (3-20)</a><Br>
+{% endif %}
+
+
+{% if ia1[0][0]==true %}
+  {% if ia1[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('ia_ethics_chapter_1') }}" >Law & Ethics Update for Independent Adjusters (5-620)</a><Br>
+{% endif %}
+
+{% if ia2[0][0]==true %}
+  {% if ia2[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('ia_homeowners_chapter_1') }}" >Homeowners, Property, & Auto Insurance Update (5-20 & 6-20)</a><Br>
+{% endif %}
+
+{% if ia4[0][0]==true %}
+  {% if ia4[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('ia_course_4_chapter_1') }}" >National Flood Insurance Program (5-20 & 6-20)</a><Br>
+{% endif %}
+
+{% if ia3[0][0]==true %}
+  {% if ia3[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('ia_umbrella_chapter_1') }}" >Umbrella, Underwriting Insurance Update (5-20 & 6-20)</a><Br>
+{% endif %}
+
+{% if h1[0][0]==true %}
+  {% if h1[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('health_ethics_chapter_1') }}" >Law & Ethics Update for Health Agents (5-240)</a><Br>
+{% endif %}
+
+{% if h2[0][0]==true %}
+  {% if h2[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('health_course_2_chapter_1') }}" >Long Term Care & Partnerships for Health Agents (2-40)</a><Br>
+{% endif %}
+
+{% if h3[0][0]==true %}
+  {% if h3[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('health_course_3_chapter_1') }}" >Medicare & Medicaid for for Health Agents (2-40)</a><Br>
+{% endif %}
+
+{% if h4[0][0]==true %}
+  {% if h4[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('health_ethics_chapter_1') }}" >health_course_4 for Health Agentss (2-40)</a><Br>
+{% endif %}
+
+
+{% if lhv1[0][0]==true %}
+  {% if lhv1[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('life_health_ethics_chapter_1') }}" >Law & Ethics Update for Life/Health/Annuity Agents (5-215)</a><Br>
+{% endif %}
+
+{% if lhv2[0][0]==true %}
+  {% if lhv2[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('life_health_course_2_chapter_1') }}" >Long Term Care & Partnerships for Life/Health/Annuity Agents (2-15 & 2-18)</a><Br>
+{% endif %}
+
+{% if lhv3[0][0]==true %}
+  {% if lhv3[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('life_health_course_3_chapter_1') }}" >Medicare & Medicaid for Life/Health/Annuity Agents (2-15 & 2-18)</a><Br>
+{% endif %}
+
+{% if lhv4[0][0]==true %}
+  {% if lhv4[0][1]!=none %}
+    <h5 id='pass'>{{passed}}</h5>
+  {% else %}
+    <h5 id='nopass'>{{nopass}}</h5>
+  {% endif %}
+  <a href="{{ url_for('life_health_course_4_chapter_1') }}" >Insurance Claims for Life/Health/Annuity Agents (2-15 & 2-18)</a><Br>
+{% endif %}
+
+</ul>
+<h6>Need to take more courses? When signing up create a different Username than the one above </h6>
+</div>
+
+</div>
+
+</body>
+
+</html>

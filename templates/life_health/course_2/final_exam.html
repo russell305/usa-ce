@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: LTC Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -60px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('life_health_course_2_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('life_health_course_2_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1.  By 2020, the number of Americans over the age of 65 that require
+  long-term-care service will increase to how many? <BR>
+  <input type="radio" name="1" value="maison"> 1 million<BR>
+  <input type="radio" name="1" value="correct"> 12 million<BR>
+  <input type="radio" name="1" value="quatre"> 2 million<BR>
+  <input type="radio" name="1" value="poisson"> 100,000<BR>
+</p>
+
+<P>2. Which degenerative disease is estimated to have an economic impact of $33 billion a year? <BR>
+  <input type="radio" name="2" value="maison">  Leukemia<BR>
+  <input type="radio" name="2" value="quatre"> Muscular Dystrophy<BR>
+  <input type="radio" name="2" value="corre"> Legionnaires' Disease<BR>
+  <input type="radio" name="2" value="correct"> Alzheimer’s Disease<BR>
+</p>
+
+<P>3. The number of days after which the policy holder qualifies for benefits, but before benefits are payable is called?<BR>
+  <input type="radio" name="3" value="maison"> No-care period<BR>
+  <input type="radio" name="3" value="quatre"> U-pay period<BR>
+  <input type="radio" name="3" value="correct"> Elimination period <BR>
+  <input type="radio" name="3" value="soleil"> Time to service<BR>
+</p>
+
+<P>4.  What is not considered Instrumental Activities of Daily Living (IADLs)?<BR>
+  <input type="radio" name="4" value="maison"> Toileting<BR>
+  <input type="radio" name="4" value="quatre"> Transferring<BR>
+  <input type="radio" name="4" value="correct"> Shopping<BR>
+  <input type="radio" name="4" value="poisson"> Continence maintenance<BR>
+</p>
+
+<P>5. Most states require that policies covering long-term care services cannot contain a
+  pre-existing condition limitation of more than ______ after the effective date of coverage. <BR>
+  <input type="radio" name="5" value="maison"> 3 months<BR>
+  <input type="radio" name="5" value="quatre"> 1 year<BR>
+  <input type="radio" name="5" value="xxx"> 5 years<BR>
+  <input type="radio" name="5" value="correct"> 6 months <BR>
+</p>
+
+<P>6. What is the name given to a family member or friend who provides informal, unpaid care? <BR>
+  <input type="radio" name="6" value="maison"> Arbiter<BR>
+  <input type="radio" name="6" value="quatre"> Litigator<BR>
+  <input type="radio" name="6" value=""> Nurse<BR>
+  <input type="radio" name="6" value="correct"> Caregiver<BR>
+</p>
+
+<P>7. How old was thhe average age of early Partnership Program respondents?<BR>
+  <input type="radio" name="7" value="maison"> 38 or 39 years old<BR>
+  <input type="radio" name="7" value="quatre"> 28 or 29 years old<BR>
+  <input type="radio" name="7" value="correct"> 58 or 59 years old<BR>
+  <input type="radio" name="7" value="poisson"> 78 or 79 years old<BR>
+</p>
+
+<P>8.The Family and Medical Leave Act (FMLA), requires
+  employers to grant up to_____ unpaid leave per year? <BR>
+  <input type="radio" name="8" value="maison"> 1 week<BR>
+  <input type="radio" name="8" value="quatre"> 4 weeks<BR>
+  <input type="radio" name="8" value="correct"> 12 weeks<BR>
+  <input type="radio" name="8" value="poisson"> 52 weeks<BR>
+</p>
+
+<P>9. The likelihood of receiving long-term care assistance increases with:<BR>
+  <input type="radio" name="9" value="maison">  Height<BR>
+  <input type="radio" name="9" value="correct"> Age<BR>
+  <input type="radio" name="9" value="soleil"> Wealth<BR>
+  <input type="radio" name="9" value="poisson"> Family Size<BR>
+</p>
+
+<P>10. An example of a Community-based service is? <BR>
+  <input type="radio" name="10" value="ccc">  Adult day service<BR>
+  <input type="radio" name="10" value=""> Senior centers<BR>
+  <input type="radio" name="10" value="wrong"> Care-giver support programs<BR>
+  <input type="radio" name="10" value="correct"> All of the above <BR>
+</p>
+
+<P>11.  Which designates a person to make treatment decisions in the event that a patient cannot make decisions personally?<BR>
+  <input type="radio" name="11" value="correct">  Advanced Directive<BR>
+  <input type="radio" name="11" value="coct"> Non-Living Will<BR>
+  <input type="radio" name="11" value="wrong"> Living Will<BR>
+  <input type="radio" name="11" value="wrong"> Administrative Action<BR>
+</p>
+
+<P>12.  What is not a factor that influences the risk of needing long-term care services?<BR>
+  <input type="radio" name="12" value="correct">  Height<BR>
+  <input type="radio" name="12" value="coct"> Lifestyle<BR>
+  <input type="radio" name="12" value="wrong"> Gender<BR>
+  <input type="radio" name="12" value="wrong"> Marital Status<BR>
+</p>
+
+<P>13.  Where do most long-term care recipients receive their care? <BR>
+  <input type="radio" name="13" value="coct"> Nursing Homes<BR>
+  <input type="radio" name="13" value="wrong"> Assisted Living Facilities<BR>
+  <input type="radio" name="13" value="correct">  Home<BR>
+  <input type="radio" name="13" value="wrong"> Hospitals<BR>
+</p>
+
+<P>14. What will lead to a sharp growth in federal entitlement spending?<BR>
+  <input type="radio" name="14" value="coct"> Lower tax polices<BR>
+  <input type="radio" name="14" value="wrong"> Capital gains taxes<BR>
+  <input type="radio" name="14" value="correct"> Aging baby boomers<BR>
+  <input type="radio" name="14" value="wrong"> Wealth inequality<BR>
+</p>
+
+<P>15. Which type of care primarily provides assistance with Activities of daily living (ADLs)?<BR>
+  <input type="radio" name="15" value="coct"> Intermediate Care<BR>
+  <input type="radio" name="15" value="correct"> Custodial Care<BR>
+  <input type="radio" name="15" value="wrong"> Skilled Care<BR>
+  <input type="radio" name="15" value="wrong"> Foundation Care<BR>
+</p>
+
+<P>16.  What is the medical term for moving into or out of a bed, chair, or wheelchair?<BR>
+  <input type="radio" name="16" value="correct">  Transferring<BR>
+  <input type="radio" name="16" value="quatre"> Toileting<BR>
+  <input type="radio" name="16" value="corre"> Translating<BR>
+  <input type="radio" name="16" value=""> Transforming<BR>
+</p>
+
+<P>17.   In what year were the Medicare and Medicaid programs created? <BR>
+    <input type="radio" name="17" value="maison">  1985<BR>
+    <input type="radio" name="17" value="quatre"> 1995<BR>
+    <input type="radio" name="17" value="correct"> 1965<BR>
+    <input type="radio" name="17" value="corr"> 1935<BR>
+</p>
+
+<P>18. Public financing for long-term-care services and support comes primarily from what program?<BR>
+  <input type="radio" name="18" value="correct"> Medicaid<BR>
+  <input type="radio" name="18" value="maison">  Medicare<BR>
+  <input type="radio" name="18" value="quatre"> Social Security<BR>
+  <input type="radio" name="18" value="corre"> FMLA<BR>
+</p>
+
+<P>19.  If certain conditions are met, Medicare will fully cover the first how many days of care
+  in a skilled nursing facility (SNF) during each benefit period?<BR>
+  <input type="radio" name="19" value="maison"> 1 week<BR>
+  <input type="radio" name="19" value="quatre"> 1 month <BR>
+  <input type="radio" name="19" value="corre"> 90 days<BR>
+  <input type="radio" name="19" value="correct"> 20 days  <BR>
+</p>
+
+<P>20.  The first long-term care insurance policies were of one type.  Which one?<BR>
+  <input type="radio" name="20" value="maison">  Home Based <BR>
+  <input type="radio" name="20" value="quatre"> Assisted Living <BR>
+  <input type="radio" name="20" value="correct"> Nursing Home<BR>
+  <input type="radio" name="20" value="corr"> Community Based<BR>
+</p>
+
+<P>21.  Which is considered a countable-asset to Medicaid?<BR>
+  <input type="radio" name="21" value="maison">  Automobile<BR>
+  <input type="radio" name="21" value="quatre"> Household belongings<BR>
+  <input type="radio" name="21" value="corre"> Personal possessions<BR>
+  <input type="radio" name="21" value="correct"> Checking and Savings accounts <BR>
+</p>
+
+<P>22. This type of long-term care policy is referred to as “Shared Care”?<BR>
+  <input type="radio" name="22" value="maison"> Reimbursement benefit policies<BR>
+  <input type="radio" name="22" value="quatre"> Long-term benefit policies<BR>
+  <input type="radio" name="22" value="correct"> Linked benefit policies<BR>
+  <input type="radio" name="22" value=""> Shared benefit policies <BR>
+</p>
+
+<P>23.   Which would Medicaid consider non-countable income?<BR>
+  <input type="radio" name="23" value="maison">  Salaries and wages<BR>
+  <input type="radio" name="23" value="correct"> Food stamps<BR>
+  <input type="radio" name="23" value="quatre"> Veterans’ benefits<BR>
+  <input type="radio" name="23" value="cort"> Interest earnings and dividends<BR>
+</p>
+
+<P>24.  This type of long term care is furnished by nurses, home aides, homemakers and other paid providers?<BR>
+  <input type="radio" name="24" value="maison">  Driving care<BR>
+  <input type="radio" name="24" value="quatre"> Informal care<BR>
+  <input type="radio" name="24" value="corre"> Friendly care<BR>
+  <input type="radio" name="24" value="correct"> Formal care<BR>
+</p>
+
+<P>25.  States are required to permit the community spouse of nursing facility residents to retain
+  income sufficient for support to protect them form spousal impoverishment.  What is this called?<BR>
+  <input type="radio" name="25" value="maison">  Monthly Maintenance Allowance (MMA)<BR>
+  <input type="radio" name="25" value="quatre"> Minimum Money Maintenance Allowance (MMMA)<BR>
+  <input type="radio" name="25" value="corre">  Money Needs Allowance (MNA)<BR>
+  <input type="radio" name="25" value="correct"> Minimum Monthly Maintenance Needs Allowance (MMMNA)<BR>
+</p>
+
+<P>26. What is a risk of self funding long term care?<BR>
+  <input type="radio" name="26" value=""> Not being able to define future long-term health-care needs <BR>
+  <input type="radio" name="26" value="quatre"> Not knowing when long-term care may be needed<BR>
+  <input type="radio" name="26" value="soleil"> Sacrificing money toward care that is intended to be passed on to family members and dependents<BR>
+  <input type="radio" name="26" value="correct">  All of the above<BR>
+</p>
+
+<P>27. The policy’s_____ is the amount that the policy will pay, usually expressed as a dollar-per-day amount.<BR>
+  <input type="radio" name="27" value="quatre"> Dollar-for-Dollar<BR>
+  <input type="radio" name="27" value="soleil"> Per Diem<BR>
+  <input type="radio" name="27" value="correct"> Benefit Amount<BR>
+  <input type="radio" name="27" value="poisson">  Deductible<BR>
+</p>
+
+<P>28. Which is not considered a Home Based Care service?<BR>
+  <input type="radio" name="28" value="quatre"> Homemaker services<BR>
+  <input type="radio" name="28" value="correct"> Valet services<BR>
+  <input type="radio" name="28" value="soleil"> Non-medical personal care <BR>
+  <input type="radio" name="28" value="poisson">  Home health care<BR>
+</p>
+
+<P>29. Long-term care contracts include a grace period of
+  how many days before the policy lapses for nonpayment of premium?<BR>
+  <input type="radio" name="29" value="quatre"> 7<BR>
+  <input type="radio" name="29" value="soleil"> 14<BR>
+  <input type="radio" name="29" value="poisson"> 100<BR>
+  <input type="radio" name="29" value="correct"> 31<BR>
+</p>
+
+<P>30. Self-funding of long-term care is possible for who?<BR>
+  <input type="radio" name="30" value=""> Individuals over 65<BR>
+  <input type="radio" name="30" value="soleil"> People who can't afford it<BR>
+  <input type="radio" name="30" value="correct">  Individuals with above-average wealth<BR>
+  <input type="radio" name="30" value="poisson">  Married couples<BR>
+</p>
+
+<P>31. A Partnership Program joins a state’s _____ program with ownership of private LTC insurance.<BR>
+  <input type="radio" name="31" value="maison">  Social Security<BR>
+  <input type="radio" name="31" value="quatre"> Medicare<BR>
+  <input type="radio" name="31" value="corre"> Welfare<BR>
+  <input type="radio" name="31" value="correct"> Medicaid <BR>
+</p>
+
+<P>32. The Long-Term Care Partnership Program was developed in the late 1980's by who?<BR>
+  <input type="radio" name="32" value="maison"> The Robert Frost Foundation<BR>
+  <input type="radio" name="32" value="quatre"> FEMA<BR>
+  <input type="radio" name="32" value="cot"> The LTC Project<BR>
+  <input type="radio" name="32" value="correct"> The Robert Wood Johnson Foundation <BR>
+</p>
+
+<P>33. What percent of people currently receiving long-term care are adults 18 to 64 years old.<BR>
+  <input type="radio" name="33" value="maison"> 65 percent<BR>
+  <input type="radio" name="33" value="correct"> 40 percent<BR>
+  <input type="radio" name="33" value="quatre"> 10 percent<BR>
+  <input type="radio" name="33" value=""> 90 percent<BR>
+</p>
+
+<P>34. Which of the following services would be paid by Medicare:<BR>
+  <input type="radio" name="34" value="maison">  Custodial Care<BR>
+  <input type="radio" name="34" value="quatre"> Medical Supplies<BR>
+  <input type="radio" name="34" value="corre"> Lab Tests<BR>
+  <input type="radio" name="34" value="correct"> All of the above<BR>
+</p>
+
+<P>35.  Which is not a requirement for an LTC policy to qualify for use in a
+  state partnership program?<BR>
+  <input type="radio" name="35" value="maison"> The policy must include some measure of inflation protection for purchasers younger than 76 and the
+  offer to purchase inflation protection for those who are 76 and older<BR>
+  <input type="radio" name="35" value="quatre"> The policy must meet the definition of a tax-qualified LTCI policy <BR>
+  <input type="radio" name="35" value="corre">  The policy holder must be a resident of the partnership state when the policy is issued<BR>
+  <input type="radio" name="35" value="correct"> The policy holder must have assets over $100,000<BR>
+</p>
+
+<P>36.In which Partnership Program Model are all assets protected when a state-defined
+  minimum benefit package is purchased by the consumer?<BR>
+  <input type="radio" name="36" value="correct">  Total Asset Protection <BR>
+  <input type="radio" name="36" value="quatre"> Dollar-for-Dollar<BR>
+  <input type="radio" name="36" value="corre"> Flood & Body<BR>
+  <input type="radio" name="36" value=""> Dwelling & Property<BR>
+</p>
+
+<P>37. If an asset is improperly transferred, a state can consider the asset countable. States can “look back”
+  how many months to find improper transfers of assets?<BR>
+    <input type="radio" name="37" value="maison">  6 months<BR>
+    <input type="radio" name="37" value="quatre"> 12 months<BR>
+    <input type="radio" name="37" value="correct"> 60 months<BR>
+    <input type="radio" name="37" value="corr"> 24 months<BR>
+</p>
+
+<P>38.  What is not considered Activities of daily living (ADLs)?<BR>
+  <input type="radio" name="38" value="corre"> Bathing<BR>
+  <input type="radio" name="38" value="correct">  Driving<BR>
+  <input type="radio" name="38" value="quatre"> Eating<BR>
+  <input type="radio" name="38" value="cor"> Dressing<BR>
+</p>
+
+<P>39.There are several ways that benefits may be reduced to save on premiums.  Which is not one of them?<BR>
+  <input type="radio" name="39" value="correct"> Lower the deductible<BR>
+  <input type="radio" name="39" value="quatre"> Reduce the daily benefit amount<BR>
+  <input type="radio" name="39" value=""> Reduce the length of benefit payments <BR>
+  <input type="radio" name="39" value=""> Discontinue some benefits, such as home health care options<BR>
+</p>
+
+<P>40. What is an example of a deceptive trade practice or act?<BR>
+  <input type="radio" name="40" value="maison">  Representing that consumer goods or services have a
+  sponsorship, approval, use, or benefit that they do not have <BR>
+  <input type="radio" name="40" value="quatre"> The use of any plan or scheme in soliciting sales or services over the telephone that misrepresents the solicitor’s true status or mission <BR>
+  <input type="radio" name="40" value="corct"> Disparaging the goods or services or business of another
+  by a false or misleading representation of a material fact <BR>
+  <input type="radio" name="40" value="correct"> All of the above<BR>
+</p>
+
+<P>41.  What is it called when an agency misrepresents a material fact in selling
+  or offering to sell a long-term care insurance policy? <BR>
+  <input type="radio" name="41" value="correct"> Misrepresentation<BR>
+  <input type="radio" name="41" value="">  Twisting <BR>
+  <input type="radio" name="41" value="coct"> Defamation<BR>
+  <input type="radio" name="41" value="wrong"> Suitability<BR>
+
+</p>
+
+<P>42.   What is the total amount the insurance company will pay during the insured's lifetime for all benefits covered by the policy?<BR>
+  <input type="radio" name="42" value="correct">  Maximum Lifetime Benefit<BR>
+  <input type="radio" name="42" value="coct"> Total Deductible<BR>
+  <input type="radio" name="42" value="wrong"> Endorsement Payback<BR>
+  <input type="radio" name="42" value="wrong"> Risk Benefit Amount<BR>
+</p>
+
+<P>43. This condition of  an individual requires frequent monitoring by medical professionals, such as physicians and
+  registered nurses, in order to maintain the patient’s health status:<BR>
+  <input type="radio" name="43" value="coct"> Re-action<BR>
+  <input type="radio" name="43" value="wrong"> Continence<BR>
+  <input type="radio" name="43" value="correct">  Acute<BR>
+  <input type="radio" name="43" value="wrong"> Ambulation<BR>
+</p>
+
+<P>44.  Of the total costs of long-term care services,how much are covered by private insurance? <BR>
+  <input type="radio" name="44" value="correct"> Less than 1 percent <BR>
+  <input type="radio" name="44" value="wrong"> 5 percent<BR>
+  <input type="radio" name="44" value=""> 20 percent<BR>
+  <input type="radio" name="44" value="wrong"> 50 percent<BR>
+</p>
+
+<P>45. The Robert Wood Johnson Foundation (RWJF) had specific goals when creating the Partnership
+  Program, which is not one of them?<BR>
+  <input type="radio" name="45" value="coct"> Assurance of equity and affordability in the long-term-care-insurance program for lower-income individuals<BR>
+  <input type="radio" name="45" value="correct">  Assisting in raising deductibles along with inflation<BR>
+  <input type="radio" name="45" value="wrong"> Providing coverage for a full range of home and community-based services<BR>
+  <input type="radio" name="45" value="wrong"> Avoiding impoverishment for elderly individuals by guaranteeing some measure of asset protection<BR>
+</p>
+
+<P>46.  Partnership Program long-term care policies offer three asset protection models.  Dollar-for-Dollar, Total Asset Protection, and what else?<BR>
+  <input type="radio" name="46" value="maison">  Indemnity Model<BR>
+  <input type="radio" name="46" value="quatre"> Partner Model <BR>
+  <input type="radio" name="46" value="corre"> Deductible Model<BR>
+  <input type="radio" name="46" value="correct"> Hybrid Model<BR>
+</p>
+
+<P>47.  Partnership policies have specific______ requirements under the Deficit Reduction Act of 2005:<BR>
+  <input type="radio" name="47" value="maison">  Discrimination<BR>
+  <input type="radio" name="47" value="quatre"> Age<BR>
+  <input type="radio" name="47" value="correct"> Inflation Protection<BR>
+  <input type="radio" name="47" value="corr"> Height<BR>
+</p>
+
+<P>48. Under Medicare,what must have occurred for the same or related condition in order to receive
+  Medicare’s skilled care benefits?<BR>
+  <input type="radio" name="48" value="correct"> Hospitalization<BR>
+  <input type="radio" name="48" value="corre"> Medical Condition <BR>
+  <input type="radio" name="48" value="maison">  Referral <BR>
+  <input type="radio" name="48" value="quatre"> Depletion of Benefits<BR>
+</p>
+
+<P>49.  In Florida, The Agency for Health Care Administration, in consultation with the Office of Insurance Regulation and the____  is directed to establish
+  a qualified state Long-Term Care Insurance Partnership Program.<BR>
+  <input type="radio" name="49" value="maison"> Division of Funeral, Cemetery, and Consumer Services<BR>
+  <input type="radio" name="49" value="quatre"> Division of Investigative & Forensic Services<BR>
+  <input type="radio" name="49" value="corre"> Department of Insurance<BR>
+  <input type="radio" name="49" value="correct"> Department of Children and Families  <BR>
+</p>
+
+<P>50. LTC Medicaid recipients are limited to no more than how much in assets?<BR>
+  <input type="radio" name="50" value="maison">  $30,000<BR>
+  <input type="radio" name="50" value="quatre"> $10,000<BR>
+  <input type="radio" name="50" value="correct"> $3,000  <BR>
+  <input type="radio" name="50" value="corr"> $50,000 <BR>
+</p>
+
+<P>51. Which is not an unfair claim practices defined under the NAIC?<BR>
+  <input type="radio" name="51" value="maison">  Failing to adopt and implement reasonable standards for the prompt investigation and settlement of claims<BR>
+  <input type="radio" name="51" value="quatre"> Not attempting in good faith to settle claims promptly, fairly, and equitably when it is reasonably clear the insurer is liable to pay such claims<BR>
+  <input type="radio" name="51" value="correct"> Representing to claimants or insureds relevant
+  facts or policy provisions that relate to the coverages at issue  <BR>
+  <input type="radio" name="51" value="corre"> Failing to provide forms necessary to present claims within 15 calendar days of a request for such forms<BR>
+</p>
+
+<P>52. Which is a non-countable asset to Medicaid?<BR>
+  <input type="radio" name="52" value="correct">  Burial plot<BR>
+  <input type="radio" name="52" value=""> IRAs and other retirement investments<BR>
+  <input type="radio" name="52" value="quatre"> Nonresident property<BR>
+  <input type="radio" name="52" value="corre"> Certificates of deposit and money market accounts<BR>
+</p>
+
+<P>53. It is often possible to obtain both nursing home benefits and home care benefits in the same policy.
+  In such a case, home care is typically covered at what percentage of the nursing home rate? <BR>
+  <input type="radio" name="53" value=""> 100 percent<BR>
+  <input type="radio" name="53" value="maison"> 75 percent<BR>
+  <input type="radio" name="53" value="correct"> 50 percent<BR>
+  <input type="radio" name="53" value="cot"> 25 percent<BR>
+</p>
+
+<P>54.  _____ is when all of used benefits renew after a specific length of time and under specific
+  circumstances.  During this period of time, the policyholder must be claim free.<BR>
+  <input type="radio" name="54" value="maison">  Business Output Policy<BR>
+  <input type="radio" name="54" value="correct"> Restoration of Policy Benefits<BR>
+  <input type="radio" name="54" value="corre"> Motor Truck Policy<BR>
+  <input type="radio" name="54" value=""> Non Standard Policy<BR>
+</p>
+
+<P>55.  Citizens who elect to enroll in Original Medicare may augment their coverage with: <BR>
+  <input type="radio" name="55" value="maison">  Old Age Supplement Insurance<BR>
+  <input type="radio" name="55" value="quatre"> Disability Supplement Insurance<BR>
+  <input type="radio" name="55" value="corre">  Medicaid Supplement Insurance<BR>
+  <input type="radio" name="55" value="correct"> Medicare Supplement Insurance<BR>
+</p>
+
+<P>56. What is the average age of the long-term care insurance policyholder at the time of purchase?<BR>
+  <input type="radio" name="56" value="correct"> 63 <BR>
+  <input type="radio" name="56" value="quatre"> 83<BR>
+  <input type="radio" name="56" value="soleil"> 30<BR>
+  <input type="radio" name="56" value="poisson">  47<BR>
+</p>
+
+<P>57. Part D of Medicare covers what?<BR>
+  <input type="radio" name="57" value="quatre"> Hospital Insurance<BR>
+  <input type="radio" name="57" value="correct"> Prescription Drugs <BR>
+  <input type="radio" name="57" value=""> Medical Insurance<BR>
+  <input type="radio" name="57" value="poisson">  Long-Term-Care Insurance<BR>
+</p>
+
+<P>58. What is the daily benefit called that will be paid by the insurer if confinement in a nursing home occurs?<BR>
+  <input type="radio" name="58" value="quatre"> Inclusion amount<BR>
+  <input type="radio" name="58" value="correct"> Daily benefit amount<BR>
+  <input type="radio" name="58" value=""> Dollar-for-Dollar<BR>
+  <input type="radio" name="58" value="poisson">  Personal property amount<BR>
+</p>
+
+<P>59. The foundation for the Medicaid program, created by Roosevelt in 1935, was called?<BR>
+  <input type="radio" name="59" value="quatre"> Medical Assistance (MA)<BR>
+  <input type="radio" name="59" value="correct"> Old Age Assistance (OAA) <BR>
+  <input type="radio" name="59" value=""> Social Assistance (SA)<BR>
+  <input type="radio" name="59" value="poisson">  Long Term Assistance (LTA)<BR>
+</p>
+
+<P>60. There are two main kinds of Advance Directives: the Living Will and what else?<BR>
+  <input type="radio" name="60" value="correct"> Durable Power of Attorney for Health Care <BR>
+  <input type="radio" name="60" value="soleil"> Non-Living Will<BR>
+  <input type="radio" name="60" value="corect">  Health Directive<BR>
+  <input type="radio" name="60" value="poisson">  Administrative Will<BR>
+</p>
+
+
+</div>
+
+
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+<!-- <input type="radio" name="21" value="maison">   Adjusters may handle investigations, or handle loss and claim adjustments and settlements in any manner<BR> -->
+<!-- <input type="radio" name="21" value="quatre"> Adjusters must report the facts after making a complete investigation in a truthful and unbiased manner.<BR> -->
+<!-- <input type="radio" name="21" value="correct"> Adjusters may refer claimants who need repairs or other services related to a loss to an individual or organization with which the adjuster has an undisclosed financial interest or that might reasonably be expected to compensate the adjuster for the referral.<BR> -->
+<!-- <input type="radio" name="21" value="corre"> All of thee Above<BR> -->

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Discount Florida Continuing Education: flood insurance </title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111789653-4');
+</script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+		<!-- <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.png') }}"> -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+body {
+	height: 100%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 0px;
+	margin-bottom: 100px;
+	padding: 0;
+	font-family: verdana;
+	background-color: 	white ;
+}
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+
+h2{
+  margin-top: -30px;
+	margin-bottom: 15px;
+}
+.list{
+	margin-bottom: 20px;
+}
+.button1{
+	/* margin: -5px; */
+}
+.button2{
+	margin-top: 25px;
+}
+.info{
+	margin-bottom: 25px;
+}
+
+</style>
+</head>
+
+<body >
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+<div class="container-fluid text-center jumbotron ">
+<h2>8-Hour Flood & Homeowner's Insurance Update for Public Adjusters</h2>
+<h5>This course fulfills the state-mandated
+requirements for the Public Adjuster Law and Policy continuing education
+component for Florida-licensed public adjusters. (3-20)</h5>
+
+<div class=" text-left info">
+<p>In this course we will review some of the fundamental concepts and some of the
+complex coverage details involving flood insurance, FEMA,
+and other programs related to property risks. We will review how the water versus wind issue was addressed by the Florida Supreme Court in
+the Florida Farm Bureau v Jernigan.  This course also provides
+an introduction to homeowners insurance, focusing on different types of coverages and liabilities.
+In addition, we will also provide answers for
+the most common questions and important concepts.
+
+
+</p><p> Our course is 100% online and
+	can be taken in the privacy of your own home at your convenience.</p>
+
+
+		<p>Class highlights include:</p>
+		<div class="text-left">
+			<ul>
+			<div class="list">
+				<li>The Role of FEMA</li>
+				<li>Increased Cost of Compliance Coverage</li>
+				<li>Damages and Property Not Covered</li>
+				<li>Claims Handling Procedures</li>
+				<li>Other Issues Affecting Flood Coverage</li>
+				<li>Property coverages, such as the dwelling, other structures, personal property, and loss of use</li>
+				<li>Covered perils for the dwelling, other structures, and personal property</li>
+				<li>General property exclusions</li>
+				<li>Property conditions</li>
+				<li>Liability coverages, including exclusions and conditions</li>
+
+			</div>
+
+		</ul>
+		</div>
+<p>This course has been approved by the Florida Department of Financial Services for insurance continuing education. </p>
+<b>		<p>Provider of Record: Florida Discount Continuing Education </p>
+		<p>Course number: 110472</p>
+		<p>Provider Number: 372120</p>
+		<p>Hours Approved: 8 Public Adjuster Electives</p>
+		<p>Price: $15.20</p>
+</b>
+
+
+  </div>
+
+
+<div class="button1 text-center">
+	<form action="{{ url_for('sign_up') }}" method="post">
+				<button class=" btn-primary btn-lg " aria-pressed="true">Sign-Up</button><BR>
+	</form>
+</div>
+<div class="button2">
+	<form action="{{ url_for('sign_in_main') }}" method="post">
+				<button class=" btn-primary btn-lg " aria-pressed="true">Sign-In</button><BR>
+	</form>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

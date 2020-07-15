@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Health 215</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+nav ul {
+  	margin-right:7%;
+}
+nav ul li {
+	margin-left:7%;
+	font-size: 24px;
+}
+.row{
+  margin-bottom: 12px;
+}
+@media (min-width: 500px) {
+	h2{
+    margin-top: -40px;
+    margin-bottom: 20px;
+					  }
+				}
+@media (max-width: 500px) {
+	h2{
+    margin-top: -20px;
+    margin-bottom: 20px;
+					  }
+				}
+h3{
+  /* margin-bottom: 15px; */
+}
+h6{
+  margin-bottom: 0px;
+}
+#offer{
+  /* color: green; */
+  margin-top: 10px;
+  margin-bottom: 0px;
+
+}
+#course_title{
+  font-size: 22px;
+  margin-top: -10px;
+}
+#name{
+  margin-bottom: 0px;
+}
+.block{
+  margin-bottom: 35px;
+}
+
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container-fluid jumbotron text-center">
+
+  <h2>Florida Health Agents (2-40)</h2>
+
+  <div class="row" id="name">
+    <div class="col-md-7">
+      <u><h3>Name of Course</h3></u>
+
+    </div>
+    <div class="col-md-1">
+      <u><h3>Hours</h3></u>
+
+    </div>
+    <div class="col-md-2">
+      <u><h3>Price</h3></u>
+
+    </div>
+    <div class="col-md-2">
+      <u><h3>Course ID</h3></u>
+
+    </div>
+  </div>
+
+  <div class="block">
+      <div class="row" >
+      <div class="col-md-12">
+      <h5 id="offer">Bundle completes all 24-hour continuing education credits for 2 years</h5>
+      </div>
+    </div>
+    <div class="row" id="course_title">
+      <div class="col-md-7">
+        <h4><a href="{{ url_for('health_bundle_24') }}"> 24-Hour 3-Course Bundle </a></h4>
+        </div>
+      <div class="col-md-1">
+        <h4>24</h4>
+      </div>
+      <div class="col-md-2">
+        <h4>$25.00</h4>
+
+      </div>
+      <div class="col-md-2">
+        <h4>01, 02, 03</h4>
+
+      </div>
+    </div>
+    </div>
+
+<div class="block">
+    <u>  <h3>Individual classes - $1.90/hour</h3></u>
+  <div class="row ">
+    <div class="col-md-12">
+    <h5 id="offer">Course below counts for Law & Ethics 5-Hour Update Health Agents</h5>
+    </div>
+  </div>
+
+  <div class="row" id="course_title">
+    <div class="col-md-7">
+      <h4><a href="{{ url_for('health_law_ethics') }}">Law & Ethics Update</a></h4>
+  </div>
+    <div class="col-md-1">
+      <h4>5</h4>
+    </div>
+    <div class="col-md-2">
+      <h4>$9.50<Br></h4>
+    </div>
+    <div class="col-md-2">
+      <h4>01</h4>
+  </div>
+  </div>
+
+  <div class="block">
+      <div class="row ">
+      <div class="col-md-12">
+      <h5 id="offer">Courses below count for Electives for Health Agents</h5>
+      </div>
+    </div>
+
+    <div class="row" id="course_title">
+      <div class="col-md-7">
+        <h4><a href="{{ url_for('health_course_2') }}">Long Term Care & Partnership Programs </a><Br></h4>
+
+
+      </div>
+      <div class="col-md-1">
+        <h4>10</h4>
+
+      </div>
+      <div class="col-md-2">
+        <h4>$19.00</h4>
+
+      </div>
+      <div class="col-md-2">
+        <h4>02</h4>
+
+      </div>
+    </div>
+    <div class="row" id="course_title">
+      <div class="col-md-7">
+        <h4><a href="{{ url_for('health_course_3') }}"> Medicare & Medicaid </a></h4>
+
+
+      </div>
+      <div class="col-md-1">
+        <h4>9</h4>
+
+
+      </div>
+      <div class="col-md-2">
+        <h4>$17.10</h4>
+
+
+      </div>
+      <div class="col-md-2">
+        <h4>03</h4>
+
+      </div>
+    </div>
+
+
+    <div class="row" id="course_title">
+      <div class="col-md-7">
+        <!-- <h4><a href="{{ url_for('life_health_course_4') }}"> Insurance Claims </a></h4> -->
+
+
+      </div>
+      <div class="col-md-1">
+        <!-- <h4>5</h4> -->
+
+
+      </div>
+      <div class="col-md-2">
+        <!-- <h4>$9.50</h4> -->
+
+
+      </div>
+      <div class="col-md-2">
+
+        <!-- <h4>04</h4> -->
+
+      </div>
+    </div>
+
+    </div>
+  <h6>(more courses coming soon)</h6>
+</div>
+
+  </div>
+
+
+
+
+
+ </div>
+</body>
+</html>

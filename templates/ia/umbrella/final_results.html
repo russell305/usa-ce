@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Final Results </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: white ;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+h3{
+  margin-top: -60px;
+}
+
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center jumbotron">
+    <h3>Final Results</h3>
+    <h4>{{final_score}}%</h4>
+    <div class="text-left">
+
+      <h6>Question 1:  A fender bender </h6>
+      <h6>Question 2:  Exceeds </h6>
+      <h6>Question 3:  Risk management</h6>
+      <h6>Question 4:  Estimating appraisal values </h6>
+      <h6>Question 5:  Desirable insurance</h6>
+      <h6>Question 6:  Body & Property</h6>
+      <h6>Question 7:  1 million and up</h6>
+      <h6>Question 8:  Legal purpose</h6>
+      <h6>Question 9:  All of the above</h6>
+      <h6>Question 10:  Vandalism </h6>
+      <h6>Question 11:  Promise</h6>
+      <h6>Question 12:  Unilateral contract</h6>
+      <h6>Question 13:  Indemnity basis</h6>
+      <h6>Question 14:  Altering applications</h6>
+      <h6>Question 15:  Untruths in Advertising</h6>
+      <h6>Question 16:  The Unfair Claims Settlement Practices Act</h6>
+      <h6>Question 17:  Objective information</h6>
+      <h6>Question 18:  In a future period</h6>
+      <h6>Question 19:  Equipment Violations</h6>
+      <h6>Question 20:  The umbrella policy pays before the limits of the underlying policy are exhausted </h6>
+      <h6>Question 21:  Commissary</h6>
+      <h6>Question 22:  Nuclear</h6>
+      <h6>Question 23:  All of the above </h6>
+      <h6>Question 24:  Transferring the risk</h6>
+      <h6>Question 25:  Churning</h6>
+      <h6>Question 26:  "Probability of elevation" and "damage by elevation”</h6>
+      <h6>Question 27:  Charge much higher rates</h6>
+      <h6>Question 28:  The NFIP is likely to cost taxpayers significantly more than its current financial reports indicate </h6>
+      <h6>Question 29:  High risk programs</h6>
+      <h6>Question 30:  Encourage the purchase of flood insurance</h6>
+      <h6>Question 31:  Pollutants such as oil </h6>
+      <h6>Question 32:  Increased Cost of Compliance (ICC) coverage</h6>
+      <h6>Question 33:  To assist the mortgage lending and servicing industries in bringing their mortgage portfolios into compliance   </h6>
+      <h6>Question 34:  Complying with new state or local floodplain management laws or ordinances that affect the costs of repair or reconstruction for a structure that's suffered insured flood damage</h6>
+      <h6>Question 35:  All of the above</h6>
+      <h6>Question 36:  Weather reports</h6>
+      <h6>Question 37:  All of the above</h6>
+      <h6>Question 38:  Encourage participation in the program</h6>
+      <h6>Question 39:  Affordable</h6>
+      <h6>Question 40:  All of the above</h6>
+      <h6>Question 41:  To allow premiums to rise to reflect the true risk of living in high-flood areas</h6>
+      <h6>Question 42:  Insurable interest</h6>
+      <h6>Question 43:  Providing direct government assistance to homeowners after floods </h6>
+      <h6>Question 44:  Subsidized and full-risk</h6>
+      <h6>Question 45:  Local geography, flooding histories and risk levels</h6>
+      <h6>Question 46:  Prevent insureds from buying coverage in the hours before a major storm or flood event has been predicted to occur</h6>
+      <h6>Question 47:  30 Days</h6>
+      <h6>Question 48:  A building or its contents, or both </h6>
+      <h6>Question 49:  Coastal Barrier Resources System</h6>
+      <h6>Question 50:  The NFIP is required to submit all "significant" management decisions to FEMA for approval</h6>
+      <h6>Question 51:  May increase NFIP's financial risk </h6>
+      <h6>Question 52:  Properties that have had two or more flood insurance claims payments of $1,000 or more over 10 years</h6>
+      <h6>Question 53:  25 to 30 percent of claims  </h6>
+      <h6>Question 54:  Special Flood Hazard Areas</h6>
+      <h6>Question 55:  All of the above</h6>
+      <h6>Question 56:  Disaster assistance loans from SBA are usually more costly than flood insurance premiums</h6>
+      <h6>Question 57:  $1,000</h6>
+      <h6>Question 58:  Base Flood Elevationan </h6>
+      <h6>Question 59:  The lowest floor would have to meet the requirements of 6 feet above mean sea level</h6>
+      <h6>Question 60:  Flood policies written by private-sector insurance companies that comply with NFIP guidelines and are effectively guaranteed by the NFIP</h6>
+      <h6>Question 61:  Private insurance companies </h6>
+      <h6>Question 62:  Monitor flood activity</h6>
+      <h6>Question 63:  Bureau and Statistical Agent (BSA) contractor employees</h6>
+      <h6>Question 64:  Flood Hazard Boundary Map (FHBM) , Flood Insurance Rate Map (FIRM)</h6>
+      <h6>Question 65:  Often based on outdated information and processes, so even these rates may not reflect the actual risk of flood-related loss</h6>
+
+
+
+
+
+    </div>
+
+
+
+    {% if exam_pass %}
+    <p>GREAT JOB!!!</p>
+    <form action="{{ url_for('ia_umbrella_course_complete', name=name, final_score=final_score, date_fin=date_fin) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Next</button>
+    </form>
+    {% else %}
+    <h5>Review and fix wrong answers before moving forward</h5>
+    <form action="{{ url_for('ia_umbrella_final_prep', name=name) }}" method="post">
+      <button class="btn btn-primary btn-lg" aria-pressed="true">Back</button>
+    </form>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

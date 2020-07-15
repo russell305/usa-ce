@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Florida Continuing Education: Ethics Final Exam </title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+
+background-color: 	white ;
+}
+
+h1{
+    margin-top: -30px;
+    margin-bottom:30px;
+}
+h5{
+  margin-bottom:30px;
+}
+.admin-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.form{
+  /* /text-align: left */
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+nav ul li {
+	display: flex;
+	margin:2%;
+	margin-bottom: 25px;
+	margin-top: 50px;
+	text-decoration: none;
+	font-size: 15px;
+}
+@media (min-width: 500px) {
+	nav ul li {
+		margin: 2%;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		font-size: 20px;
+	}
+}
+nav ul li a {
+	color: black;
+	text-decoration: none;
+}
+</style>
+<body>
+  <nav>
+  <ul >
+    <li><a href="{{ url_for('index') }}">Home</a></li>
+    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+    <li><a href="{{ url_for('contact') }}" >Contact</a></li>
+  </ul>
+  </nav>
+  <div class="container-fluid text-center">
+
+<div class="jumbotron" >
+  <h1>Ethics Final Exam</h1>
+      {% if admin_button %}
+        <p class = "admin-text">Press Admin button to go to next page</p>
+         <form action="{{ url_for('ia_ethics_final_results', name=name) }}" method="post">
+           <button class="btn btn-primary btn-sm" aria-pressed="true">Admin</button>
+         </form>
+     {% endif %}
+
+
+<h5>Check the answer to each multiple-coice question, and click on the "Send" button to submit the information.</h5>
+<form action="{{ url_for('ia_ethics_final_results', name=name) }}" method="post"  enctype = "multipart/form-data">
+<div class="text-left">
+
+<P>1.  Which department is primarily responsible for regulating adjusters and agents, combating insurance fraud, and protecting consumers? <BR>
+  <input type="radio" name="1" value="maison"> Department of Federal Insurance<BR>
+  <input type="radio" name="1" value="correct"> Department of Financial Services<BR>
+  <input type="radio" name="1" value="quatre"> Federal Department of Finance<BR>
+  <input type="radio" name="1" value="poisson"> Office of Financial Regulation<BR>
+</p>
+<P>2.  What is the Department of Financial Services responsible for?<BR>
+  <input type="radio" name="2" value="maison">  Regulating Florida’s banking<BR>
+  <input type="radio" name="2" value="quatre"> Regulating Florida’s securities<BR>
+  <input type="radio" name="2" value="corre"> Regulating Florida’s insurance<BR>
+  <input type="radio" name="2" value="correct"> All of the above<BR>
+</p>
+
+<P>3. Which of the following acts or practices are not considered by federal law to be unfair trade practices?<BR>
+  <input type="radio" name="3" value="maison"> Causes serious harm to consumers, or has the potential to do so.<BR>
+  <input type="radio" name="3" value="quatre"> Cannot be reasonably avoided by consumers.<BR>
+  <input type="radio" name="3" value="correct"> Causes disappointment to consumer<BR>
+  <input type="radio" name="3" value="soleil"> Is not offset by more advantageous benefits to consumers or the competitive marketplace.<BR>
+</p>
+
+<P>4.  ____________ occurs when an adjuster knowingly makes any type of statement—in writing or verbally—that is false or maliciously critical to any person and does so with the intent to harm that person.<BR>
+  <input type="radio" name="4" value="maison"> A false claim<BR>
+  <input type="radio" name="4" value="quatre"> Coercion<BR>
+  <input type="radio" name="4" value="correct"> Defamation<BR>
+  <input type="radio" name="4" value="poisson"> Intimidation<BR>
+</p>
+<P>5. Which Bureau would deal with employee relations? <BR>
+  <input type="radio" name="5" value="maison"> Bureau of General Services<BR>
+  <input type="radio" name="5" value="quatre"> Bureau of Inspector General<BR>
+  <input type="radio" name="5" value="xxx"> Bureau of Employee Relations<BR>
+  <input type="radio" name="5" value="correct"> Bureau of Human Resource Management <BR>
+</p>
+<P>6. In Florida, the term “transact” means which of the following? <BR>
+  <input type="radio" name="6" value="maison"> Solicitation or inducement<BR>
+  <input type="radio" name="6" value="quatre"> Preliminary negotiations<BR>
+  <input type="radio" name="6" value="">  Effectuation of a contract of insurance<BR>
+  <input type="radio" name="6" value="correct"> All of the above<BR>
+</p>
+
+<P>7.  The _____ serves Floridians through its responsibilities for regulation, compliance and enforcement of statutes related to the business of insurance. <BR>
+  <input type="radio" name="7" value="maison"> Office of Insurance Consumer Advocate<BR>
+  <input type="radio" name="7" value="quatre"> Office of Internal Affairs and Appointments<BR>
+  <input type="radio" name="7" value="correct"> Office of Insurance Regulation<BR>
+  <input type="radio" name="7" value="poisson"> Office of Finance and Budget<BR>
+</p>
+
+<P>8.  What is an authorized insurer, or an admitted insurer, defined as? <BR>
+  <input type="radio" name="8" value="maison"> A person in the process of receiving their license.<BR>
+  <input type="radio" name="8" value="quatre"> A person who used to have a license but does not anymore.<BR>
+  <input type="radio" name="8" value="correct"> A company licensed and authorized to transact insurance business in the state of Florida.<BR>
+  <input type="radio" name="8" value="poisson"> A company licensed and authorized to adjust hurricane claims. <BR>
+</p>
+
+<P>9.  Florida’s continuing education (CE) requirements would apply to:<BR>
+  <input type="radio" name="9" value="maison">  Limited lines crop, hail, or multi-peril crop insurance agents<BR>
+  <input type="radio" name="9" value="correct"> Independent adjuster working emergency claims<BR>
+  <input type="radio" name="9" value="soleil"> Individuals who hold limited lines licenses for which no exam is required<BR>
+  <input type="radio" name="9" value="poisson"> None of the above<BR>
+</p>
+
+<P>10.  This adjuster is a person licensed as an all-lines adjuster who is self-appointed or
+  appointed and employed by an independent adjusting firm to ascertain and effect settlement of claims, losses, or damage:<BR>
+  <input type="radio" name="10" value="ccc">  Public Adjuster<BR>
+  <input type="radio" name="10" value="coct"> Catastrophe or Emergency Adjuster<BR>
+  <input type="radio" name="10" value="wrong"> Company Employee Adjuster<BR>
+  <input type="radio" name="10" value="correct"> Independent Adjuster <BR>
+</p>
+
+<P>11.  The Department’s Division of Insurance Agent and Agency Services issues an online newsletter, ______ which provides information
+  for adjusters and other licensees about the latest trends and news in the insurance industry.<BR>
+  <input type="radio" name="11" value="correct">  Insurance Insights<BR>
+  <input type="radio" name="11" value="coct"> Onguard<BR>
+  <input type="radio" name="11" value="wrong"> Financial Frontlines<BR>
+  <input type="radio" name="11" value="wrong"> Sales Insure<BR>
+</p>
+
+<P>12.  Which of the following is an account maintained by FIGA?<BR>
+  <input type="radio" name="12" value="correct">  Health insurance account<BR>
+  <input type="radio" name="12" value="coct"> Auto insurance account<BR>
+  <input type="radio" name="12" value="wrong"> Property insurance account<BR>
+  <input type="radio" name="12" value="wrong"> Home insurance account<BR>
+</p>
+
+<P>13.  What is one of the powers of FIGA?<BR>
+  <input type="radio" name="13" value="coct"> Provide counseling to insurers in distress<BR>
+  <input type="radio" name="13" value="wrong"> Prosecute bad faith insurerss<BR>
+  <input type="radio" name="13" value="correct">  Loan money to an impaired insurer<BR>
+  <input type="radio" name="13" value="wrong"> Regulate the appraisal industry<BR>
+</p>
+
+<P>14.  A legal concept in insurance law that provides insurance coverage
+  to a claimant, even when the policy does not provide coverage, is called what?<BR>
+  <input type="radio" name="14" value="coct"> Doctrine of Professional Competence<BR>
+  <input type="radio" name="14" value="wrong"> Doctrine of Insurance<BR>
+  <input type="radio" name="14" value="correct"> Doctrine of Reasonable Expectations<BR>
+  <input type="radio" name="14" value="wrong"> Doctrine of Coverage<BR>
+</p>
+
+<P>15.  This doctrine calls for each party to an insurance contract to be entirely and completely honest:<BR>
+  <input type="radio" name="15" value="coct"> Doctrine of Privacy<BR>
+  <input type="radio" name="15" value="correct">  Doctrine of Utmost Good Faith<BR>
+  <input type="radio" name="15" value="wrong"> Doctrine of Standard of Care<BR>
+  <input type="radio" name="15" value="wrong"> Doctrine of Policyholder's Rights<BR>
+</p>
+
+<P>16.  Which is not part of the Policyholders Bill of Rights?<BR>
+  <input type="radio" name="16" value="correct">  Policyholders shall have the right to be able to contact their agent 24/7.<BR>
+  <input type="radio" name="16" value="quatre"> Policyholders shall have a right to an insurance company that is financially stable.<BR>
+  <input type="radio" name="16" value="corre"> Policyholders shall have the right to a readable policy.<BR>
+  <input type="radio" name="16" value=""> Policyholders shall have the right to be serviced by a competent, honest insurance agent or broker.<BR>
+</p>
+
+<P>17.   The existence of a Guaranty Association lessens the burden on policyholders and claimants of insolvent insurers by doing which of the following?<BR>
+    <input type="radio" name="17" value="maison">  Standing behind decisions of adjusters<BR>
+    <input type="radio" name="17" value="quatre"> Establishing claims<BR>
+    <input type="radio" name="17" value="correct"> Guarantee, assume, or reinsure, or cause to be guaranteed, assumed, or reinsured, the covered policies of residents of this state<BR>
+    <input type="radio" name="17" value="corr"> All of the above<BR>
+</p>
+
+<P>18.  Which of the following is a power of the Guaranty Association?<BR>
+  <input type="radio" name="18" value="correct"> Be appointed as the liquidator to an insurer<BR>
+  <input type="radio" name="18" value="maison">  Suspend licensees<BR>
+  <input type="radio" name="18" value="quatre"> Form new insurance associations<BR>
+  <input type="radio" name="18" value="corre"> Adjust losses<BR>
+</p>
+
+<P>19.  Which of the following specific rules regarding the types of behavior is permissible when working in the state as an adjuster?<BR>
+  <input type="radio" name="19" value="maison"> Adjusters may refer claimants who need repairs to a loss to an individual with which the adjuster has an undisclosed financial interest.<BR>
+  <input type="radio" name="19" value="quatre"> Adjusters may seek extra compensation in emergency events.<BR>
+  <input type="radio" name="19" value="corre"> Adjusters must report their opinions after making a complete investigation in a manner that will help insurers.<BR>
+  <input type="radio" name="19" value="correct"> Adjusters are required to report the facts after making a complete investigation in a truthful and unbiased manner. <BR>
+</p>
+
+<P>20.  Unauthorized release of personal information, including financial or health-related information is a breach of what?<BR>
+  <input type="radio" name="20" value="maison">  Right to Sue <BR>
+  <input type="radio" name="20" value="quatre"> Right to Appraisal <BR>
+  <input type="radio" name="20" value="correct"> Right to Privacy<BR>
+  <input type="radio" name="20" value="corr"> Right to Ownership<BR>
+</p>
+
+<P>21.  What is it called if an agent conceals the true identity of the insurer?<BR>
+  <input type="radio" name="21" value="maison">  Defamation<BR>
+  <input type="radio" name="21" value="quatre"> Coercion<BR>
+  <input type="radio" name="21" value="corre"> Use of Designations<BR>
+  <input type="radio" name="21" value="correct"> Misrepresentation and False Advertising<BR>
+</p>
+
+<P>22.  Florida law, H.B. 301, sets forth the procedures for bringing a civil action against an insurer for violating certain parts of the Insurance Code  One of
+  the conditions of bringing suit is that the Department and the insurer be given _____ written notice of the insurer’s violation<BR>
+  <input type="radio" name="22" value="maison"> 14 days<BR>
+  <input type="radio" name="22" value="quatre"> 90 days<BR>
+  <input type="radio" name="22" value="cot"> 365 days<BR>
+  <input type="radio" name="22" value="correct"> 60 days<BR>
+</p>
+
+<P>23.  The National Flood Insurance Program (NFIP) continued to do what in 2020?<BR>
+  <input type="radio" name="23" value="maison">  Reduce its private sector reinsurance program.<BR>
+  <input type="radio" name="23" value="correct"> Expand its private sector reinsurance program.<BR>
+  <input type="radio" name="23" value="quatre"> Expand its public sector reinsurance program.<BR>
+  <input type="radio" name="23" value="cort"> Dissolve it private sector reinsurance program.<BR>
+</p>
+
+<P>24.  “Essentially, bad faith involves unfair dealing and deception—an adjuster’s
+  or insurer’s method of precluding a claimant from receiving all or some of the
+  benefits to which he or she is entitled under an insurance policy.” This statement is:<BR>
+  <input type="radio" name="24" value="maison">  Sometimes True<BR>
+  <input type="radio" name="24" value="quatre"> Sometimes False<BR>
+  <input type="radio" name="24" value="corre"> Always False<BR>
+  <input type="radio" name="24" value="correct"> Always True<BR>
+</p>
+
+<P>25.  An agent tells a claimant or insured that an additional product or policy feature is included
+  at no additional cost when there is an additional charge, what is this called?<BR>
+  <input type="radio" name="25" value="maison">  False Claim<BR>
+  <input type="radio" name="25" value="quatre"> Twisting<BR>
+  <input type="radio" name="25" value="corre">  Rebating<BR>
+  <input type="radio" name="25" value="correct"> Sliding<BR>
+</p>
+
+<P>26. Florida law specifically prohibits licensees from representing who?<BR>
+  <input type="radio" name="26" value="correct"> Unauthorized entities<BR>
+  <input type="radio" name="26" value="quatre"> Insurers under investigation<BR>
+  <input type="radio" name="26" value="soleil"> Surplus Lines insurers<BR>
+  <input type="radio" name="26" value="poisson">  Out of state insurers<BR>
+</p>
+
+<P>27. An agent in the process of placing a policy through an
+  insurance company with whom he or she does not hold an appointment is called a:<BR>
+  <input type="radio" name="27" value="quatre"> Authorized Agent<BR>
+  <input type="radio" name="27" value="soleil"> Customs Agent<BR>
+  <input type="radio" name="27" value="correct"> Brokering Agent<BR>
+  <input type="radio" name="27" value="poisson">  Customer Agent<BR>
+</p>
+
+<P>28. An agent attempting to settle claims on the basis of a policy document or binder
+  that was altered without the consent or knowledge of the insured is partaking in what?<BR>
+  <input type="radio" name="28" value="quatre"> Membership council agreement<BR>
+  <input type="radio" name="28" value="correct"> Unfair claims settlement practices<BR>
+  <input type="radio" name="28" value="soleil"> Binder resolution <BR>
+  <input type="radio" name="28" value="poisson">  Claims reporting<BR>
+</p>
+
+<P>29. Which is a type of vehicle insurance whereby the cost depends on the
+  time the vehicle is used, the distance traveled, and driving behaviors?<BR>
+  <input type="radio" name="29" value="quatre"> Behavioral insurance<BR>
+  <input type="radio" name="29" value="soleil"> Guaranty insurance<BR>
+  <input type="radio" name="29" value="poisson">  Digitized insurance<BR>
+  <input type="radio" name="29" value="correct"> Usage based insurance<BR>
+</p>
+
+<P>30. Which division of the Department of Financial Services is a law enforcement agency?<BR>
+  <input type="radio" name="30" value="quatre"> The Division of Agents and Agency Services<BR>
+  <input type="radio" name="30" value="soleil"> The Division of Insurance Regulation<BR>
+  <input type="radio" name="30" value="correct">  The Division of Investigative and Forensic Services<BR>
+  <input type="radio" name="30" value="poisson">  The Division of Consumer Services<BR>
+</p>
+</div>
+
+<button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+</form>
+</div>
+ </div>
+</body>
+<!-- <input type="radio" name="21" value="maison">   Adjusters may handle investigations, or handle loss and claim adjustments and settlements in any manner<BR> -->
+<!-- <input type="radio" name="21" value="quatre"> Adjusters must report the facts after making a complete investigation in a truthful and unbiased manner.<BR> -->
+<!-- <input type="radio" name="21" value="correct"> Adjusters may refer claimants who need repairs or other services related to a loss to an individual or organization with which the adjuster has an undisclosed financial interest or that might reasonably be expected to compensate the adjuster for the referral.<BR> -->
+<!-- <input type="radio" name="21" value="corre"> All of thee Above<BR> -->
